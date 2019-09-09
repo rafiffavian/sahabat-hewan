@@ -7,7 +7,7 @@
     <ul class="navbar-nav ml-auto" style="padding-right:55px">
     
      <li class="nav-item active">
-        <a class="nav-link" href="/automatch">Auto Match</a>
+        <a class="nav-link" href="/automatch">Adopsi</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="/komunitas">Komunitas</a>

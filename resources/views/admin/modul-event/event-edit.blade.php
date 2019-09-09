@@ -29,15 +29,20 @@
             </div>
         </div>
         <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput">Time</label>  
+        <label class="col-md-4 control-label" for="textinput">Time Start</label>  
             <div class="col-md-4">
                 <input id="textinput" name="rating" type="time" value="{{$editEvent->time}}" class="form-control input-md">
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">Requirement</label>  
+        <label class="col-md-4 control-label" for="textinput">Time Finish</label>  
             <div class="col-md-4">
-                <textarea name="requirement" id="" cols="30" rows="10">{{$editEvent->requirement}}</textarea>
+                <input id="textinput" name="rating" type="time" value="{{$editEvent->time_finish}}" class="form-control input-md">
+            </div>
+        </div>
+        <label class="col-md-4 control-label" for="textinput">Url Lokasi</label>  
+            <div class="col-md-4">
+                <textarea name="url_lokasi" id="" cols="30" rows="10">{{$editEvent->url_lokasi}}</textarea>
             </div>
         </div>
         <div class="form-group">
@@ -74,6 +79,18 @@
                @endforeach     
                
                 </select>
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Whatsapp</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="whatsapp" type="text" value="{{$editEvent->whatsapp}}" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Line</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="line" type="text" value="{{$editEvent->line}}" class="form-control input-md">
             </div>
         </div>
 

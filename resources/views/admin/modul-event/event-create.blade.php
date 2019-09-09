@@ -28,15 +28,21 @@
             </div>
         </div>
         <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput">Time</label>  
+        <label class="col-md-4 control-label" for="textinput">Time Start</label>  
             <div class="col-md-4">
-                <input id="textinput" name="rating" type="time" placeholder="Time" class="form-control input-md">
+                <input id="textinput" name="time" type="text" placeholder="Time" class="form-control input-md">
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">Requirement</label>  
+        <label class="col-md-4 control-label" for="textinput">Time Finish</label>  
             <div class="col-md-4">
-                <textarea name="requirement" id="" cols="30" rows="10"></textarea>
+                <input id="textinput" name="time_finish" type="text" placeholder="Time" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Url Lokasi</label>  
+            <div class="col-md-4">
+                <textarea name="url_lokasi" id="" cols="30" rows="10"></textarea>
             </div>
         </div>
         <div class="form-group">
@@ -72,6 +78,18 @@
                @endforeach     
                
                 </select>
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Whatsapp</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="whatsapp" type="text" placeholder="Nomor Whatsapp" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Line</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="line" type="text" placeholder="ID Line" class="form-control input-md">
             </div>
         </div>
 

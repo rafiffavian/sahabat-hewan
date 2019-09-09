@@ -23,6 +23,7 @@
 				    </div>
 			    </div>
 			</form> <!-- search-wrap .end// -->
+		
 	</div> <!-- col.// -->
 	<div class="col-lg-3 col-md-12">
 		
@@ -58,10 +59,8 @@
 				</form>
 
 				<ul class="list-unstyled list-lg">
-					<li><a href="#">Pudel <span class="float-right badge badge-light round">142</span> </a></li>
-					<li><a href="#">Anggora  <span class="float-right badge badge-light round">3</span>  </a></li>
-					<li><a href="#">Rottweiler <span class="float-right badge badge-light round">32</span>  </a></li>
-					<li><a href="#">Kucing Singapura <span class="float-right badge badge-light round">12</span>  </a></li>
+					<li><a href="#">Anjing <span class="float-right badge badge-light round">142</span> </a></li>
+					<li><a href="#">Kucing  <span class="float-right badge badge-light round">3</span>  </a></li>
 				</ul>  
 			</div> <!-- card-body.// -->
 		</div> <!-- collapse .// -->
@@ -122,121 +121,72 @@
 	</aside> <!-- col.// -->
 	<main class="col-sm-9">
 
+	<h1 style="color:#0066ff;">Dibawah ini merupakan daftar komunitas yang bekerja sama dengan aplikasi ini untuk menyelamatkan dan melindungi hewan.</h1><br>
 
-<article class="card card-product">
-	<div class="card-body">
-	<div class="row">
-		<aside class="col-sm-3">
-			<div class="img-wrap"><img src="asset/img/fotokomunitas/komunitassemua.jpg"></div>
-		</aside> <!-- col.// -->
-		<article class="col-sm-6">
-				<h4 class="title"> AnimalRescue </h4>
-				<div class="rating-wrap  mb-2">
-					<ul class="rating-stars">
-						<li style="width:80%" class="stars-active"> 
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-							<i class="fa fa-star"></i> 
-						</li>
-						<li>
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-							<i class="fa fa-star"></i> 
-						</li>
-					</ul>
-					<div class="label-rating">132 reviews</div>
-					<div class="label-rating">154 selesai ditangani </div>
-				</div> <!-- rating-wrap.// -->
-				<p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam </p>
-				<dl class="dlist-align">
-				  <dt>Lokasi</dt>
-				  <dd>Jakrta Utara</dd>
-				</dl>  <!-- item-property-hor .// -->
-				<dl class="dlist-align">
-				  <dt>Jenis</dt>
-				  <dd>Pitbull, Kucing Persia, Rottweiler</dd>
-				</dl>  <!-- item-property-hor .// -->
-				<dl class="dlist-align">
-				  <dt>Komunitas</dt>
-				  <dd>Semua Hewan</dd>
-				</dl>  <!-- item-property-hor .// -->
-				
-			
-		</article> <!-- col.// -->
-		<aside class="col-sm-3 border-left">
-			<div class="action-wrap">
-				<div class="price-wrap h4">
+@foreach($comunity as $comunities)
+	<article class="card card-product">
+		<div class="card-body">
+		<div class="row">
+			<aside class="col-sm-3">
+				<div class="img-wrap"><img src="asset/img/fotokomunitas/komunitassemua.jpg"></div>
+			</aside> <!-- col.// -->
+			<article class="col-sm-6">
+					<h4 class="title"> {{$comunities->name}} </h4>
+					<div class="rating-wrap  mb-2">
+						<ul class="rating-stars">
+							<li style="width:80%" class="stars-active"> 
+								<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+								<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+								<i class="fa fa-star"></i> 
+							</li>
+							<li>
+								<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+								<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+								<i class="fa fa-star"></i> 
+							</li>
+						</ul>
+						<div class="label-rating">{{$comunities->rating}} reviews</div>
+						<div class="label-rating">{{$comunities->case_finish}} selesai ditangani </div>
+					</div> <!-- rating-wrap.// -->
+					<p> {{$comunities->description}}. </p>
+					<dl class="dlist-align">
+					<dt>Lokasi</dt>
+					<dd><a target="_blank" href="{{$comunities->url_lokasi}}">{{$comunities->location}},&nbsp;{{$comunities->mywilayah->name}}</a></dd>
+					</dl>  <!-- item-property-hor .// -->
+					<dl class="dlist-align">
+					<dt>Sosial Media</dt>
+					<dd>Instagram:</dd>
+					<dd>{{$comunities->instagram}}</dd><br>
+					<dd>Whatsapp:</dd>
+					<dd>{{$comunities->whatsapp}}</dd><br>
+					<dd>Line:</dd>
+					<dd>{{$comunities->Line}}</dd><br>
+					</dl>  <!-- item-property-hor .// -->
+					<dl class="dlist-align">
+					<dt>Komunitas</dt>
+					<dd>{{$comunities->myhewan->name}}</dd>
+					</dl>  <!-- item-property-hor .// -->
 					
-				</div> <!-- info-price-detail // -->
-			
-				<br>
-				<p>
-					<a href="#" class="btn btn-primary"> Gabung </a>
-					<a href="#" class="btn btn-secondary"> Detail  </a>
-				</p>
-				<a href="#"><i class="fa fa-heart"></i> Beri Rating</a>
-			</div> <!-- action-wrap.// -->
-		</aside> <!-- col.// -->
-	</div> <!-- row.// -->
-	</div> <!-- card-body .// -->
-</article> <!-- card product .// -->
+				
+			</article> <!-- col.// -->
+			<aside class="col-sm-3 border-left">
+				<div class="action-wrap">
+					<div class="price-wrap h4">
+						
+					</div> <!-- info-price-detail // -->
+				
+					<br>
+					
+					<a href="#"><i class="fa fa-heart"></i> Beri Rating</a>
+				</div> <!-- action-wrap.// -->
+			</aside> <!-- col.// -->
+		</div> <!-- row.// -->
+		</div> <!-- card-body .// -->
+	</article> <!-- card product .// -->
+@endforeach
 
-<article class="card card-product">
-	<div class="card-body">
-	<div class="row">
-		<aside class="col-sm-3">
-			<div class="img-wrap"><img src="asset/img/fotokomunitas/defaultuser.jpg"></div>
-		</aside> <!-- col.// -->
-		<article class="col-sm-6">
-				<h4 class="title"> Cat Lover Cimanggis </h4>
-				<div class="rating-wrap  mb-2">
-					<ul class="rating-stars">
-						<li style="width:80%" class="stars-active"> 
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-							<i class="fa fa-star"></i> 
-						</li>
-						<li>
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-							<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-							<i class="fa fa-star"></i> 
-						</li>
-					</ul>
-					<div class="label-rating">32 reviews</div>
-					<div class="label-rating">12 selesai ditangani </div>
-				</div> <!-- rating-wrap.// -->
-				<p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam </p>
-				<dl class="dlist-align">
-				  <dt>Lokasi</dt>
-				  <dd>Jakrta Timur</dd>
-				</dl>  <!-- item-property-hor .// -->
-				<dl class="dlist-align">
-				  <dt>Jenis</dt>
-				  <dd>Kucing Singapura, Kucing Persia, Anggora</dd>
-				</dl>  <!-- item-property-hor .// -->
-				<dl class="dlist-align">
-				  <dt>Komunitas</dt>
-				  <dd>Semua Hewan</dd>
-				</dl>  <!-- item-property-hor .// -->
-				
-			
-		</article> <!-- col.// -->
-		<aside class="col-sm-3 border-left">
-			<div class="action-wrap">
-				<div class="price-wrap h4">
-					
-				</div> <!-- info-price-detail // -->
-			
-				<br>
-				<p>
-					<a href="#" class="btn btn-primary"> Gabung </a>
-					<a href="#" class="btn btn-secondary"> Detail  </a>
-				</p>
-				<a href="#"><i class="fa fa-heart"></i> Beri Rating</a>
-			</div> <!-- action-wrap.// -->
-		</aside> <!-- col.// -->
-	</div> <!-- row.// -->
-	</div> <!-- card-body .// -->
-</article> <!-- card product .// -->
+<h1 style="color:#0066ff;">Kami terbuka bagi siapa saja yang memiliki komunitas yang ingin mendaftarkan komunitasnya untuk bekerja sama dengan aplikasi ini </h1><br>
+<center><a href="" style="width:200px; height:50px;" class="btn btn-primary">DAFTAR</a><br><br></center>
 
 	</main> <!-- col.// -->
 </div>

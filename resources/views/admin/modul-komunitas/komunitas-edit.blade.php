@@ -23,6 +23,12 @@
             </div>
         </div>
         <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Url Alamat</label>  
+            <div class="col-md-4">
+                <textarea name="url_lokasi" id="" cols="30" rows="10">{{$editComunity->url_lokasi}}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Alamat</label>  
             <div class="col-md-4">
                 <input id="textinput" name="location" type="text" value="{{$editComunity->location}}" class="form-control input-md">
@@ -68,6 +74,24 @@
                @endforeach     
                
                 </select>
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Instagram</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="instagram" type="text" value="{{$editComunity->instagram}}" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Whatsapp</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="whatsapp" type="text" value="{{$editComunity->whatsapp}}" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Line</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="Line" type="text" value="{{$editComunity->Line}}" class="form-control input-md">
             </div>
         </div>
 

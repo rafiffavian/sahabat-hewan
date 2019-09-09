@@ -28,6 +28,12 @@
             </div>
         </div>
         <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Url Alamat</label>  
+            <div class="col-md-4">
+                <textarea name="url_lokasi" id="" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Rating</label>  
             <div class="col-md-4">
                 <input id="textinput" name="rating" type="text" placeholder="Rating" class="form-control input-md">
@@ -66,6 +72,24 @@
                @endforeach     
                
                 </select>
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Instagram</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="instagram" type="text" placeholder="Nama Instagram" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Whatsapp</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="whatsapp" type="text" placeholder="Nomor Whatsapp" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Line</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="Line" type="text" placeholder="ID Line" class="form-control input-md">
             </div>
         </div>
 

@@ -34,15 +34,16 @@
                   <div class="text-center text-sm-left mb-2 mb-sm-0">
                     <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Mochammad Fariz Syah Lazuardy</h4>
                     <p class="mb-0">@mochammadfariz</p>
+                    
                     <div class="mt-2">
                       <button class="btn btn-primary" type="button">
                         <i class="fa fa-fw fa-camera"></i>
-                        <span>Change Photo</span>
+                        <span>Ubah foto</span>
                       </button>
                     </div>
                   </div>
                   <div class="text-center text-sm-right">
-                    <div class="text-muted"><small>Joined 09 Dec 2017</small></div>
+                    <div class="text-muted"><small>Bergabung sejak 09 Desember 2017</small></div>
                   </div>
                 </div>
               </div>
@@ -94,49 +95,24 @@
                       </div>
                     </div>
 
-                    <div class="row">
-                      <div class="col-12 ">
-                        <div class=""><b>Hewan Favoritku  </b><i style="color:green;" class="fas fa-cat"></i></div>
-
-                        <br>
-
-                         <div class="container">
-  <div class="row">
-    <div class="col-sm mb-3">
-       <div class="chart" data-percent="95" data-scale-color="#fff">Kucing Anggora<button type="button" class="btn btn-danger btn-sm ml-3">  <i class="fas fa-trash"></i> Hapus</button></div>
-    </div>
-    <div class="col-sm mb-3">
-       <div class="chart" data-percent="95" data-scale-color="#fff">Kucing Persia<button type="button" class="btn btn-danger btn-sm ml-3">  <i class="fas fa-trash"></i> Hapus</button></div>
-    </div>
-    <div class="col-sm mb-3">
-       <div class="chart" data-percent="95" data-scale-color="#fff">Kucing Singapura<button type="button" class="btn btn-danger btn-sm ml-3">  <i class="fas fa-trash"></i> Hapus</button></div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm mb-3">
-       <div class="chart" data-percent="95" data-scale-color="#fff">Siberian Husky<button type="button" class="btn btn-danger btn-sm ml-3">  <i class="fas fa-trash"></i> Hapus</button></div>
-    </div>
-    <div class="col-sm mb-3">
-       <div class="chart" data-percent="95" data-scale-color="#fff">Pitbull<button type="button" class="btn btn-danger btn-sm ml-3">  <i class="fas fa-trash"></i> Hapus</button></div>
-    </div>
-    <div class="col-sm mb-3">
-       <div class="chart" data-percent="95" data-scale-color="#fff">Doberman<button type="button" class="btn btn-danger btn-sm ml-3">  <i class="fas fa-trash"></i> Hapus</button></div>
-    </div>
-  </div>
-</div>
-                        </div>
+                       <div class="row">
+                      <div class="col-8 offset-2 ">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nomor Handphone">
+                                    <button class="btn btn-instagram"> Sembunyikan <i class="fas fa-eye-slash"></i></button>
+                                  </div> 
                       </div>
                     </div>
 
-<br>
-<br>
-
-                       <div class="row">
-                      <div class="col-12 ">
-                        <div class="mb-2"><i style="color:green"class="fas fa-plus"></i><b> Tambah hewan favorit</b></div>
+                     <div class="row">
+                    
+                   
+                     
+                      <div class="col-8 offset-2 ">
+                        <img height="40px;" width="auto"src="asset/img/desainpelaporan/whatsapp.png">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Tambah hewan Favoritmu">
+                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nomor Whatsapp">
+                                    <button class="btn btn-instagram"> Sembunyikan <i class="fas fa-eye-slash"></i></button>
                                   </div>
                         </div>
                       </div>
@@ -146,9 +122,9 @@
                 <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Save Changes">
+              <input type="button" class="btn btn-primary" value="Simpan">
               <span></span>
-              <input type="reset" class="btn btn-secondary" value="Cancel">
+              <input type="reset" class="btn btn-secondary" value="Kembali">
             </div>
           </div>
 

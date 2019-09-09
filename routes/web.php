@@ -16,14 +16,49 @@ Route::get('/', function () {
 });
 
 
+Route::get('/laporkomunitas', function () {
+    return view('modul.pelaporan.komunitas');
+});
 
+Route::get('/daftarkomunitas', function () {
+    return view('modul.komunitas.daftarkomunitas');
+});
+
+Route::get('/dokter', function () {
+    return view('modul.pelaporan.dokter');
+});
+
+
+Route::get('/profilteman', function () {
+    return view('modul.user.detailprofilteman');
+});
+
+Route::get('/detailprofilku', function () {
+    return view('modul.user.detailprofilku');
+});
+
+Route::get('/editprofil', function () {
+    return view('modul.user.editprofil');
+});
+
+Route::get('/info', function () {
+    return view('modul.setting.info');
+});
+Route::get('/gantipassword', function () {
+    return view('modul.setting.gantipassword');
+});    
 Route::get('/daftar', function () {
     return view('modul.signinup.daftar');
+});
+Route::get('/adopsi', function () {
+    return view('modul.adopsi.index');
 });
 
 
 Route::resource('/user', 'User\EnduserController', ['names' => 'enduser']);
 Route::resource('/login', 'User\LoginController');
+Route::resource('/komunitas', 'User\UserkomController');
+Route::resource('/event', 'User\UsereventController');
 
 Route::group(['prefix' => 'dashboard'], function(){
     
