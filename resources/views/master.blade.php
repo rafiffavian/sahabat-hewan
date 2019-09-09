@@ -18,6 +18,9 @@
 
     <!-- TAMBAHAN css untuk list teman yang mengikuti dan ikuti -->
     <link href="css/listfollowingfollower.css" rel="stylesheet" type="text/css"/>
+
+    <!-- TAMBAHAN css untuk automatch -->
+    <link href="css/automatch.css" rel="stylesheet" type="text/css"/>
    
     <!-- link untuk grid gallery hewanku -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -49,7 +52,19 @@
         </script>
      <!-- Akhir tambahan -->
      
+<!-- MAP google -->
+<script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(51.508742,-0.120850),
+  zoom:5,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+<!-- Ahir MAP google -->
 
 </body>
 

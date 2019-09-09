@@ -12,7 +12,7 @@
                     <div class="work-experience pt-2">
                           <div class="section">
                         <h3>@Rafffvn</h3>
-                       <button class="btn btn-outline-info btn-success"><span class="fa fa-user"></span> 332 <b>Following </b></button>&
+                       <button class="btn btn-outline-info btn-success"><span class="fa fa-user"></span> 332 <b>Following </b></button>
                       <button class="btn btn-outline-info btn-success"><span class="fa fa-user"></span> 114 <b>Followers</b> </button>
                        
                     </div>
@@ -43,7 +43,7 @@
                 </h2>
                 <address class="m-0 pt-2 pl-0 pl-md-4 font-weight-light text-secondary">
                     <i class="fa fa-map-marker"></i>
-                    Jakarta Timur, ID
+                    Jakarta Timur, Indonesia
                 </address>
             </div>
             <p class="h5 text-primary mt-2 d-block font-weight-light">
@@ -96,35 +96,41 @@
             <div class="container">
                 
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 item">
+                     <div class="col-4">
                         <a class="lightbox" href="asset/img/hewanku/anggora.jpg">
                             <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/anggora.jpg">
                         </a>
+                          <button type="button" class="btn btn-success btn-sm">  <i class="far fa-eye"></i> Detail</button>
                     </div>
-                    <div class="col-md-6 col-lg-4 item">
+                    <div class="col-4">
                         <a class="lightbox" href="asset/img/hewanku/husky.jpg">
                             <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/husky.jpg">
                         </a>
+                         <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#husky">  <i class="far fa-eye"></i> Detail</button>
                     </div>
-                    <div class="col-md-6 col-lg-4 item">
+                    <div class="col-4">
                         <a class="lightbox" href="asset/img/hewanku/kitten.jpg">
                             <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/kitten.jpg">
                         </a>
+                           <button type="button" class="btn btn-success btn-sm">  <i class="far fa-eye"></i> Detail</button>
                     </div>
-                    <div class="col-md-6 col-lg-4 item">
+                    <div class="col-4">
                         <a class="lightbox" href="asset/img/hewanku/kucinglucu.jpg">
                             <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/kucinglucu.jpg">
                         </a>
+                           <button type="button" class="btn btn-success btn-sm">  <i class="far fa-eye"></i> Detail</button>
                     </div>
-                    <div class="col-md-6 col-lg-4 item">
+                    <div class="col-4">
                         <a class="lightbox" href="asset/img/hewanku/kucinglucu2.jpg">
                             <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/kucinglucu2.jpg">
                         </a>
+                           <button type="button" class="btn btn-success btn-sm">  <i class="far fa-eye"></i> Detail</button>
                     </div>
-                    <div class="col-md-6 col-lg-4 item">
+                    <div class="col-4">
                         <a class="lightbox" href="asset/img/hewanku/kucingsungapura.jpg">
                             <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/kucingsungapura.jpg">
                         </a>
+                           <button type="button" class="btn btn-success btn-sm">  <i class="far fa-eye"></i> Detail</button>
                     </div>
                   
                 </div>
@@ -146,7 +152,7 @@
                         <!-- komunitas 1 -->
                         <div class="container">
     <div class="row">
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -200,7 +206,7 @@
         
   <!-- Awal komunitas 2 -->
            
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -416,5 +422,29 @@
             </section>
         </div>
     </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="husky" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cody</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <b>Kategori :</b> <p>Anjing <i style="color:orange;" class="fas fa-dog"></i></p>
+        <b>Jenis :</b> <p>Siberian Husky</p>
+        <b>Jenis Kelamin :</b> <p>Laki-laki <i style="color:blue;"class="fas fa-mars"></i></p> 
+        <b>Lahir :</b> <p>14 Oktober 2018</p>
+        <b>Tingkat agresivitas:</b> <span class="badge badge-pill badge-danger">Galak</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+      
+      </div>
+    </div>
+  </div>
 </div>
 @endsection

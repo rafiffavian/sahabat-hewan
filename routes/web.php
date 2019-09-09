@@ -15,19 +15,22 @@ Route::get('/', function () {
     return view('master');
 });
 
-Route::get('/lapor', function () {
-    return view('modul.pelaporan.index');
+
+
+Route::get('/daftar', function () {
+    return view('modul.signinup.daftar');
 });
 
-Route::get('/komunitas', function () {
-    return view('modul.komunitas.index');
+
+Route::resource('/user', 'User\EnduserController', ['names' => 'enduser']);
+Route::resource('/login', 'User\LoginController');
+
+Route::group(['prefix' => 'dashboard'], function(){
+    
+    Route::resource('/admin', 'Admin\AdminController');
+    Route::resource('/comunity', 'Admin\ComunityController');
+    Route::resource('/event', 'Admin\EventController');
+    Route::resource('/user', 'Admin\UserController');
 });
 
-Route::get('/event', function () {
-    return view('modul.event.index');
-});
-
-Route::get('/profilteman', function () {
-    return view('modul.user.detailprofilteman');
-});
 

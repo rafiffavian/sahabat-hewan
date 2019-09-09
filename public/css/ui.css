@@ -106,7 +106,7 @@ a:hover {
   margin-right: auto; }
 
 .overflow-h {
-  overflow: hidden; }
+  overflow: auto; }
 
 .flip-h {
   -webkit-transform: scaleX(-1);

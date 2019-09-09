@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-7">
-      <img src="asset/img/logo/dog.png" alt="">
+      <img class="mt-5" src="asset/img/desainpelaporan/komunitas2.png" alt="">
     </div>
     <div class="col-md-5">
      <h4 style="margin-top:60px;"class="font-weight-bold" style="font-family:Segoe UI Symbol " style="padding-top"> Hentikan Kekerasan Hewan Sekarang Juga!</h4>

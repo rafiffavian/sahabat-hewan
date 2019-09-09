@@ -1,0 +1,17 @@
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.login,
+.image {
+    min-height: 100vh;
+}
+
+.bg-image {
+    background-image: url('../../asset/img/logo/dog.png');
+    background-size: 10;
+    background-position: center center;
+}
