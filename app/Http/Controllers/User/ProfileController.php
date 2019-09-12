@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('modul.signinup.login');
+        $user = Auth::user();
+        return view('modul.user.detailprofilku',compact('user'));
     }
 
     /**
@@ -23,11 +24,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        Auth::logout();
-        return redirect(route('login.index'));
-
+        //
     }
 
     /**
@@ -38,12 +37,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            return redirect()->intended('/detailprofilku');
-        }else{
-            return redirect()->back();
-        }
+        //
     }
 
     /**
@@ -65,7 +59,8 @@ class LoginController extends Controller
      */
     public function edit($id)
     {
-        //
+        $editUser = Auth::user()->findOrFail($id);
+        return view('modul.user.editprofil',compact('editUser'));
     }
 
     /**
@@ -77,7 +72,9 @@ class LoginController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user()->findOrFail($id);
+        $user->fill($request->except(['token','_method']))->save();
+        return redirect(route('detailprofile.index'));
     }
 
     /**

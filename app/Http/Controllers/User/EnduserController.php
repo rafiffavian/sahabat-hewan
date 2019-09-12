@@ -37,7 +37,8 @@ class EnduserController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $data['image'] = 'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png';
+        $data['password'] = bcrypt($request->password); 
+        $data['image'] = 'userimage/anon.jpg';
         $data['description'] = 'test';
         $data['address'] = 'test';
         $data['tanggal_lahir'] = $data['tahun'] . '-' . $data['bulan'] . '-' . $data['tanggal'];

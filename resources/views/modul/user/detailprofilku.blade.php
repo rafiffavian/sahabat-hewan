@@ -5,21 +5,22 @@
 <div class="container py-4 my-2">
             <div class="row">
                 <div class="col-md-4 pr-md-5">
-                    <img  style=""class="img-fluid" alt="Responsive image" src="asset/img/user/fariz.jpg" />
+                    <img  style=""class="img-fluid" alt="Responsive image" src="{{$user->image}}" />
                     <div class="pt-4 mt-2">
 
                         <section class="mb-4 pb-1">
                             <div class="work-experience pt-2">
                                 <div class="section">
-                                <h3>@mochammadfarizz</h3>
+                                <h3>{{$user->username}}</h3>
+                                <h1>{{Auth::user()->id}}</h1>
                                 </div>
                             </div>
                         </section>
 
                         <section class="mb-5 mb-md-0">
                         <h3 class="h6 font-weight-light text-secondary text-uppercase">Kontak Saya </h3>
-                        <p> <i style="color:green"class="fas fa-phone-alt"></i> +6287888562143</p>
-                        <a href=""><img height="40px;" width="auto"src="asset/img/desainpelaporan/whatsapp.png"> Hubungi Whatsapp saya. </a>
+                        <p> <i style="color:green"class="fas fa-phone-alt"></i> {{$user->no_tlp}}</p>
+                        <a href="https://api.whatsapp.com/send?phone=6287789123707"><img height="40px;" width="auto"src="asset/img/desainpelaporan/whatsapp.png"> Hubungi Whatsapp saya. </a>
                         </section>
 
                     </div>
@@ -28,19 +29,19 @@
         <div class="col-md-8">
             <div class="d-flex align-items-center">
                 <h2 class="font-weight-bold m-0">
-                    Mochammad Fariz Syah Lazuardy
+                {{$user->first_name}}&nbsp;{{$user->last_name}}
                 </h2>
            </div>
                  <address class="m-0 pt-2 pl-0 pl-md-4 font-weight-light text-secondary">
                     <i class="fa fa-map-marker"></i>
-                     Depok, Jakarta Selatan
+                    {{$user->kota}}, {{$user->provinsi}}
                 </address>
             <p class="h5 text-primary mt-2 d-block font-weight-light">
             </p>
-            <p class="lead mt-4">Saya suka dengan anjing doberman dan kucing persia. Teknik Informatika UG 16 . Sedang mencari teman main untuk doberman saya agar melatih kemampuan bersosialisasi dengan anjing lainnya. </p>
+            <p class="lead mt-4">{{$user->description}}. </p>
            
             <section class="d-flex mt-5">
-                <a href="/editprofil" class="btn btn-success"> <i class="fas fa-cog"></i> Ubah Profil</a>
+                <a href="{{route('detailprofile.edit',$user->id)}}" class="btn btn-success"> <i class="fas fa-cog"></i> Ubah Profil</a>
             </section>
             <section class="mt-4">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">

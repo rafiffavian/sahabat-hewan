@@ -32,11 +32,11 @@
                 </div>
                 <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                   <div class="text-center text-sm-left mb-2 mb-sm-0">
-                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Mochammad Fariz Syah Lazuardy</h4>
-                    <p class="mb-0">@mochammadfariz</p>
+                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{$editUser->first_name}} {{$editUser->last_name}}</h4>
+                    <p class="mb-0">{{$editUser->username}}</p>
                     
                     <div class="mt-2">
-                      <button class="btn btn-primary" type="button">
+                      <button class="btn btn-primary" type="file">
                         <i class="fa fa-fw fa-camera"></i>
                         <span>Ubah foto</span>
                       </button>
@@ -52,34 +52,43 @@
               </ul>
               <div class="tab-content pt-3">
                 <div class="tab-pane active">
-                  <form class="form" novalidate="">
+                  <form class="form" novalidate="" method="post" action="{{route('detailprofile.update',$editUser->id)}}">
+                    @csrf
+                    <input type="hidden" name="_method" value="put">
                     <div class="row">
                       <div class="col">
                         <div class="row">
                           <div class="col">
                             <div class="form-group">
-                              <label>Full Name</label>
-                              <input class="form-control" type="text" name="name" placeholder="Mochammad Fariz Syah Lazuardy" value="Mochammad Fariz Syah Lazuardy">
+                              <label>First Name</label>
+                              <input class="form-control" type="text" name="first_name" placeholder="First Name" value="{{$editUser->first_name}}">
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Last Name</label>
+                              <input class="form-control" type="text" name="last_name" placeholder="Last Name" value="{{$editUser->last_name}}">
                             </div>
                           </div>
                           <div class="col">
                             <div class="form-group">
                               <label>Username</label>
-                              <input class="form-control" type="text" name="username" placeholder="@mochammadfariz" value="@mochammadfariz">
+                              <input class="form-control" type="text" name="username" placeholder="Username" value="{{$editUser->username}}">
                             </div>
                           </div>
                         </div>
+                        
                         <div class="row">
                           <div class="col">
                             <div class="form-group">
                               <label>Provinsi</label>
-                              <input class="form-control" type="text" name="name" placeholder="Jakarta Selatan" value="Jakarta Selatan">
+                              <input class="form-control" type="text" name="provinsi" placeholder="Provinsi" value="{{$editUser->provinsi}}">
                             </div>
                           </div>
                           <div class="col">
                             <div class="form-group">
                               <label>Kabupaten/Kota</label>
-                              <input class="form-control" type="text" name="username" placeholder="Depok" value="Depok">
+                              <input class="form-control" type="text" name="kota" placeholder="Kabupaten/Kota" value="{{$editUser->kota}}">
                             </div>
                           </div>
                         </div>
@@ -88,7 +97,7 @@
                           <div class="col mb-3">
                             <div class="form-group">
                               <label>Bio</label>
-                              <textarea class="form-control" rows="5" placeholder="Pecinta Kucing Anggora. Teknik Informatika UG 16 . Sedang mencari kucing lucu untuk dipelihara siapapun bisa contact saya. Work Hard Pray Hard"></textarea>
+                              <textarea name="description" class="form-control" rows="5" placeholder="Bio">{{$editUser->description}}</textarea>
                             </div>
                           </div>
                         </div>
@@ -98,7 +107,7 @@
                        <div class="row">
                       <div class="col-8 offset-2 ">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nomor Handphone">
+                                    <input type="text" class="form-control" name="no_tlp" value="{{$editUser->no_tlp}}" id="formGroupExampleInput" placeholder="Nomor Handphone">
                                     <button class="btn btn-instagram"> Sembunyikan <i class="fas fa-eye-slash"></i></button>
                                   </div> 
                       </div>
@@ -109,9 +118,9 @@
                    
                      
                       <div class="col-8 offset-2 ">
-                        <img height="40px;" width="auto"src="asset/img/desainpelaporan/whatsapp.png">
+                        <img height="40px;" width="auto"src="{{asset ('asset/img/desainpelaporan/whatsapp.png')}}">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nomor Whatsapp">
+                                    <input type="text" name="whatsapp" class="form-control" id="formGroupExampleInput" value="{{$editUser->whatsapp}}" placeholder="Nomor Whatsapp">
                                     <button class="btn btn-instagram"> Sembunyikan <i class="fas fa-eye-slash"></i></button>
                                   </div>
                         </div>
@@ -119,13 +128,14 @@
                     </div>
 <br>
 <br>
-                <div class="form-group">
-            <label class="col-md-3 control-label"></label>
-            <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Simpan">
-              <span></span>
-              <input type="reset" class="btn btn-secondary" value="Kembali">
-            </div>
-          </div>
+                          <div class="form-group">
+                      <label class="col-md-3 control-label"></label>
+                      <div class="col-md-8">
+                      <button class="btn btn-primary" type="submit">Simpan</button>
+                        <span></span>
+                        <input type="reset" class="btn btn-secondary" value="Kembali">
+                      </div>
+                    </div>
+                   </form>  
 
 @endsection

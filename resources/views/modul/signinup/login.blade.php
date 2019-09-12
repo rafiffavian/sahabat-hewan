@@ -109,12 +109,13 @@ anime.timeline({loop: true})
                           <img width="80px" height="auto" src="asset/img/logo/sahabathewan1.png" alt="" class="rounded-circle ">
                             <h3 class="">Sahabat Hewan</h3>
                             <p class="text-muted mb-4">"Hewanku Sobatku" </p>
-                            <form>
+                            <form action="{{route('login.store')}}" method="post" >
+                              @csrf
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="email" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="inputEmail" name="email" type="email" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input id="inputPassword" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-success">
+                                    <input id="inputPassword" name="password" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-success">
                                 </div>
                                 <div class="custom-control custom-checkbox mb-3">
                                     <input id="customCheck1" type="checkbox" checked class="custom-control-input">

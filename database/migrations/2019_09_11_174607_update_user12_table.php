@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateUser3Table extends Migration
+class UpdateUser12Table extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,9 @@ class UpdateUser3Table extends Migration
     public function up()
     {
         Schema::table('user', function (Blueprint $table) {
-            
-            $table->string('gender')->change();
-            
+           
+            $table->string('whatsapp')->nullable();
+           
         });
     }
 
@@ -28,9 +28,9 @@ class UpdateUser3Table extends Migration
     public function down()
     {
         Schema::table('user', function (Blueprint $table) {
-            
-            $table->date('gender');
-            
+           
+            $table->dropColumn('whatsapp');
+           
         });
     }
 }

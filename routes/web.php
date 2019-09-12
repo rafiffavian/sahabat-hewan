@@ -33,14 +33,6 @@ Route::get('/profilteman', function () {
     return view('modul.user.detailprofilteman');
 });
 
-Route::get('/detailprofilku', function () {
-    return view('modul.user.detailprofilku');
-});
-
-Route::get('/editprofil', function () {
-    return view('modul.user.editprofil');
-});
-
 Route::get('/info', function () {
     return view('modul.setting.info');
 });
@@ -59,6 +51,7 @@ Route::resource('/user', 'User\EnduserController', ['names' => 'enduser']);
 Route::resource('/login', 'User\LoginController');
 Route::resource('/komunitas', 'User\UserkomController');
 Route::resource('/event', 'User\UsereventController');
+Route::resource('/detailprofile', 'User\ProfileController');
 
 Route::group(['prefix' => 'dashboard'], function(){
     
