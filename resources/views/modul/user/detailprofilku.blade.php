@@ -34,7 +34,7 @@
            </div>
                  <address class="m-0 pt-2 pl-0 pl-md-4 font-weight-light text-secondary">
                     <i class="fa fa-map-marker"></i>
-                    {{$user->kota}}, {{$user->provinsi}}
+                   {{$user->kelurahan}} {{$user->kota}}, {{$user->provinsi}}
                 </address>
             <p class="h5 text-primary mt-2 d-block font-weight-light">
             </p>
@@ -61,57 +61,24 @@
                         </h4>
                         <br>
                        <!-- Konten Gallery Peliharaanku -->
-          
-       <section class="gallery-block grid-gallery">
-            <div class="container">
-              <button style= "rounded:100%"type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#tambahfoto"><i class="fas fa-plus"></i> Tambah Foto</button>
-                <div class="row">
-                    <div class="col-6 col-md-4">
-                        <a class="lightbox" href="asset/img/hewanku/anggora.jpg">
-                            <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/anggora.jpg">
-                        </a>
-                        <button type="button" class="btn btn-danger btn-sm">  <i class="fas fa-trash"></i> Hapus</button>
-                          <button type="button" class="btn btn-warning btn-sm">  Ubah</button>
+                       <section class="gallery-block grid-gallery">
+                           <div class="container">
+                               <button style= "rounded:100%"type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#tambahfoto"><i class="fas fa-plus"></i> Tambah Foto</button>
+                               <div class="row">
+                                   
+                    @foreach($adoption as $adoptions)        
+                        <div class="col-6 col-md-4">
+                            <a class="lightbox" href="{{ url('adoptionimage/' . $adoptions->image) }}">
+                                <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="{{ url('adoptiontimage/' . $adoptions->image) }}">
+                            </a>
+                            <button type="button" class="btn btn-danger btn-sm">  <i class="fas fa-trash"></i> Hapus</button>
+                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#husky">  Ubah</button>
+                        </div>
+                    @endforeach        
+                        
                     </div>
-                    <div class="col-6 col-md-4">
-                        <a class="lightbox" href="asset/img/hewanku/husky.jpg">
-                            <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/husky.jpg">
-                        </a>
-                         <button type="button" class="btn btn-danger btn-sm">  <i class="fas fa-trash"></i> Hapus</button>
-                         <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#husky">  Ubah</button>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a class="lightbox" href="asset/img/hewanku/kitten.jpg">
-                            <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/kitten.jpg">
-                        </a>
-                         <button type="button" class="btn btn-danger btn-sm">  <i class="fas fa-trash"></i> Hapus</button>
-                           <button type="button" class="btn btn-warning btn-sm">  Ubah</button>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a class="lightbox" href="asset/img/hewanku/kucinglucu.jpg">
-                            <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/kucinglucu.jpg">
-                        </a>
-                         <button type="button" class="btn btn-danger btn-sm">  <i class="fas fa-trash"></i> Hapus</button>
-                           <button type="button" class="btn btn-warning btn-sm">  Ubah</button>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a class="lightbox" href="asset/img/hewanku/kucinglucu2.jpg">
-                            <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/kucinglucu2.jpg">
-                        </a>
-                         <button type="button" class="btn btn-danger btn-sm">  <i class="fas fa-trash"></i> Hapus</button>
-                           <button type="button" class="btn btn-warning btn-sm">  Ubah</button>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a class="lightbox" href="asset/img/hewanku/kucingsungapura.jpg">
-                            <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/kucingsungapura.jpg">
-                        </a>
-                         <button type="button" class="btn btn-danger btn-sm">  <i class="fas fa-trash"></i> Hapus</button>
-                           <button type="button" class="btn btn-warning btn-sm">  Ubah</button>
-                    </div>
-                  
                 </div>
-            </div>
-        </section>
+            </section>
         
         <br>
         <br>
@@ -221,35 +188,31 @@
         <form>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Nama Peliharaan </label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Cody">
+                    <input type="text" name="animal_name" value="" class="form-control" id="formGroupExampleInput" placeholder="Misal: Cody">
                 </div>
                  <div class="form-group">
                     <label for="exampleFormControlFile1">Unggah Foto</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                  </div>
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kategori</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Anjing</option>
-                        <option value="1">Kucing</option>
+                    <select name="id_animaltype" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        @foreach($animal as $animals)
+                            <option value="{{$animals->id}}">{{$animals->name}}</option>
+                       @endforeach   
                     </select>
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Siberian Husky</option>
-                        <option value="1">Pitbull</option>
-                        <option value="2">Rottweiler</option>
-                        <option value="3">Doberman</option>
-                    </select>
+                    <input type="text" name="animal_kind" placeholder="Misal: Siberian Husky" class="form-control">
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis Kelamin</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Laki-Laki</option>
-                         <option selected>Perempuan</option>
+                    <select name="gender" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option value="lakilaki">laki-Laki</option>
+                         <option value="perempuan">perempuan</option>
                     </select>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Lahir </label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="DD-MM-YYYY">
+                    <input type="date" name="birth" class="form-control" id="formGroupExampleInput" placeholder="DD-MM-YYYY">
                 </div>
                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Tingkat agresivitas</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <select name="" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                         <option selected>Baik</option>
                         <option value="1">Biasa</option>
                         <option value="3">Sedikit Galak</option>
@@ -282,52 +245,51 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="{{route('adoption.store')}}" method="post" enctype="multipart/form-data">
+            @csrf
                 <div class="form-group">
                     <label for="formGroupExampleInput">Nama Peliharaan </label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                    <input type="text" name="animal_name" class="form-control" id="formGroupExampleInput" placeholder="Misal: Cody">
                 </div>
                  <div class="form-group">
                     <label for="exampleFormControlFile1">Unggah Foto</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                  </div>
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kategori</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Anjing</option>
-                        <option value="1">Kucing</option>
+                    <select name="id_animaltype" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    @foreach($animal as $animals)
+                        <option value="{{$animals->id}}">{{$animals->name}}</option>
+                      @endforeach   
                     </select>
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Siberian Husky</option>
-                        <option value="1">Pitbull</option>
-                        <option value="2">Rottweiler</option>
-                        <option value="3">Doberman</option>
-                    </select>
+                    <input type="text" name="animal_kind" placeholder="Misal: Siberian Husky" class="form-control">
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis Kelamin</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Laki-Laki</option>
-                         <option selected>Perempuan</option>
+                  <select name="gender" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                      
+                        <option value="lakilaki">laki-Laki</option>
+                        <option value="perempuan">perempuan</option>
+                      
                     </select>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Lahir </label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="DD-MM-YYYY">
+                    <input type="date" name="birth" class="form-control" id="formGroupExampleInput" placeholder="DD-MM-YYYY">
                 </div>
                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Tingkat agresivitas</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Baik</option>
-                        <option value="1">Biasa</option>
-                        <option value="3">Sedikit Galak</option>
-                        <option value="1">Galak</option>
+                    <select name="agresiv"class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option value="baik">Baik</option>
+                        <option value="biasa">Biasa</option>
+                        <option value="sedikitgalak">Sedikit Galak</option>
+                        <option value="galak">Galak</option>
                     </select>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Alasan Lepas Adopsi</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="alasan" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                      <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary">Simpan</button>
       </div>
     </div>
   </div>

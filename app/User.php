@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name','last_name','gender','no_tlp','email', 'username','id_adoption','image','description','provinsi','kota', 'password','tanggal_lahir','whatsapp'
+        'first_name','last_name','gender','no_tlp','email', 'username','id_adoption','image','description','provinsi','kota', 'password','tanggal_lahir','whatsapp','kelurahan'
     ];
 
     /**
@@ -37,4 +37,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function daftarkom()
+    {
+        return $this->hasMany(Daftarkom::class, 'id_user');
+    }
+
+    public function adoption()
+    {
+        return $this->hasMany(Adoption::class, 'id_user');
+    }
 }

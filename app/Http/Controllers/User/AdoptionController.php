@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Adoption;
+use App\Animaltype;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
-class EnduserController extends Controller
+class AdoptionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +18,8 @@ class EnduserController extends Controller
      */
     public function index()
     {
-        $last= date('Y')-120;
-        $now = date('Y');
-        return view('modul.signinup.daftar',compact('last','now'));
+        $adoption = Adoption::all();
+        return view('modul.adopsi.index',compact('adoption'));
     }
 
     /**
@@ -27,7 +29,7 @@ class EnduserController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -38,18 +40,23 @@ class EnduserController extends Controller
      */
     public function store(Request $request)
     {
+        $file =  $request->file('image');
+        $fileNameArr = explode('.',$file->getClientOriginalName());
+        $fileName = $fileNameArr[0] . '-' . time() . '.' . $fileNameArr[1];
+        $file->move('adoptionimage', $fileName);
+
         $data = $request->all();
-        $data['password'] = bcrypt($request->password); 
-        $data['image'] = 'userimage/anon.jpg';
-        $data['description'] = 'test';
-        $data['address'] = 'test';
-        $data['tanggal_lahir'] = $data['tahun'] . '-' . $data['bulan'] . '-' . $data['tanggal'];
-        unset($data['tahun']);
-        unset($data['bulan']);
-        unset($data['tanggal']);
-        // dd($data);
-        $save = User::create($data);
-        redirect(route('login.index'));
+        unset($data['token']);
+        $data['image'] = $fileName;
+
+        $save = Auth::user()->adoption();
+        $save->create($data);
+
+        if(!$save){
+            File::delete('adoptionimage/'.$fileName);
+        } else{
+            return redirect()->route('detailprofile.index');
+        }
     }
 
     /**
@@ -71,7 +78,8 @@ class EnduserController extends Controller
      */
     public function edit($id)
     {
-        //
+        // $editAdop = Auth::user()->adoption()->findOrFail($id);
+        // return view('modul.user.detailprofilku',compact('editAdop'));
     }
 
     /**

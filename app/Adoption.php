@@ -8,4 +8,9 @@ class Adoption extends Model
 {
     protected $table = "adoption";
     protected $guarded = [];
+
+    public function myhewan()
+    {
+        return $this->belongsTo(Animaltype::class, 'id_animaltype');
+    }
 }

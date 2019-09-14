@@ -40,7 +40,7 @@ class LoginController extends Controller
     {
         
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            return redirect()->intended('/detailprofilku');
+            return redirect()->intended('/detailprofile');
         }else{
             return redirect()->back();
         }

@@ -22,7 +22,8 @@
 
 <body class="">
  @include('layouts.includes.navbar')
-
+<form action="{{route('komunitas.store')}}" method="post">
+    @csrf
     <div class="container" >
         <div class="row" >
             <div class="col-lg-8 col-sm-12 col-11 main-section">
@@ -31,38 +32,38 @@
 
                 <div class="form-group">
                     <label for="hp">Nama Komunitas</label>
-                    <input type="text" class="form-control" id="hp" placeholder="Masukkan Nama Komunitasmu">
+                    <input type="text" name="nama_komunitas" class="form-control" id="hp" placeholder="Masukkan Nama Komunitasmu">
                 </div>
                 <div class="form-group">
                     <label for="hp">Nomor Handphone Aktif</label>
-                    <input type="text" class="form-control" id="hp" placeholder="+62878000000000">
+                    <input type="text" name="no_tlp" class="form-control" id="hp" placeholder="+62878000000000">
                 </div>
 
                 <div class="form-group">
                     <label for="wa">Nomor Whatsapp Aktif <img height="40px;" width="auto"src="asset/img/desainpelaporan/whatsapp.png"></label>
-                    <input type="text" class="form-control" id="wa" placeholder="+62878000000000">
+                    <input type="text" name="whatsapp" class="form-control" id="wa" placeholder="+62878000000000">
                      <small id="emailHelp" class="form-text text-muted">Opsional</small>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Alasan Ingin Mendaftar</label><br>
-                    <textarea name="" id="" cols="70" rows="7" placeholder="Masukkan Alasanmu"></textarea>
+                    <textarea name="alasan" id="" cols="70" rows="7" placeholder="Masukkan Alasanmu"></textarea>
                 </div>
 
 
                 <br>
                
                         <br>
-                    <button type="button" class="btn btn-success">Laporkan</button><br><br>
+                    <button type="submit" class="btn btn-success">DAFTAR</button><br><br>
 
             </div>
         </div>
     </div>
-
+</form>
     
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/js/fileinput.js" type="text/javascript"></script>

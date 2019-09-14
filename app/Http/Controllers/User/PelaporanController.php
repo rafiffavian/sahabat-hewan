@@ -4,9 +4,8 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
 
-class EnduserController extends Controller
+class PelaporanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class EnduserController extends Controller
      */
     public function index()
     {
-        $last= date('Y')-120;
-        $now = date('Y');
-        return view('modul.signinup.daftar',compact('last','now'));
+        return view('modul.pelaporan.komunitas');
     }
 
     /**
@@ -38,18 +35,7 @@ class EnduserController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $data['password'] = bcrypt($request->password); 
-        $data['image'] = 'userimage/anon.jpg';
-        $data['description'] = 'test';
-        $data['address'] = 'test';
-        $data['tanggal_lahir'] = $data['tahun'] . '-' . $data['bulan'] . '-' . $data['tanggal'];
-        unset($data['tahun']);
-        unset($data['bulan']);
-        unset($data['tanggal']);
-        // dd($data);
-        $save = User::create($data);
-        redirect(route('login.index'));
+        //
     }
 
     /**

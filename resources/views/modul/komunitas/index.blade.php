@@ -5,17 +5,13 @@
 <div class="row align-items-center">
 	<div class="col-lg-3 col-sm-4">
 	<div class="brand-wrap">
-		<img width="70" height="70" class="logo" src="asset/img/logo/dog.png">
+		<img width="70" height="70" class="logo" src="asset/img/logo/sahabathewan1.png">
 	</div> <!-- brand-wrap.// -->
 	</div>
 	<div class="col-lg-6 col-sm-8">
 			<form action="#" class="search-wrap">
 				<div class="input-group w-100">
 				    <input type="text" class="form-control" style="width:40%;" placeholder="Search">
-				    <select class="custom-select" name="category_name">
-							<option value="">Semua Hewan</option><option value="codex">Anjing</option>
-							<option value="comments">Kucing</option>
-					</select>
 				    <div class="input-group-append">
 				      <button class="btn btn-primary" type="submit">
 				        <i class="fas fa-search"></i>
@@ -121,7 +117,7 @@
 	</aside> <!-- col.// -->
 	<main class="col-sm-9">
 
-	<h1 style="color:#0066ff;">Dibawah ini merupakan daftar komunitas yang bekerja sama dengan aplikasi ini untuk menyelamatkan dan melindungi hewan.</h1><br>
+	<p class="text-muted">Dibawah ini merupakan daftar komunitas yang bekerja sama dengan aplikasi ini untuk menyelamatkan dan melindungi hewan.</p><br>
 
 @foreach($comunity as $comunities)
 	<article class="card card-product">
@@ -133,19 +129,6 @@
 			<article class="col-sm-6">
 					<h4 class="title"> {{$comunities->name}} </h4>
 					<div class="rating-wrap  mb-2">
-						<ul class="rating-stars">
-							<li style="width:80%" class="stars-active"> 
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-								<i class="fa fa-star"></i> 
-							</li>
-							<li>
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-								<i class="fa fa-star"></i> 
-							</li>
-						</ul>
-						<div class="label-rating">{{$comunities->rating}} reviews</div>
 						<div class="label-rating">{{$comunities->case_finish}} selesai ditangani </div>
 					</div> <!-- rating-wrap.// -->
 					<p> {{$comunities->description}}. </p>
@@ -169,24 +152,14 @@
 					
 				
 			</article> <!-- col.// -->
-			<aside class="col-sm-3 border-left">
-				<div class="action-wrap">
-					<div class="price-wrap h4">
-						
-					</div> <!-- info-price-detail // -->
-				
-					<br>
-					
-					<a href="#"><i class="fa fa-heart"></i> Beri Rating</a>
-				</div> <!-- action-wrap.// -->
-			</aside> <!-- col.// -->
+		
 		</div> <!-- row.// -->
 		</div> <!-- card-body .// -->
 	</article> <!-- card product .// -->
 @endforeach
 
-<h1 style="color:#0066ff;">Kami terbuka bagi siapa saja yang memiliki komunitas yang ingin mendaftarkan komunitasnya untuk bekerja sama dengan aplikasi ini </h1><br>
-<center><a href="" style="width:200px; height:50px;" class="btn btn-primary">DAFTAR</a><br><br></center>
+<p style="text-muted">Kami terbuka bagi siapa saja yang memiliki komunitas yang ingin mendaftarkan komunitasnya untuk bekerja sama dengan aplikasi ini </p><br>
+<center><a href="{{route('komunitas.create')}}" style="width:200px; height:50px;" class="btn btn-primary">DAFTAR</a><br><br></center>
 
 	</main> <!-- col.// -->
 </div>

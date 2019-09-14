@@ -10,8 +10,8 @@
     <div class="card p-3">
       <div class="e-navlist e-navlist--active-bg">
         <ul class="nav">
-          <li class="nav-item"><a class="nav-link px-2 active" href="/info"><i class="fa fa-user"></i><span> Informasi saya</span></a></li>
-          <li class="nav-item"><a class="nav-link px-2" href="/gantipassword"><i class="fas fa-unlock-alt"></i><span> Ganti Password</span></a></li>
+          <li class="nav-item"><a class="nav-link px-2 active" href="{{route('myinfo.edit',$user->id)}}"><i class="fa fa-user"></i><span> Informasi saya</span></a></li>
+          <li class="nav-item"><a class="nav-link px-2" href="{{route('changepassword.edit',$user->id)}}"><i class="fas fa-unlock-alt"></i><span> Ganti Password</span></a></li>
          
         </ul>
       </div>
@@ -30,7 +30,9 @@
               </ul>
               <div class="tab-content pt-3">
                 <div class="tab-pane active">
-                  <form class="form" novalidate="">
+                  <form action="{{route('myinfo.update',$user->id)}}" method="post">
+                    <input type="hidden" name="_method" value="put">
+                    @csrf
                     <div class="row">
                       <div class="col">
                         <div class="row">
@@ -40,7 +42,7 @@
                           <div class="col">
                             <div class="form-group">
                               <label>Email</label>
-                              <input class="form-control" type="text" placeholder="user@example.com">
+                              <input class="form-control" name="email" value="{{$user->email}}" type="text" placeholder="user@example.com">
                             </div>
                           </div>
                         </div>
@@ -48,7 +50,7 @@
                           <div class="col">
                          <div class="form-group">
                             <label for="inputAddress">Nomor Handphone</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="+62878880000">
+                            <input type="text" name="no_tlp" class="form-control" id="inputAddress" value="{{$user->no_tlp}}" placeholder="+62878880000">
                           </div>
                           </div>
                         </div>
@@ -56,9 +58,10 @@
                           <div class="col">
                          <div class="form-group">
                             <label for="inputAddress">Jenis Kelamin</label>
-                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                              <option selected>Laki-Laki</option>
-                              <option value="1">Perempuan</option>
+                            <select name="gender" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                              <option value="{{$user->gender}}"selected>{{$user->gender}}</option>
+                              <option value="pria">pria</option>
+                              <option value="wanita">wanita</option>
                             </select>
                           </div>
                           </div>

@@ -121,95 +121,53 @@
 	<main class="col-sm-9">
 
 
-<article class="card card-product">
-	<div class="card-body">
-	<div class="row">
-		<aside class="col-sm-3">
-			<div class="img-wrap"><img src="asset/img/hewanku/husky.jpg"></div>
-		</aside> <!-- col.// -->
-		<article class="col-sm-6">
-				<h4 class="title"> Cody <span class="badge badge-pill badge-success">Free</span> </h4>
-			
-					
-				
-				<p> Cody berumur 2,5 tahun. Berkulit Putih dan Coklat. Silahkan adopsi Cody karena saya tidak boleh memelihara anjing lagi oleh orang tua saya. </p>
-				<dl class="dlist-align">
-				  <dt>Lokasi</dt>
-				  <dd>Jakarta Utara</dd>
-				</dl>  <!-- item-property-hor .// -->
-				<dl class="dlist-align">
-				  <dt>Kategori</dt>
-				  <dd>Anjing</dd>
-				</dl>  <!-- item-property-hor .// -->
-				<dl class="dlist-align">
-				  <dt>Jenis</dt>
-				  <dd>Siberian Husky</dd>
-				</dl>  <!-- item-property-hor .// -->
-			
-				
-			
-		</article> <!-- col.// -->
-		<aside class="col-sm-3 border-left">
-			<div class="action-wrap">
-				<div class="price-wrap h4">
-					
-				</div> <!-- info-price-detail // -->
-			
-				<br>
-				<p>
-					<a href="/profilteman" class="btn btn-primary"> Hubungi </a>
-					<a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#husky"> Detail  <i class="fas fa-eye"></i> </a>
-				</p>
-				
-			</div> <!-- action-wrap.// -->
-		</aside> <!-- col.// -->
-	</div> <!-- row.// -->
-	</div> <!-- card-body .// -->
-</article> <!-- card product .// -->
 
-<article class="card card-product">
-	<div class="card-body">
-	<div class="row">
-		<aside class="col-sm-3">
-			<div class="img-wrap"><img src="asset/img/fotokomunitas/defaultuser.jpg"></div>
-		</aside> <!-- col.// -->
-		<article class="col-sm-6">
-				<h4 class="title"> Popo <span class="badge badge-pill badge-success">Free</span> </h4>
-			
-				<p> Kucing Anggora berumur 2 bulan, alasan kenapa saya open adopsi karena saya terlalu banyak memelihara kucing.</p>
-				<dl class="dlist-align">
-				  <dt>Lokasi</dt>
-				  <dd>Jakarta Timur</dd>
-				</dl>  <!-- item-property-hor .// -->
-				<dl class="dlist-align">
-				  <dt>Kategori</dt>
-				  <dd>Kucing</dd>
-				</dl>  <!-- item-property-hor .// -->
+
+@foreach($adoption as $adoptions)	
+	<article class="card card-product">
+		<div class="card-body">
+		<div class="row">
+			<aside class="col-sm-3">
+				<div class="img-wrap"><img src="{{ url('adoptionimage/' . $adoptions->image) }}"></div>
+			</aside> <!-- col.// -->
+			<article class="col-sm-6">
+					<h4 class="title"> Popo <span class="badge badge-pill badge-success">Free</span> </h4>
 				
-				<dl class="dlist-align">
-				  <dt>Jenis</dt>
-				  <dd>Anggora</dd>
-				</dl>  <!-- item-property-hor .// -->
-				
-			
-		</article> <!-- col.// -->
-		<aside class="col-sm-3 border-left">
-			<div class="action-wrap">
-				<div class="price-wrap h4">
+					<p> {{$adoptions->alasan}}.</p>
+					<dl class="dlist-align">
+					<dt>Lokasi</dt>
+					<dd>Jakarta Timur</dd>
+					</dl>  <!-- item-property-hor .// -->
+					<dl class="dlist-align">
+					<dt>Kategori</dt>
+					<dd>{{$adoptions->myhewan->name}}</dd>
+					</dl>  <!-- item-property-hor .// -->
 					
-				</div> <!-- info-price-detail // -->
-			
-				<br>
-				<p>
-					<a href="#" class="btn btn-primary"> Hubungi </a>
-					<a href="#" class="btn btn-secondary"> Detail <i class="fas fa-eye"></i>  </a>
-				</p>
+					<dl class="dlist-align">
+					<dt>Jenis</dt>
+					<dd>{{$adoptions->animal_kind}}</dd>
+					</dl>  <!-- item-property-hor .// -->
+					
 				
-			</div> <!-- action-wrap.// -->
-		</aside> <!-- col.// -->
-	</div> <!-- row.// -->
-	</div> <!-- card-body .// -->
-</article> <!-- card product .// -->
+			</article> <!-- col.// -->
+			<aside class="col-sm-3 border-left">
+				<div class="action-wrap">
+					<div class="price-wrap h4">
+						
+						</div> <!-- info-price-detail // -->
+						
+						<br>
+						<p>
+							<a href="#" class="btn btn-primary"> Hubungi </a>
+							
+						</p>
+						
+					</div> <!-- action-wrap.// -->
+				</aside> <!-- col.// -->
+			</div> <!-- row.// -->
+		</div> <!-- card-body .// -->
+	</article> <!-- card product .// -->
+@endforeach	
 
 	</main> <!-- col.// -->
 </div>

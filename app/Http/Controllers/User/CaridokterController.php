@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Doctor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
-class EnduserController extends Controller
+class CaridokterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +17,28 @@ class EnduserController extends Controller
      */
     public function index()
     {
-        $last= date('Y')-120;
-        $now = date('Y');
-        return view('modul.signinup.daftar',compact('last','now'));
+        $user_id = Auth::user()->id;
+        $user_data = User::where('id', $user_id)->get();
+        $kecamatan = $user_data[0]->kecamatan;
+        $kelurahan = $user_data[0]->kelurahan;
+        $kota = $user_data[0]->kota;
+        $provinsi = $user_data[0]->provinsi;
+        return view('modul.pelaporan.dokter');
+    }
+
+    public function listdoctor()
+    {
+        $user_id = Auth::user()->id;
+        $user_data = User::where('id', $user_id)->get();
+        $kecamatan = $user_data[0]->kecamatan;
+        $kelurahan = $user_data[0]->kelurahan;
+        $kota = $user_data[0]->kota;
+        $provinsi = $user_data[0]->provinsi;
+        $doctor_kelurahan = Doctor::where('kelurahan',$kelurahan)->get();
+        $doctor_kecamatan = Doctor::where('kecamatan',$kecamatan)->get();
+        $doctor_kota = Doctor::where('kota',$kota)->get();
+        return view('modul.pelaporan.listdoctor',compact('doctor_kelurahan','doctor_kecamatan','doctor_kota'));
+        
     }
 
     /**
@@ -38,18 +59,7 @@ class EnduserController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $data['password'] = bcrypt($request->password); 
-        $data['image'] = 'userimage/anon.jpg';
-        $data['description'] = 'test';
-        $data['address'] = 'test';
-        $data['tanggal_lahir'] = $data['tahun'] . '-' . $data['bulan'] . '-' . $data['tanggal'];
-        unset($data['tahun']);
-        unset($data['bulan']);
-        unset($data['tanggal']);
-        // dd($data);
-        $save = User::create($data);
-        redirect(route('login.index'));
+        //
     }
 
     /**

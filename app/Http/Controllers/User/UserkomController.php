@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\User;
 
 use App\Comunity;
+use App\Daftarkom;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class UserkomController extends Controller
 {
@@ -26,7 +28,7 @@ class UserkomController extends Controller
      */
     public function create()
     {
-        //
+       return view('modul.komunitas.daftarkomunitas');
     }
 
     /**
@@ -37,7 +39,9 @@ class UserkomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comunity = Auth::user()->daftarkom();
+        $comunity->create($request->except('_token'));
+        return redirect(route('komunitas.index'));
     }
 
     /**

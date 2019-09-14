@@ -4,9 +4,9 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
+use Illuminate\Support\Facades\Auth;
 
-class EnduserController extends Controller
+class GantipwController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class EnduserController extends Controller
      */
     public function index()
     {
-        $last= date('Y')-120;
-        $now = date('Y');
-        return view('modul.signinup.daftar',compact('last','now'));
+        $user = Auth::user();
+        return view('modul.setting.gantipassword',compact('user'));
     }
 
     /**
@@ -38,18 +37,7 @@ class EnduserController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $data['password'] = bcrypt($request->password); 
-        $data['image'] = 'userimage/anon.jpg';
-        $data['description'] = 'test';
-        $data['address'] = 'test';
-        $data['tanggal_lahir'] = $data['tahun'] . '-' . $data['bulan'] . '-' . $data['tanggal'];
-        unset($data['tahun']);
-        unset($data['bulan']);
-        unset($data['tanggal']);
-        // dd($data);
-        $save = User::create($data);
-        redirect(route('login.index'));
+        //
     }
 
     /**
@@ -83,7 +71,9 @@ class EnduserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user()->findOrFail($id);
+        $user->fill($request->except(['token','_method']))->save();
+        return redirect(route('info.index'));
     }
 
     /**

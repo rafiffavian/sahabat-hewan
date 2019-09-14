@@ -16,16 +16,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/laporkomunitas', function () {
-    return view('modul.pelaporan.komunitas');
-});
-
 Route::get('/daftarkomunitas', function () {
     return view('modul.komunitas.daftarkomunitas');
-});
-
-Route::get('/dokter', function () {
-    return view('modul.pelaporan.dokter');
 });
 
 
@@ -33,25 +25,26 @@ Route::get('/profilteman', function () {
     return view('modul.user.detailprofilteman');
 });
 
-Route::get('/info', function () {
-    return view('modul.setting.info');
-});
-Route::get('/gantipassword', function () {
-    return view('modul.setting.gantipassword');
-});    
-Route::get('/daftar', function () {
-    return view('modul.signinup.daftar');
-});
-Route::get('/adopsi', function () {
-    return view('modul.adopsi.index');
-});
 
 
-Route::resource('/user', 'User\EnduserController', ['names' => 'enduser']);
-Route::resource('/login', 'User\LoginController');
-Route::resource('/komunitas', 'User\UserkomController');
-Route::resource('/event', 'User\UsereventController');
-Route::resource('/detailprofile', 'User\ProfileController');
+	Route::resource('/user', 'User\EnduserController', ['names' => 'enduser']);
+    Route::resource('/login', 'User\LoginController');
+    Route::get('/myinfo', 'User\MyinfoController@edit')->name('myinfo.edit');
+    Route::put('/myinfo-update/{id}', 'User\MyinfoController@update')->name('myinfo.update');
+    Route::get('/changepassword', 'User\ChangepasswordController@edit')->name('changepassword.edit');
+    Route::put('/changepassword-update/{id}', 'User\ChangepasswordController@update')->name('changepassword.update');
+    Route::resource('/komunitas', 'User\UserkomController');
+    Route::resource('/event', 'User\UsereventController',['names' => 'userevent']);
+    Route::resource('/detailprofile', 'User\ProfileController');
+    Route::resource('/adoption', 'User\AdoptionController');
+    Route::resource('/pelaporan', 'User\PelaporanController');
+    Route::resource('/caridokter', 'User\CaridokterController');
+    Route::get('/listdoctor', 'User\CaridokterController@listdoctor')->name('listdoctor.index');
+    
+
+
+
+
 
 Route::group(['prefix' => 'dashboard'], function(){
     

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Animaltype;
+use App\Adoption;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +17,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
+        $adoption = Auth::user()->adoption();
+        $animal = Animaltype::all();
         $user = Auth::user();
-        return view('modul.user.detailprofilku',compact('user'));
+        return view('modul.user.detailprofilku',compact('user','animal','adoption'));
     }
 
     /**
@@ -48,7 +52,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        //
+       
     }
 
     /**

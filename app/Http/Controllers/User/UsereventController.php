@@ -13,10 +13,28 @@ class UsereventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $event = Event::all();
-        return view('modul.event.index',compact('event'));
+
+        $search = $request->search;
+        $hewan = $request->hewan;
+        if ($hewan){
+            $event = Event::where('id_animaltype',$hewan)->get();
+        }
+        if ($search){
+            $event = Event::where('name','like','%' . $search . '%')->orWhere('description','like','%' . $search . '%')->get();
+        }
+
+        $anjing = $event->filter(function($value, $key){
+            return $value->id_animaltype == 1;
+        });
+
+        $kucing = $event->filter(function($value, $key){
+            return $value->id_animaltype == 2;
+        });
+
+        return view('modul.event.index',compact('event','anjing','kucing'));
     }
 
     /**

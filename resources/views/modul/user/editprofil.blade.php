@@ -82,13 +82,19 @@
                           <div class="col">
                             <div class="form-group">
                               <label>Provinsi</label>
-                              <input class="form-control" type="text" name="provinsi" placeholder="Provinsi" value="{{$editUser->provinsi}}">
+                              <input class="form-control" type="text" name="provinsi" placeholder="Misal : jakarta" value="{{$editUser->provinsi}}">
                             </div>
                           </div>
                           <div class="col">
                             <div class="form-group">
                               <label>Kabupaten/Kota</label>
-                              <input class="form-control" type="text" name="kota" placeholder="Kabupaten/Kota" value="{{$editUser->kota}}">
+                              <input class="form-control" type="text" name="kota" placeholder="Misal : jakarta timur" value="{{$editUser->kota}}">
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Kelurahan</label>
+                              <input class="form-control" type="text" name="kelurahan" placeholder="Misal: rawamangun" value="{{$editUser->kelurahan}}">
                             </div>
                           </div>
                         </div>

@@ -16,107 +16,97 @@
    <!-- MultiStep Form -->
    <form method="post" action="{{route('enduser.store')}}" novalidate>
      @csrf
-  <div id="msform">
-    <!-- progressbar -->
-    <ul id="progressbar">
-      <li class="active">Personal Detail</li>
-      <li>Buat Akun</li>
-      <li>Selesai</li>
-    </ul>
-    <!-- fieldsets -->
-      <fieldset>
-      <h2 class="fs-title">Personal Detail</h2>
-      <h3 class="fs-subtitle"></h3>
-      <input type="text" name="first_name" placeholder="Nama Depan" />
-      <input type="text" name="last_name" placeholder="Nama Belakang" />
-       <label class="" for="birthday"><p class="font-weight-light">Tanggal Lahir</p></label>
-    <div class="container">
-      <div class="row">
-                <div class="col-4">
-                   <select name="tanggal" class="custom-select custom-select-sm">
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    </select>
-                </div>
-                 <div class="col-4">
-                   <select name="bulan" class="custom-select custom-select-sm">
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-
-                    
-                    </select>
-                </div>
-                 <div class="col-4">
-                   <select name="tahun" class="custom-select custom-select-sm">
-                    <option selected>1990</option>
-                    <option value="1991">1991</option>
-                    <option value="1992">1992</option>
-                    <option value="1993">1993</option>
-                    </select>
-                </div>
-     </div>
-    </div>
-    <br>
-      <div class="container">
-      <div class="row">
-                <div class="col-6">
-                    <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline1" name="gender" value="pria" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline1"><p class="font-weight-light">Pria</p></label>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline2" name="gender" value="wanita" class="custom-control-input">
-                    <label class="custom-control-label" for="customRadioInline2"><p class="font-weight-light">Wanita</p></label>
-                    </div>
-                 </div>
-     </div>
-    </div>
-    
-      <input type="text" name="no_tlp" placeholder="+628780000000" />
-     
-      <input type="text" name="email" placeholder="email" />
-       <input type="button" style="border-radius: 30px;" name="next" class="next action-button" value="Next" />
-    </fieldset>
-    <fieldset>
-      <h2 class="fs-title">BUAT AKUN</h2>
-      <h3 class="fs-subtitle">Buat username dan passwordmu</h3>
-      <input type="text" name="username" placeholder="@username" />
-      <input type="password" class="password" name="password" placeholder="Password" />
-      <input type="password" class="password_confirm" name="cpass" placeholder="Confirm Password" />
-       <input type="button" style="border-radius: 30px;" name="previous" class="previous action-button" value="Previous" />
-      <input type="button" style="border-radius: 30px;" name="next" class="next_password action-button" value="Next" />
-    </fieldset>
-    <fieldset>
-      <h2 class="fs-title">Selesai</h2>
-      <h3 class="fs-subtitle">Selesaikan akunmu sekarang juga!</h3>
-    <p class="font-weight-lighter">hai <b>@mochammadfariz</b> pastikan anda membaca poin-poin pada license agreement & Term of Service sebelum melakukan submit!  </p>
-    <div>
-    <form action="" class="typecast-form simple-register">
-    <p class="simple-reg-terms">
-    <label>
-      <span class="checkbox"><input title="Please tick" name="accept_terms" type="checkbox" class="required" id="js-accept-terms" /></span> <span title="Please tick">Saya menyetujui </span> <a target="_blank" href="#license" data-toggle="modal" title="Opens in a new tab">end-user license agreement</a> &amp; <a target="_blank" href="#tof" data-toggle="modal" title="Opens in a new tab">terms of service</a>
-    </label>
-  </p>
-  <input type="button" style="border-radius: 30px;" name="previous" class="previous action-button" value="Previous" />
-  <input type="submit" style="border-radius: 30px;" name="submit" class="submit action-button" value="Submit" />
-  </form>
-  </div>
-    </fieldset>
-  
-  </div>
+        <div id="msform">
+          <!-- progressbar -->
+          <ul id="progressbar">
+            <li class="active">Personal Detail</li>
+            <li>Buat Akun</li>
+            <li>Selesai</li>
+          </ul>
+          <!-- fieldsets -->
+            <fieldset>
+            <h2 class="fs-title">Personal Detail</h2>
+            <h3 class="fs-subtitle"></h3>
+            <input type="text" name="first_name" placeholder="Nama Depan" />
+            <input type="text" name="last_name" placeholder="Nama Belakang" />
+            <label class="" for="birthday"><p class="font-weight-light">Tanggal Lahir</p></label>
+          <div class="container">
+            <div class="row">
+                      <div class="col-4">
+                        <select name="tanggal" class="custom-select custom-select-sm">
+                          <option value="1" selected>1</option>
+                          @for($i=2; $i < 32; $i++)
+                              <option value="{{$i}}">{{$i}}</option>
+                          @endfor     
+                          </select>
+                      </div>
+                      <div class="col-4">
+                        <select name="bulan" class="custom-select custom-select-sm">
+                          <option value="1" selected>1</option>
+                          @for($i=2; $i < 13; $i++)
+                              <option value="{{$i}}">{{$i}}</option>
+                          @endfor                     
+                          </select>
+                      </div>
+                      <div class="col-4">
+                        <select name="tahun" class="custom-select custom-select-sm">
+                        @for ($i = $now; $i <= $last; $i--)   
+                          <option value="{{$i}}" selected>{{$i}}</option>
+                        @endfor 
+                          </select>
+                      </div>
+          </div>
+          </div>
+          <br>
+            <div class="container">
+            <div class="row">
+                      <div class="col-6">
+                          <div class="custom-control custom-radio custom-control-inline">
+                                  <input type="radio" id="customRadioInline1" name="gender" value="pria" class="custom-control-input">
+                                  <label class="custom-control-label" for="customRadioInline1"><p class="font-weight-light">Pria</p></label>
+                          </div>
+                      </div>
+                      <div class="col-6">
+                          <div class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" id="customRadioInline2" name="gender" value="wanita" class="custom-control-input">
+                          <label class="custom-control-label" for="customRadioInline2"><p class="font-weight-light">Wanita</p></label>
+                          </div>
+                      </div>
+          </div>
+          </div>
+          
+            <input type="text" name="no_tlp" placeholder="+628780000000" />
+          
+            <input type="text" name="email" placeholder="email" />
+            <input type="button" style="border-radius: 30px;" name="next" class="next action-button" value="Next" />
+          </fieldset>
+          <fieldset>
+            <h2 class="fs-title">BUAT AKUN</h2>
+            <h3 class="fs-subtitle">Buat username dan passwordmu</h3>
+            <input type="text" name="username" placeholder="@username" />
+            <input type="password" class="password" name="password" placeholder="Password" />
+            <input type="password" class="password_confirm" name="cpass" placeholder="Confirm Password" />
+            <input type="button" style="border-radius: 30px;" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" style="border-radius: 30px;" name="next" class="next_password action-button" value="Next" />
+          </fieldset>
+          <fieldset>
+            <h2 class="fs-title">Selesai</h2>
+            <h3 class="fs-subtitle">Selesaikan akunmu sekarang juga!</h3>
+          <p class="font-weight-lighter">hai <b>@mochammadfariz</b> pastikan anda membaca poin-poin pada license agreement & Term of Service sebelum melakukan submit!  </p>
+          <div>
+          <form action="" class="typecast-form simple-register">
+          <p class="simple-reg-terms">
+          <label>
+            <span class="checkbox"><input title="Please tick" name="accept_terms" type="checkbox" class="required" id="js-accept-terms" /></span> <span title="Please tick">Saya menyetujui </span> <a target="_blank" href="#license" data-toggle="modal" title="Opens in a new tab">end-user license agreement</a> &amp; <a target="_blank" href="#tof" data-toggle="modal" title="Opens in a new tab">terms of service</a>
+          </label>
+        </p>
+        <input type="button" style="border-radius: 30px;" name="previous" class="previous action-button" value="Previous" />
+        <input type="submit" style="border-radius: 30px;" name="submit" class="submit action-button" value="Submit" />
+        </form>
+        </div>
+          </fieldset>
+        
+        </div>
 </form>
 
 <!-- /.MultiStep Form -->
