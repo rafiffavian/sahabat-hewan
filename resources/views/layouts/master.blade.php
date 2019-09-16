@@ -288,7 +288,7 @@
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="{{route('report.index')}}">
             <i class="fa fa-th"></i> <span>Pelaporan Table</span>
             <span class="pull-right-container">
               
@@ -296,8 +296,8 @@
           </a>
         </li>
         <li>
-          <a href="">
-            <i class="fa fa-th"></i> <span>Transaction</span>
+          <a href="{{route('finddoctor.index')}}">
+            <i class="fa fa-th"></i> <span>Doctor</span>
             <span class="pull-right-container">
               
             </span>

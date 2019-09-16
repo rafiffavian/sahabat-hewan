@@ -40,6 +40,7 @@ Route::get('/profilteman', function () {
     Route::resource('/pelaporan', 'User\PelaporanController');
     Route::resource('/caridokter', 'User\CaridokterController');
     Route::get('/listdoctor', 'User\CaridokterController@listdoctor')->name('listdoctor.index');
+   
     
 
 
@@ -52,6 +53,8 @@ Route::group(['prefix' => 'dashboard'], function(){
     Route::resource('/comunity', 'Admin\ComunityController');
     Route::resource('/event', 'Admin\EventController');
     Route::resource('/user', 'Admin\UserController');
+    Route::resource('/report', 'Admin\ReportController');
+    Route::resource('/finddoctor', 'Admin\FinddoctorController');
 });
 
 

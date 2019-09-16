@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Report;
 
-class EnduserController extends Controller
+class ReportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class EnduserController extends Controller
      */
     public function index()
     {
-        $last= date('Y')-20;
-        $now = date('Y');
-        return view('modul.signinup.daftar',compact('last','now'));
+        $report = Report::all();
+        return view('admin.modul-report.report-table',compact('report'));
     }
 
     /**
@@ -38,18 +37,7 @@ class EnduserController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $data['password'] = bcrypt($request->password); 
-        $data['image'] = 'userimage/anon.jpg';
-        $data['description'] = 'test';
-        $data['address'] = 'test';
-        $data['tanggal_lahir'] = $data['tahun'] . '-' . $data['bulan'] . '-' . $data['tanggal'];
-        unset($data['tahun']);
-        unset($data['bulan']);
-        unset($data['tanggal']);
-        // dd($data);
-        $save = User::create($data);
-        redirect(route('login.index'));
+        //
     }
 
     /**

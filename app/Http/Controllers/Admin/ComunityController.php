@@ -68,7 +68,8 @@ class ComunityController extends Controller
      */
     public function show($id)
     {
-        return view('admin.modul-komunitas.komunitas-detail');
+        $detailComunity = Comunity::findOrFail($id); 
+        return view('admin.modul-komunitas.komunitas-detail',compact('detailComunity'));
     }
 
     /**

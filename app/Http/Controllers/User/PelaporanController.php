@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Report;
 
 class PelaporanController extends Controller
 {
@@ -35,7 +36,9 @@ class PelaporanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $admin = new Report();
+        $admin->create($request->except('_token'));
+        return redirect(route('pelaporan.index'));
     }
 
     /**

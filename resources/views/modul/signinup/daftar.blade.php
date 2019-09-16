@@ -50,7 +50,7 @@
                       </div>
                       <div class="col-4">
                         <select name="tahun" class="custom-select custom-select-sm">
-                        @for ($i = $now; $i <= $last; $i--)   
+                        @for ($i = $last; $i <= $now; $i++)   
                           <option value="{{$i}}" selected>{{$i}}</option>
                         @endfor 
                           </select>

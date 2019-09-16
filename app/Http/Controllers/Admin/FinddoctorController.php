@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Admin;
 
+use App\Doctor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
+use Illuminate\Support\Facades\File;
 
-class EnduserController extends Controller
+class FinddoctorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,8 @@ class EnduserController extends Controller
      */
     public function index()
     {
-        $last= date('Y')-20;
-        $now = date('Y');
-        return view('modul.signinup.daftar',compact('last','now'));
+        $doctor = Doctor::all();
+        return view('admin.modul-doctor.doctor-table',compact('doctor'));
     }
 
     /**
@@ -27,7 +27,7 @@ class EnduserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.modul-doctor.doctor-create');
     }
 
     /**
@@ -38,18 +38,22 @@ class EnduserController extends Controller
      */
     public function store(Request $request)
     {
+        $file =  $request->file('image');
+        $fileNameArr = explode('.',$file->getClientOriginalName());
+        $fileName = $fileNameArr[0] . '-' . time() . '.' . $fileNameArr[1];
+        $file->move('doctorimage', $fileName);
+
         $data = $request->all();
-        $data['password'] = bcrypt($request->password); 
-        $data['image'] = 'userimage/anon.jpg';
-        $data['description'] = 'test';
-        $data['address'] = 'test';
-        $data['tanggal_lahir'] = $data['tahun'] . '-' . $data['bulan'] . '-' . $data['tanggal'];
-        unset($data['tahun']);
-        unset($data['bulan']);
-        unset($data['tanggal']);
-        // dd($data);
-        $save = User::create($data);
-        redirect(route('login.index'));
+        unset($data['token']);
+        $data['image'] = $fileName;
+
+        $save = Doctor::create($data);
+
+        if(!$save){
+            File::delete('doctorimage/'.$fileName);
+        } else{
+            return redirect()->route('finddoctor.index');
+        }
     }
 
     /**
@@ -94,6 +98,15 @@ class EnduserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $gambar = Doctor::find($id)->image;
+        // dd($gambar);
+        // exit();
+        File::delete('doctorimage/' . $gambar);
+        $delete_action = Doctor::where('id',$id)->delete();
+        if ($delete_action){
+            return redirect()->route('finddoctor.index');
+        }else{
+            echo "Gagal Delete";
+        }
     }
 }

@@ -189,6 +189,7 @@ Walaupun cantik Purbararang sangat kasar, sombong, kejam dan iri hati terhadap s
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation/foundation.clearing.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
 <!-- end depedency -->
 
 

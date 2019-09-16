@@ -20,8 +20,8 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 style="text-align: center" class="box-title">Table Admin</h3><br>
-          <a class="btn btn-primary" href="{{route('admin.create')}}">Tambah</a>
+          <h3 style="text-align: center" class="box-title">Table Event</h3><br>
+          <a class="btn btn-primary" href="{{route('finddoctor.create')}}">Tambah</a>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -37,30 +37,30 @@
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th>Nama Depan</th>
-                    <th>Nama Belakang</th>
-                    <th>Username</th>
-                    <th>No Telp</th>
-                    <th>Email</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Role</th>
+                    <th>Gambar</th>
+                    <th>Nama Dokter</th>
+                    <th>No Telpon</th>
+                    <th>Kelurahan</th>
+                    <th>Kota</th>
+                    <th>Kecamatan</th>
+                    <th>Provinsi</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-              @foreach($admin as $admins)
+              @foreach($doctor as $doctors)
                   <tr>
-                    <td>{{$admins->first_name}}</td>
-                    <td>{{$admins->last_name}}</td>
-                    <td>{{$admins->username}}</td>
-                    <td>{{$admins->no_tlp}}</td>
-                    <td>{{$admins->email}}</td>
-                    <td>{{$admins->gender}}</td>
-                    <td>{{$admins->myrole->name}}</td>
+                  <td><img src="{{ url('doctorimage/' . $doctors->image) }}" width="200"></td>
+                    <td>{{$doctors->name}}</td>
+                    <td>{{$doctors->no_tlp}}</td>
+                    <td>{{$doctors->kelurahan}}</td>
+                    <td>{{$doctors->kota}}</td>
+                    <td>{{$doctors->kecamatan}}</td>
+                    <td>{{$doctors->provinsi}}</td>
                     <td>
-                        <a href="{{route('admin.show', $admins->id)}}"><i class="fa fa-eye"></i></a>
-                        <a href="{{route('admin.edit', $admins->id)}}"><i class="fa fa-pencil"></i></a>
-                        <form method="post" action="{{ route('admin.destroy', $admins->id) }}"> 
+                        <a href=""><i class="fa fa-eye"></i></a>
+                        <a href=""><i class="fa fa-pencil"></i></a>
+                    <form method="post" action="{{ route('finddoctor.destroy', $doctors->id) }}"> 
                       @csrf
                         <input type="hidden" name="_method" value="delete">   
                         <button type="submit"><i class="fa fa-trash"></i></button>

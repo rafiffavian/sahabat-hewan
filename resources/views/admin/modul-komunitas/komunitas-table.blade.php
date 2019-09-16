@@ -40,8 +40,8 @@
                     <th>Gambar</th>
                     <th>Nama Komunitas</th>
                     <th>Alamat</th>
-                    <th>Rating</th>
-                    <th>Jenis Hewan</th>
+                    <!-- <th>Rating</th> -->
+                    <!-- <th>Jenis Hewan</th> -->
                     <th>Jumlah Kasus</th>
                     <th>Deskripsi</th>
                     <th>Wilayah</th>
@@ -54,15 +54,15 @@
                   <td><img src="{{ url('comunityimage/' . $comunities->image) }}" width="200"></td>
                     <td>{{$comunities->name}}</td>
                     <td>{{$comunities->location}}</td>
-                    <td>{{$comunities->rating}}</td>
-                    <td>{{$comunities->myhewan->name}}</td>
+                    <!-- <td>{{$comunities->rating}}</td> -->
+                    <!-- <td>{{$comunities->myhewan->name}}</td> -->
                     <td>{{$comunities->case_finish}}</td>
                     <td>{{$comunities->description}}</td>
                     <td>{{$comunities->mywilayah->name}}</td>
                     <td>
-                        <a href="{{route('admin.show', $comunities->id)}}"><i class="fa fa-eye"></i></a>
-                        <a href="{{route('admin.edit', $comunities->id)}}"><i class="fa fa-pencil"></i></a>
-                        <a href="{{route('admin.destroy', $comunities->id)}}"><i class="fa fa-trash"></i></a>
+                        <a href="{{route('comunity.show', $comunities->id)}}"><i class="fa fa-eye"></i></a>
+                        <a href="{{route('comunity.edit', $comunities->id)}}"><i class="fa fa-pencil"></i></a>
+                        <a href="{{route('comunity.destroy', $comunities->id)}}"><i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
              @endforeach

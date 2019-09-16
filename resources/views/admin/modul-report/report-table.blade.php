@@ -20,8 +20,8 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 style="text-align: center" class="box-title">Table Admin</h3><br>
-          <a class="btn btn-primary" href="{{route('admin.create')}}">Tambah</a>
+          <h3 style="text-align: center" class="box-title">Table Event</h3><br>
+          <a class="btn btn-primary" href="{{route('event.create')}}">Tambah</a>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -37,34 +37,34 @@
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th>Nama Depan</th>
-                    <th>Nama Belakang</th>
-                    <th>Username</th>
-                    <th>No Telp</th>
-                    <th>Email</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Role</th>
+                    <th>Gambar 1</th>
+                    <th>Gambar 2</th>
+                    <th>Gambar 3</th>
+                    <th>Gambar 4</th>
+                    <th>Video</th>
+                    <th>location</th>
+                    <th>no_tlp</th>
+                    <th>whatsapp</th>
+                    <th>created_at</th>
+                    <th>updated_at</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-              @foreach($admin as $admins)
+              @foreach($report as $reports)
                   <tr>
-                    <td>{{$admins->first_name}}</td>
-                    <td>{{$admins->last_name}}</td>
-                    <td>{{$admins->username}}</td>
-                    <td>{{$admins->no_tlp}}</td>
-                    <td>{{$admins->email}}</td>
-                    <td>{{$admins->gender}}</td>
-                    <td>{{$admins->myrole->name}}</td>
+                    <td><img src="{{ url('reportimage/' . $reports->imageone) }}" width="200"></td>
+                    <td><img src="{{ url('reportimage/' . $reports->imagetwo) }}" width="200"></td>
+                    <td><img src="{{ url('reportimage/' . $reports->imagethree) }}" width="200"></td>
+                    <td><img src="{{ url('reportimage/' . $reports->imagefour) }}" width="200"></td>
+                    <td><img src="{{ url('video/' . $reports->video) }}" width="200"></td>
+                    <td>{{$reports->location}}</td>
+                    <td>{{$reports->no_tlp}}</td>
+                    <td>{{$reports->whatsapp}}</td>
                     <td>
-                        <a href="{{route('admin.show', $admins->id)}}"><i class="fa fa-eye"></i></a>
-                        <a href="{{route('admin.edit', $admins->id)}}"><i class="fa fa-pencil"></i></a>
-                        <form method="post" action="{{ route('admin.destroy', $admins->id) }}"> 
-                      @csrf
-                        <input type="hidden" name="_method" value="delete">   
-                        <button type="submit"><i class="fa fa-trash"></i></button>
-                    </form>    
+                        <a href=""><i class="fa fa-eye"></i></a>
+                        <a href=""><i class="fa fa-pencil"></i></a>
+                        <a href=""><i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
              @endforeach

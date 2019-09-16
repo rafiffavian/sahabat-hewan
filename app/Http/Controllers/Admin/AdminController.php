@@ -39,9 +39,10 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $admin = new Admin;
-        $admin->create($request->except('_token'));
-        return redirect(route('admin.index'));
+        $data = $request->all();
+        $data['password'] = bcrypt($request->password); 
+        $save = Admin::create($data);
+        redirect(route('admin.index'));
     }
 
     /**
@@ -52,8 +53,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        $detailAdmin = Admin::findOrFail($id);
-        
+        $detailAdmin = Admin::findOrFail($id); 
         return view('admin.modul-admin.admin-detail',compact('detailAdmin'));
     }
 
@@ -79,9 +79,17 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $admin = Admin::findOrFail($id);
-        $admin->fill($request->except(['token','_method']))->save();
-        return redirect()->route('admin.index');
+        $update = $request->all();
+        $data['password'] = bcrypt($request->password); 
+        unset($update['_token']);
+        unset($update['_method']);
+
+        $update_action = Admin::where('id',$id)->update($update);
+        if ($update_action){
+            return redirect()->route('admin.index');
+        }else{
+            echo "Gagal Update";
+        }
     }
 
     /**
