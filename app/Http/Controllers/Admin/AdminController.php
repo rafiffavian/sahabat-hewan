@@ -42,7 +42,7 @@ class AdminController extends Controller
         $data = $request->all();
         $data['password'] = bcrypt($request->password); 
         $save = Admin::create($data);
-        redirect(route('admin.index'));
+        return redirect()->route('admin.index');
     }
 
     /**

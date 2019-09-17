@@ -124,12 +124,12 @@
 		<div class="card-body">
 		<div class="row">
 			<aside class="col-sm-3">
-				<div class="img-wrap"><img src="asset/img/fotokomunitas/komunitassemua.jpg"></div>
+				<div class="img-wrap"><img src="{{ url('comunityimage/' . $comunities->image) }}"></div>
 			</aside> <!-- col.// -->
 			<article class="col-sm-6">
 					<h4 class="title"> {{$comunities->name}} </h4>
 					<div class="rating-wrap  mb-2">
-						<div class="label-rating">{{$comunities->case_finish}} selesai ditangani </div>
+					
 					</div> <!-- rating-wrap.// -->
 					<p> {{$comunities->description}}. </p>
 					<dl class="dlist-align">

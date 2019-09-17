@@ -7,6 +7,7 @@ use App\Adoption;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class ProfileController extends Controller
 {
@@ -17,7 +18,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $adoption = Auth::user()->adoption();
+       $adoption = Auth::user()->adoption()->get();
         $animal = Animaltype::all();
         $user = Auth::user();
         return view('modul.user.detailprofilku',compact('user','animal','adoption'));
@@ -55,6 +56,44 @@ class ProfileController extends Controller
        
     }
 
+    public function hewan($id)
+    {
+        $animal = Animaltype::all();
+        $hewan = Adoption::findOrFail($id);
+       return view('modul.user.edithewan',compact('hewan','animal'));
+    }
+
+    public function updatehewan(Request $request, $id)
+    {
+        $update = $request->all();
+        unset($update['_token']);
+        unset($update['_method']);
+
+        $file =  $request->file('image');
+        if ($file != null){
+
+            $fileNameArr = explode('.',$file->getClientOriginalName());
+            $fileName = $fileNameArr[0] . '-' . time() . '.' . $fileNameArr[1];
+            $file->move('adoptionimage', $fileName);
+
+            $update['image'] = $fileName;
+
+            $gambar = Adoption::find($id)->image;
+            // dd($gambar);
+            // exit();
+            File::delete('adoptionimage/' . $gambar);
+        }
+
+       
+
+        $update_action = Adoption::where('id',$id)->update($update);
+        if ($update_action){
+            return redirect()->route('detailprofile.index');
+        }else{
+            echo "Gagal Update";
+        }
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -63,6 +102,7 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
+        
         $editUser = Auth::user()->findOrFail($id);
         return view('modul.user.editprofil',compact('editUser'));
     }
@@ -90,5 +130,18 @@ class ProfileController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function deletehewan($id)
+    {
+        $gambar = Adoption::find($id)->image;
+        // dd($gambar);
+        // exit();
+        File::delete('adoptionimage/' . $gambar);
+        $delete_action = Adoption::where('id',$id)->delete();
+        if ($delete_action){
+            return redirect()->route('detailprofile.index');
+        }else{
+            echo "Gagal Delete";
+        }
     }
 }

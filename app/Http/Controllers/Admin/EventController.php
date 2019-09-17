@@ -70,7 +70,8 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        return view('admin.modul-event.event-detail');
+        $detailEvent = Event::findOrFail($id); 
+        return view('admin.modul-event.event-detail',compact('detailEvent'));
     }
 
     /**
@@ -109,7 +110,7 @@ class EventController extends Controller
 
             $update['image'] = $fileName;
 
-            $gambar = Comunity::find($id)->image;
+            $gambar = Event::find($id)->image;
             // dd($gambar);
             // exit();
             File::delete('eventimage/' . $gambar);

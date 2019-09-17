@@ -158,7 +158,7 @@
 						
 						<br>
 						<p>
-							<a href="#" class="btn btn-primary"> Hubungi </a>
+							<a href="{{route('teman.hubungi',$adoptions->id)}}" class="btn btn-primary"> Hubungi </a>
 							
 						</p>
 						

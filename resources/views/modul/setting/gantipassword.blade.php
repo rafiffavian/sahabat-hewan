@@ -29,10 +29,14 @@
               </ul>
               <div class="tab-content pt-3">
                 <div class="tab-pane active">
-                  <form class="form" novalidate="">
+                  <form class="form" action="{{route('changepassword.update', Auth::user()->id)}}" method="post">
+                    @csrf
+                    <input type="hidden" name="_method" value="put">
                     <div class="row">
                       <div class="col">
                         <div class="row">
+                            @include('layouts.error-form')
+                           
                           
                         </div>
                        
@@ -45,7 +49,7 @@
                           <div class="col">
                             <div class="form-group">
                               <label>Password Sekarang</label>
-                              <input class="form-control" type="password" placeholder="••••••">
+                              <input class="form-control" name="password_sekarang" type="password" placeholder="">
                             </div>
                           </div>
                         </div>
@@ -53,7 +57,7 @@
                           <div class="col">
                             <div class="form-group">
                               <label>Password Baru</label>
-                              <input class="form-control" type="password" placeholder="••••••">
+                              <input class="form-control" name="password" type="password" placeholder="">
                             </div>
                           </div>
                         </div>
@@ -61,7 +65,7 @@
                           <div class="col">
                             <div class="form-group">
                               <label>Konfirmasi <span class="d-none d-xl-inline">Password</span></label>
-                              <input class="form-control" type="password" placeholder="••••••"></div>
+                              <input class="form-control" type="password" name="confirm_password" placeholder=""></div>
                           </div>
                         </div>
                       </div>

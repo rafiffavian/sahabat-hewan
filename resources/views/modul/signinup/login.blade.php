@@ -115,7 +115,7 @@ anime.timeline({loop: true})
                                     <input id="inputEmail" name="email" type="email" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input id="inputPassword" name="password" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-success">
+                                    <input id="inputPassword" name="password" type="password" placeholder="Password"  class="form-control rounded-pill border-0 shadow-sm px-4 text-success">
                                 </div>
                                 <div class="custom-control custom-checkbox mb-3">
                                     <input id="customCheck1" type="checkbox" checked class="custom-control-input">

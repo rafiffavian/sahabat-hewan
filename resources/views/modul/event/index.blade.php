@@ -65,6 +65,7 @@
 				<ul class="list-unstyled list-lg">
 					<li><a href="?hewan=1">Anjing <span class="float-right badge badge-light round">{{$anjing->count()}}</span> </a></li>
 					<li><a href="?hewan=2">Kucing  <span class="float-right badge badge-light round">{{$kucing->count()}}</span>  </a></li>
+					<li><a href="{{route('userevent.index')}}">Semua Hewan  <span class="float-right badge badge-light round">{{$all->count()}}</span>  </a></li>
 					
 				</ul>  
 			</div> <!-- card-body.// -->

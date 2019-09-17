@@ -36,9 +36,15 @@ Route::get('/profilteman', function () {
     Route::resource('/komunitas', 'User\UserkomController');
     Route::resource('/event', 'User\UsereventController',['names' => 'userevent']);
     Route::resource('/detailprofile', 'User\ProfileController');
+    Route::get('/hewan/{id}', 'User\ProfileController@hewan')->name('detail.hewan');
+    Route::put('/hewan/update/{id}', 'User\ProfileController@updatehewan')->name('detail.updatehewan');
+    Route::delete('/hewan/delete/{id}', 'User\ProfileController@deletehewan')->name('detail.deletehewan');
     Route::resource('/adoption', 'User\AdoptionController');
     Route::resource('/pelaporan', 'User\PelaporanController');
     Route::resource('/caridokter', 'User\CaridokterController');
+    Route::resource('/teman', 'User\TemanController');
+    Route::get('/teman/hubungi/{id}', 'User\AdoptionController@hubungi')->name('teman.hubungi');
+    Route::get('/teman/whatsapp/{id}', 'User\AdoptionController@whatsapp')->name('teman.whatsapp');
     Route::get('/listdoctor', 'User\CaridokterController@listdoctor')->name('listdoctor.index');
    
     
@@ -55,6 +61,7 @@ Route::group(['prefix' => 'dashboard'], function(){
     Route::resource('/user', 'Admin\UserController');
     Route::resource('/report', 'Admin\ReportController');
     Route::resource('/finddoctor', 'Admin\FinddoctorController');
+    Route::resource('/dopsiadmin', 'Admin\DopsiadminController');
 });
 
 

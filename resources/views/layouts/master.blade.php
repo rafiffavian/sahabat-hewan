@@ -303,6 +303,14 @@
             </span>
           </a>
         </li>
+        <li>
+          <a href="{{route('dopsiadmin.index')}}">
+            <i class="fa fa-th"></i> <span>Adoption Table</span>
+            <span class="pull-right-container">
+              
+            </span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>

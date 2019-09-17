@@ -13,4 +13,10 @@ class Admin extends Model
     {
         return $this->belongsTo(Role::class, 'id_role');
     }
+
+    public function adoption()
+    {
+        return $this->hasMany(Adoption::class, 'id_admin');
+    }
+
 }

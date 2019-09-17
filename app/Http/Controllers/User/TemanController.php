@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Admin;
 use App\Adoption;
-use App\Animaltype;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
+use App\User;
 
-class AdoptionController extends Controller
+class TemanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +16,7 @@ class AdoptionController extends Controller
      */
     public function index()
     {
-        
-        $adoption = Adoption::all();
-        return view('modul.adopsi.index',compact('adoption'));
+     
     }
 
     /**
@@ -31,23 +26,7 @@ class AdoptionController extends Controller
      */
     public function create()
     {
-        
-    }
-
-    public function hubungi($id)
-    {
-        $data = Adoption::find($id)->asal;
-        if($data == '1'){
-            return redirect()->route('teman.edit',$id);
-        }else{
-            return redirect()->route('teman.whatsapp',$id);
-        }
-    }
-
-    public function whatsapp($id)
-    {
-        $adoption = Adoption::find($id)->admin->no_tlp;
-        return redirect('https://api.whatsapp.com/send?phone='. $adoption);
+        //
     }
 
     /**
@@ -58,24 +37,7 @@ class AdoptionController extends Controller
      */
     public function store(Request $request)
     {
-        $file =  $request->file('image');
-        $fileNameArr = explode('.',$file->getClientOriginalName());
-        $fileName = $fileNameArr[0] . '-' . time() . '.' . $fileNameArr[1];
-        $file->move('adoptionimage', $fileName);
-
-        $data = $request->all();
-        $data['asal'] = '1'; 
-        unset($data['token']);
-        $data['image'] = $fileName;
-
-        $save = Auth::user()->adoption();
-        $save->create($data);
-
-        if(!$save){
-            File::delete('adoptionimage/'.$fileName);
-        } else{
-            return redirect()->route('detailprofile.index');
-        }
+        //
     }
 
     /**
@@ -97,8 +59,9 @@ class AdoptionController extends Controller
      */
     public function edit($id)
     {
-        // $editAdop = Auth::user()->adoption()->findOrFail($id);
-        // return view('modul.user.detailprofilku',compact('editAdop'));
+        $hewan = Adoption::where('id',$id)->get();
+        $user = Adoption::find($id)->user;
+        return view('modul.user.detailprofilteman',compact('user','hewan'));
     }
 
     /**

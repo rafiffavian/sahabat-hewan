@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-        <form class="form-horizontal" method="put" action="{{route('admin.update',$editAdmin->id)}}" enctype="multipart/form-data">
+        <form class="form-horizontal" method="post" action="{{route('admin.update',$editAdmin->id)}}" enctype="multipart/form-data">
         @csrf
         <fieldset>
             <input type="hidden" name="_method" value="put">
@@ -66,7 +66,7 @@
         <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Password</label>  
             <div class="col-md-4">
-                <input id="textinput" name="last_name" type="text" value="{{$editAdmin->password}}" class="form-control input-md">
+                <input id="textinput" name="password" type="text" value="{{$editAdmin->password}}" class="form-control input-md">
             </div>
         </div>
 

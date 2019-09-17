@@ -62,23 +62,28 @@
                         <br>
                        <!-- Konten Gallery Peliharaanku -->
                        <section class="gallery-block grid-gallery">
-                           <div class="container">
-                               <button style= "rounded:100%"type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#tambahfoto"><i class="fas fa-plus"></i> Tambah Foto</button>
-                               <div class="row">
-                                   
-                    @foreach($adoption as $adoptions)        
-                        <div class="col-6 col-md-4">
-                            <a class="lightbox" href="{{ url('adoptionimage/' . $adoptions->image) }}">
-                                <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="{{ url('adoptiontimage/' . $adoptions->image) }}">
-                            </a>
-                            <button type="button" class="btn btn-danger btn-sm">  <i class="fas fa-trash"></i> Hapus</button>
-                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#husky">  Ubah</button>
-                        </div>
-                    @endforeach        
-                        
-                    </div>
-                </div>
-            </section>
+                            <div class="container">
+                            <button style= "rounded:100%"type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#tambahfoto"><i class="fas fa-plus"></i> Tambah Foto</button>
+                            <div class="row">
+                                @foreach($adoption as $adoptions)
+                                <div class="col-6 col-md-4">
+                                        <a class="lightbox" href="{{ url('adoptionimage/' . $adoptions->image) }}">
+                                            <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="{{ url('adoptionimage/' . $adoptions->image) }}">
+                                        </a>
+                                     <div class="row">
+                                        <a style="margin-top:5px;margin-left:20px;" href="{{route('detail.hewan', $adoptions->id)}}" class="btn btn-warning btn-sm">Ubah</a><br>
+                                       <form method="post" action="{{ route('detail.deletehewan', $adoptions->id) }}"> 
+                                            @csrf
+                                            <input type="hidden" name="_method" value="delete">   
+                                            <button style="width:70px;margin-left:5px;margin-top:5px;" type="submit" class="btn btn-danger">Hapus</button>
+                                        </form>    
+                                        </div>      
+                                    </div>
+                                @endforeach    
+                                </div>
+                           
+                            </div>
+                        </section>
         
         <br>
         <br>
@@ -201,7 +206,7 @@
                        @endforeach   
                     </select>
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis</label>
-                    <input type="text" name="animal_kind" placeholder="Misal: Siberian Husky" class="form-control">
+                    <input type="text" name="animal_kind" value="" class="form-control">
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis Kelamin</label>
                     <select name="gender" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                         <option value="lakilaki">laki-Laki</option>
@@ -209,14 +214,14 @@
                     </select>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Lahir </label>
-                    <input type="date" name="birth" class="form-control" id="formGroupExampleInput" placeholder="DD-MM-YYYY">
+                    <input type="date" name="birth" value="" class="form-control" id="formGroupExampleInput" placeholder="DD-MM-YYYY">
                 </div>
                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Tingkat agresivitas</label>
                     <select name="" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected>Baik</option>
-                        <option value="1">Biasa</option>
-                        <option value="3">Sedikit Galak</option>
-                        <option value="1">Galak</option>
+                        <option value="baik">Baik</option>
+                        <option value="biasa">Biasa</option>
+                        <option value="sedikit galak">Sedikit Galak</option>
+                        <option value="galak">Galak</option>
                     </select>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Alasan Lepas Adopsi</label>
@@ -260,7 +265,6 @@
                     @foreach($animal as $animals)
                         <option value="{{$animals->id}}">{{$animals->name}}</option>
                       @endforeach   
-                    </select>
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis</label>
                     <input type="text" name="animal_kind" placeholder="Misal: Siberian Husky" class="form-control">
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis Kelamin</label>

@@ -140,7 +140,7 @@ class ComunityController extends Controller
         File::delete('comunityimage/' . $gambar);
         $delete_action = Comunity::where('id',$id)->delete();
         if ($delete_action){
-            return redirect()->route('pages.index');
+            return redirect()->route('comunity.index');
         }else{
             echo "Gagal Delete";
         }

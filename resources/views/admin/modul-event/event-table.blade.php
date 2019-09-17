@@ -62,9 +62,9 @@
                     <td>{{$events->price}}</td>
                     <td>{{$events->mywilayah->name}}</td>
                     <td>
-                        <a href="{{route('admin.show', $events->id)}}"><i class="fa fa-eye"></i></a>
-                        <a href="{{route('admin.edit', $events->id)}}"><i class="fa fa-pencil"></i></a>
-                        <a href="{{route('admin.destroy', $events->id)}}"><i class="fa fa-trash"></i></a>
+                        <a href="{{route('event.show', $events->id)}}"><i class="fa fa-eye"></i></a>
+                        <a href="{{route('event.edit', $events->id)}}"><i class="fa fa-pencil"></i></a>
+                        <a href="{{route('event.destroy', $events->id)}}"><i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
              @endforeach

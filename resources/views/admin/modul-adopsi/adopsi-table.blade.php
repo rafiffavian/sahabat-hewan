@@ -20,8 +20,8 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 style="text-align: center" class="box-title">Table Komunitas</h3><br>
-          <a class="btn btn-primary" href="{{route('comunity.create')}}">Tambah</a>
+          <h3 style="text-align: center" class="box-title">Table Event</h3><br>
+          <a class="btn btn-primary" href="{{route('dopsiadmin.create')}}">Tambah</a>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -38,35 +38,33 @@
                 <thead>
                   <tr>
                     <th>Gambar</th>
-                    <th>Nama Komunitas</th>
-                    <th>Alamat</th>
-                    <!-- <th>Rating</th> -->
-                    <!-- <th>Jenis Hewan</th> -->
-                    <th>Jumlah Kasus</th>
-                    <th>Deskripsi</th>
-                    <th>Wilayah</th>
+                    <th>Nama Hewan</th>
+                    <th>Kategori</th>
+                    <th>Jenis Hewan</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Gender</th>
+                    <th>Agresive</th>
+                    <th>alasan</th>
+                    <th>asal</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-              @foreach($comunity as $comunities)
+              @foreach($adoption as $adoptions)
                   <tr>
-                  <td><img src="{{ url('comunityimage/' . $comunities->image) }}" width="200"></td>
-                    <td>{{$comunities->name}}</td>
-                    <td>{{$comunities->location}}</td>
-                    <!-- <td>{{$comunities->rating}}</td> -->
-                    <!-- <td>{{$comunities->myhewan->name}}</td> -->
-                    <td>{{$comunities->case_finish}}</td>
-                    <td>{{$comunities->description}}</td>
-                    <td>{{$comunities->mywilayah->name}}</td>
+                  <td><img src="{{ url('adoptionimage/' . $adoptions->image) }}" width="200"></td>
+                    <td>{{$adoptions->animal_name}}</td>
+                    <td>{{$adoptions->myhewan->name}}</td>
+                    <td>{{$adoptions->animal_kind}}</td>
+                    <td>{{$adoptions->birth}}</td>
+                    <td>{{$adoptions->gender}}</td>
+                    <td>{{$adoptions->agresiv}}</td>
+                    <td>{{$adoptions->alasan}}</td>
+                    <td>{{$adoptions->asal}}</td>
                     <td>
-                        <a href="{{route('comunity.show', $comunities->id)}}"><i class="fa fa-eye"></i></a>
-                        <a href="{{route('comunity.edit', $comunities->id)}}"><i class="fa fa-pencil"></i></a>
-                        <form method="post" action="{{ route('comunity.destroy', $comunities->id) }}"> 
-                      @csrf
-                        <input type="hidden" name="_method" value="delete">   
-                        <button type="submit"><i class="fa fa-trash"></i></button>
-                    </form>    
+                        <a href="{{route('dopsiadmin.show', $adoptions->id)}}"><i class="fa fa-eye"></i></a>
+                        <a href="{{route('dopsiadmin.edit', $adoptions->id)}}"><i class="fa fa-pencil"></i></a>
+                        <a href="{{route('dopsiadmin.destroy', $adoptions->id)}}"><i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
              @endforeach

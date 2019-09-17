@@ -34,7 +34,11 @@ class UsereventController extends Controller
             return $value->id_animaltype == 2;
         });
 
-        return view('modul.event.index',compact('event','anjing','kucing'));
+        $all = $event->filter(function($value, $key){
+            return $value->id_animaltype == 1  || 2 || 3;
+        });
+
+        return view('modul.event.index',compact('event','anjing','kucing','all'));
     }
 
     /**

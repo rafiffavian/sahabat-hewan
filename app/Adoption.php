@@ -13,4 +13,12 @@ class Adoption extends Model
     {
         return $this->belongsTo(Animaltype::class, 'id_animaltype');
     }
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class, 'id_admin');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }
