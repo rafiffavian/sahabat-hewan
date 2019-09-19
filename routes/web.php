@@ -26,9 +26,10 @@ Route::get('/profilteman', function () {
 });
 
 
+Route::resource('/user', 'User\EnduserController', ['names' => 'enduser']);
+Route::resource('/login', 'User\LoginController');
 
-	Route::resource('/user', 'User\EnduserController', ['names' => 'enduser']);
-    Route::resource('/login', 'User\LoginController');
+Route::middleware(['auth'])->group(function(){
     Route::get('/myinfo', 'User\MyinfoController@edit')->name('myinfo.edit');
     Route::put('/myinfo-update/{id}', 'User\MyinfoController@update')->name('myinfo.update');
     Route::get('/changepassword', 'User\ChangepasswordController@edit')->name('changepassword.edit');
@@ -46,22 +47,16 @@ Route::get('/profilteman', function () {
     Route::get('/teman/hubungi/{id}', 'User\AdoptionController@hubungi')->name('teman.hubungi');
     Route::get('/teman/whatsapp/{id}', 'User\AdoptionController@whatsapp')->name('teman.whatsapp');
     Route::get('/listdoctor', 'User\CaridokterController@listdoctor')->name('listdoctor.index');
-   
+    Route::resource('dashboard/admin', 'Admin\AdminController');
+    Route::resource('dashboard/comunity', 'Admin\ComunityController');
+    Route::resource('dashboard/event', 'Admin\EventController');
+    Route::resource('dashboard/user', 'Admin\UserController');
+    Route::resource('dashboard/report', 'Admin\ReportController');
+    Route::resource('dashboard/finddoctor', 'Admin\FinddoctorController');
+    Route::resource('dashboard/dopsiadmin', 'Admin\DopsiadminController');
+});	   
     
 
 
-
-
-
-Route::group(['prefix' => 'dashboard'], function(){
-    
-    Route::resource('/admin', 'Admin\AdminController');
-    Route::resource('/comunity', 'Admin\ComunityController');
-    Route::resource('/event', 'Admin\EventController');
-    Route::resource('/user', 'Admin\UserController');
-    Route::resource('/report', 'Admin\ReportController');
-    Route::resource('/finddoctor', 'Admin\FinddoctorController');
-    Route::resource('/dopsiadmin', 'Admin\DopsiadminController');
-});
 
 

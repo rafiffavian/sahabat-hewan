@@ -59,8 +59,8 @@ class TemanController extends Controller
      */
     public function edit($id)
     {
-        $hewan = Adoption::where('id',$id)->get();
-        $user = Adoption::find($id)->user;
+        $hewan = User::find($id)->adoption()->get();
+        $user = User::find($id);
         return view('modul.user.detailprofilteman',compact('user','hewan'));
     }
 

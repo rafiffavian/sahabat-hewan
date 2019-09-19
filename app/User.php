@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name','last_name','gender','no_tlp','email', 'username','id_adoption','image','description','provinsi','kota', 'password','tanggal_lahir','whatsapp','kelurahan'
+        'first_name','last_name','gender','no_tlp','email', 'username','id_adoption','image','description','provinsi','kota', 'password','tanggal_lahir','whatsapp','kelurahan','id_role'
     ];
 
     /**
@@ -46,5 +46,9 @@ class User extends Authenticatable
     public function adoption()
     {
         return $this->hasMany(Adoption::class, 'id_user');
+    }
+    public function myrole()
+    {
+        return $this->belongsTo(Role::class, 'id_role');
     }
 }

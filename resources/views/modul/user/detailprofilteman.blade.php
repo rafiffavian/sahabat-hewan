@@ -5,7 +5,7 @@
 <div class="container py-4 my-2">
     <div class="row">
         <div class="col-md-4 pr-md-5">
-            <img class="w-100 rounded border" src="{{ url('userimage/' . $user->image) }}" />
+            <img class="w-100 rounded border" src="{{asset($user->image)}}" />
             <div class="pt-4 mt-2">
                 <section class="mb-4 pb-1">
                    
@@ -21,7 +21,7 @@
                 <section class="mb-5 mb-md-0">
                     <h3 class="h6 font-weight-light text-secondary text-uppercase">Kontak Saya </h3>
                  <p> <i style="color:green"class="fas fa-phone-alt"></i> {{$user->no_tlp}}</p>
-                 <a href="https://api.whatsapp.com/send?{{$user->no_tlp}}"><img height="40px;" width="auto"src="{{asset('asset/img/desainpelaporan/whatsapp.png')}}"> Hubungi Whatsapp saya. </a>
+                 <a href="https://api.whatsapp.com/send?{{$user->whatsapp}}"><img height="40px;" width="auto"src="{{asset('asset/img/desainpelaporan/whatsapp.png')}}"> Hubungi Whatsapp saya. </a>
                 </section>
             </div>
         </div>
@@ -38,7 +38,7 @@
             <p class="h5 text-primary mt-2 d-block font-weight-light">
               
             </p>
-            <p class="lead mt-4">{{$user->description}} </p>
+            <p class="lead mt-4">{{$user->description}}. </p>
            
             <section class="d-flex mt-5">
            
@@ -62,7 +62,7 @@
                 <div class="tab-content py-4" id="myTabContent">
                     <div class="tab-pane py-3 fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h4 class="text-uppercase font-weight-bold text-success">
-                           Ambil Hewan Adopsi Milik {{$user->username}}
+                           Ambil Hewan Adopsi Milik 
                         </h4>
                        <!-- Konten Gallery Peliharaanku -->
          
@@ -70,15 +70,15 @@
             <div class="container">
                 
                 <div class="row">
-                @foreach($hewan as $hewans)    
+               @foreach($hewan as $hewans)
                     <div class="col-6 col-md-4 item">
-                        <a class="lightbox" href="{{ url('adoptionimage/' . $hewans->image) }}">
-                            <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="asset/img/hewanku/husky.jpg">
+                        <a class="lightbox" href="">
+                            <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="{{ url('adoptionimage/' . $hewans->image) }}">
                         </a>
                         <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#husky">  <i class="far fa-eye"></i> Detail</button>
                     </div>
-                   
-                 @endforeach 
+                @endforeach   
+                
                 </div>
             </div>
         </section>

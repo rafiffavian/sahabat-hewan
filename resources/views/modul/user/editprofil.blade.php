@@ -3,6 +3,32 @@
 <!-- Required Resources -->
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<style type="text/css">
+       .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+      }
+      .custom-file-input::before {
+        content: 'Select some files';
+        display: inline-block;
+        background: linear-gradient(top, #f9f9f9, #e3e3e3);
+        border: 1px solid #999;
+        border-radius: 3px;
+        padding: 5px 8px;
+        outline: none;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        cursor: pointer;
+        text-shadow: 1px 1px #fff;
+        font-weight: 700;
+        font-size: 10pt;
+      }
+      .custom-file-input:hover::before {
+        border-color: black;
+      }
+      .custom-file-input:active::before {
+        background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+</style>
 <div class="container">
 <div class="row flex-lg-nowrap">
   <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
@@ -36,10 +62,11 @@
                     <p class="mb-0">{{$editUser->username}}</p>
                     
                     <div class="mt-2">
-                      <button class="btn btn-primary" type="file">
+                      <a href="#file" class="btn btn-primary">
                         <i class="fa fa-fw fa-camera"></i>
                         <span>Ubah foto</span>
-                      </button>
+                        </a>
+                        <input type="file" class="custom-file-input">
                     </div>
                   </div>
                   <div class="text-center text-sm-right">

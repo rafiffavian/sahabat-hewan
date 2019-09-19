@@ -36,9 +36,10 @@ class AdoptionController extends Controller
 
     public function hubungi($id)
     {
+        $user = Adoption::find($id)->user;
         $data = Adoption::find($id)->asal;
         if($data == '1'){
-            return redirect()->route('teman.edit',$id);
+            return redirect()->route('teman.edit',$user);
         }else{
             return redirect()->route('teman.whatsapp',$id);
         }

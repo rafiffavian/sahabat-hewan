@@ -41,15 +41,15 @@ class EnduserController extends Controller
         $data = $request->all();
         $data['password'] = bcrypt($request->password); 
         $data['image'] = 'userimage/anon.jpg';
+        $data['id_role'] = '6';
         $data['description'] = 'test';
-        $data['address'] = 'test';
         $data['tanggal_lahir'] = $data['tahun'] . '-' . $data['bulan'] . '-' . $data['tanggal'];
         unset($data['tahun']);
         unset($data['bulan']);
         unset($data['tanggal']);
         // dd($data);
-        $save = User::create($data);
-        redirect(route('login.index'));
+        User::create($data);
+        return redirect()->route('login.index');
     }
 
     /**
