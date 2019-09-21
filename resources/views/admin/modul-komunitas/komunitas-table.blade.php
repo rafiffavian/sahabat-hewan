@@ -40,9 +40,6 @@
                     <th>Gambar</th>
                     <th>Nama Komunitas</th>
                     <th>Alamat</th>
-                    <!-- <th>Rating</th> -->
-                    <!-- <th>Jenis Hewan</th> -->
-                    <th>Jumlah Kasus</th>
                     <th>Deskripsi</th>
                     <th>Wilayah</th>
                     <th>Action</th>
@@ -54,9 +51,6 @@
                   <td><img src="{{ url('comunityimage/' . $comunities->image) }}" width="200"></td>
                     <td>{{$comunities->name}}</td>
                     <td>{{$comunities->location}}</td>
-                    <!-- <td>{{$comunities->rating}}</td> -->
-                    <!-- <td>{{$comunities->myhewan->name}}</td> -->
-                    <td>{{$comunities->case_finish}}</td>
                     <td>{{$comunities->description}}</td>
                     <td>{{$comunities->mywilayah->name}}</td>
                     <td>

@@ -3,6 +3,7 @@
 @section('content')
         <form class="form-horizontal" method="post" action="{{route('comunity.store')}}" enctype="multipart/form-data">
         @csrf
+        @include('layouts.error-form')
         <fieldset>
 
         <!-- Form Name -->
@@ -33,18 +34,7 @@
                 <textarea name="url_lokasi" id="" cols="30" rows="10"></textarea>
             </div>
         </div>
-        <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput">Rating</label>  
-            <div class="col-md-4">
-                <input id="textinput" name="rating" type="text" placeholder="Rating" class="form-control input-md">
-            </div>
-        </div>
-        <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput">Jumlah Kasus</label>  
-            <div class="col-md-4">
-                <input id="textinput" name="case_finish" type="text" placeholder="Jumlah Kasus" class="form-control input-md">
-            </div>
-        </div>
+       
         <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Description</label>  
             <div class="col-md-4">

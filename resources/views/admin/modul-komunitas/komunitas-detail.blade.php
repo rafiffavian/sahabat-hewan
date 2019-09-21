@@ -23,12 +23,6 @@
             </div>
         </div>
         <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput"><h4>Kasus yang ditangani</h4></label>  
-            <div class="col-md-4">
-                <h2>{{$detailComunity->case_finish}}</h2>
-            </div>
-        </div>
-        <div class="form-group">
         <label class="col-md-4 control-label" for="textinput"><h4>Jenis hewan</h4></label>  
             <div class="col-md-4">
                 <h2>{{$detailComunity->myhewan->name}}</h2>

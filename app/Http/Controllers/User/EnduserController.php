@@ -15,7 +15,7 @@ class EnduserController extends Controller
      */
     public function index()
     {
-        $last= date('Y')-20;
+        $last= date('Y')-100;
         $now = date('Y');
         return view('modul.signinup.daftar',compact('last','now'));
     }

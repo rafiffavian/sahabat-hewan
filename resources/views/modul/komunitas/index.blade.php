@@ -11,7 +11,7 @@
 	<div class="col-lg-6 col-sm-8">
 			<form action="#" class="search-wrap">
 				<div class="input-group w-100">
-				    <input type="text" class="form-control" style="width:40%;" placeholder="Search">
+				    <input type="text" name="search" class="form-control" style="width:40%;" placeholder="Search">
 				    <div class="input-group-append">
 				      <button class="btn btn-primary" type="submit">
 				        <i class="fas fa-search"></i>
@@ -55,8 +55,9 @@
 				</form>
 
 				<ul class="list-unstyled list-lg">
-					<li><a href="#">Anjing <span class="float-right badge badge-light round">142</span> </a></li>
-					<li><a href="#">Kucing  <span class="float-right badge badge-light round">3</span>  </a></li>
+					<li><a href="?hewan=1">Anjing <span class="float-right badge badge-light round">{{$anjing->count()}}</span> </a></li>
+					<li><a href="?hewan=2">Kucing  <span class="float-right badge badge-light round">{{$kucing->count()}}</span>  </a></li>
+					<li><a href="{{route('komunitas.index')}}">Semua Hewan  <span class="float-right badge badge-light round">{{$all->count()}}</span>  </a></li>
 				</ul>  
 			</div> <!-- card-body.// -->
 		</div> <!-- collapse .// -->

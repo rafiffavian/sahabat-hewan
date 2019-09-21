@@ -3,6 +3,7 @@
 @section('content')
         <form class="form-horizontal" method="post" action="{{route('event.update',$editEvent->id)}}" enctype="multipart/form-data">
         @csrf
+        @include('layouts.error-form')
         <input type="hidden" name="_method" value="put">
         <fieldset>
 

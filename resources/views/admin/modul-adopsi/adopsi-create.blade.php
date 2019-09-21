@@ -80,16 +80,7 @@
                 </select>
             </div>
         </div>
-        <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput">admin</label>  
-            <div class="col-md-4">
-                <select name="id_admin"class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                    @foreach($admin as $admins)
-                        <option value="{{$admins->id}}">{{$admins->first_name}}</option>
-                    @endforeach    
-                </select>
-            </div>
-        </div>
+       
        
        
 

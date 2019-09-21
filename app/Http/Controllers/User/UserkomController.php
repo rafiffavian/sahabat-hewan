@@ -15,10 +15,36 @@ class UserkomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $comunity = Comunity::all();
-        return view('modul.komunitas.index',compact('comunity'));
+
+        $search = $request->search;
+        $hewan = $request->hewan;
+
+        if ($hewan){
+            $comunity = Comunity::where('id_animaltype',$hewan)->get();
+        }
+        if ($search){
+            $comunity = Comunity::where('name','like','%' . $search . '%')->orWhere('description','like','%' . $search . '%')->orWhere('location','like','%' . $search . '%')->get();
+        }
+
+        $anjing = $comunity->filter(function($value, $key){
+            return $value->id_animaltype == 1;
+        });
+
+        $kucing = $comunity->filter(function($value, $key){
+            return $value->id_animaltype == 2;
+        });
+
+        $all = $comunity->filter(function($value, $key){
+            return $value->id_animaltype == 1  || 2 || 3;
+        });
+
+      
+
+
+        return view('modul.komunitas.index',compact('comunity','anjing','kucing','all'));
     }
 
     /**

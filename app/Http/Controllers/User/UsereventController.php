@@ -19,11 +19,14 @@ class UsereventController extends Controller
 
         $search = $request->search;
         $hewan = $request->hewan;
+        
+       
+        
         if ($hewan){
             $event = Event::where('id_animaltype',$hewan)->get();
         }
         if ($search){
-            $event = Event::where('name','like','%' . $search . '%')->orWhere('description','like','%' . $search . '%')->get();
+            $event = Event::where('name','like','%' . $search . '%')->orWhere('description','like','%' . $search . '%')->orWhere('location','like','%' . $search . '%')->get();
         }
 
         $anjing = $event->filter(function($value, $key){

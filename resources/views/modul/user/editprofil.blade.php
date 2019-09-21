@@ -164,9 +164,10 @@
                           <div class="form-group">
                       <label class="col-md-3 control-label"></label>
                       <div class="col-md-8">
-                      <button class="btn btn-primary" type="submit">Simpan</button>
                         <span></span>
-                        <input type="reset" class="btn btn-secondary" value="Kembali">
+                        <a href="javascript:history.back()" class="btn btn-danger">Kembali</a>
+                        <button class="btn btn-primary" type="submit">Simpan</button>
+                        <input type="reset" class="btn btn-secondary" value="Reset">
                       </div>
                     </div>
                    </form>  

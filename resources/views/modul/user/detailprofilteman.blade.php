@@ -21,7 +21,7 @@
                 <section class="mb-5 mb-md-0">
                     <h3 class="h6 font-weight-light text-secondary text-uppercase">Kontak Saya </h3>
                  <p> <i style="color:green"class="fas fa-phone-alt"></i> {{$user->no_tlp}}</p>
-                 <a href="https://api.whatsapp.com/send?{{$user->whatsapp}}"><img height="40px;" width="auto"src="{{asset('asset/img/desainpelaporan/whatsapp.png')}}"> Hubungi Whatsapp saya. </a>
+                 <a href="https://api.whatsapp.com/phone?{{$user->whatsapp}}"><img height="40px;" width="auto"src="{{asset('asset/img/desainpelaporan/whatsapp.png')}}"> Hubungi Whatsapp saya. </a>
                 </section>
             </div>
         </div>
@@ -40,15 +40,7 @@
             </p>
             <p class="lead mt-4">{{$user->description}}. </p>
            
-            <section class="d-flex mt-5">
            
-                <button class="btn btn-danger  mr-3 mb-3">
-                    <i class="fa fa-warning"></i>
-                    Laporkan
-                </button>
-               
-                
-            </section>
             <section class="mt-4">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
@@ -62,7 +54,7 @@
                 <div class="tab-content py-4" id="myTabContent">
                     <div class="tab-pane py-3 fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h4 class="text-uppercase font-weight-bold text-success">
-                           Ambil Hewan Adopsi Milik 
+                           Ambil Hewan Adopsi Milik {{$user->username}}
                         </h4>
                        <!-- Konten Gallery Peliharaanku -->
          
@@ -75,7 +67,7 @@
                         <a class="lightbox" href="">
                             <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="{{ url('adoptionimage/' . $hewans->image) }}">
                         </a>
-                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#husky">  <i class="far fa-eye"></i> Detail</button>
+                        <a class="btn btn-success btn-sm" href="{{route('teman.show',$hewans->id)}}"><i class="far fa-eye"></i> Detail</a>
                     </div>
                 @endforeach   
                 

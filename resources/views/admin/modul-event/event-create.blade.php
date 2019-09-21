@@ -3,6 +3,7 @@
 @section('content')
         <form class="form-horizontal" method="post" action="{{route('event.store')}}" enctype="multipart/form-data">
         @csrf
+        @include('layouts.error-form')
         <fieldset>
 
         <!-- Form Name -->

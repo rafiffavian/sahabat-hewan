@@ -180,62 +180,7 @@
 
 
 <!-- Modal Edit -->
-<div class="modal fade" id="husky" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cody</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Nama Peliharaan </label>
-                    <input type="text" name="animal_name" value="" class="form-control" id="formGroupExampleInput" placeholder="Misal: Cody">
-                </div>
-                 <div class="form-group">
-                    <label for="exampleFormControlFile1">Unggah Foto</label>
-                    <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
-                 </div>
-                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kategori</label>
-                    <select name="id_animaltype" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        @foreach($animal as $animals)
-                            <option value="{{$animals->id}}">{{$animals->name}}</option>
-                       @endforeach   
-                    </select>
-                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis</label>
-                    <input type="text" name="animal_kind" value="" class="form-control">
-                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis Kelamin</label>
-                    <select name="gender" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option value="lakilaki">laki-Laki</option>
-                         <option value="perempuan">perempuan</option>
-                    </select>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Lahir </label>
-                    <input type="date" name="birth" value="" class="form-control" id="formGroupExampleInput" placeholder="DD-MM-YYYY">
-                </div>
-                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Tingkat agresivitas</label>
-                    <select name="" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option value="baik">Baik</option>
-                        <option value="biasa">Biasa</option>
-                        <option value="sedikit galak">Sedikit Galak</option>
-                        <option value="galak">Galak</option>
-                    </select>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Alasan Lepas Adopsi</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-        </form>
-      </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    <button type="button" class="btn btn-primary">Simpan</button>
-                </div>
-    </div>
-  </div>
-</div>
+
 <!-- Akhir Modal Edit -->
 
 <!-- Awal Modal Tambah -->

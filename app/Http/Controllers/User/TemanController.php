@@ -48,7 +48,9 @@ class TemanController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = Adoption::find($id)->user;
+        $adoption = Adoption::find($id);
+        return view('modul.adopsi.detailadopsi',compact('adoption','user'));
     }
 
     /**

@@ -118,8 +118,8 @@ anime.timeline({loop: true})
                                     <input id="inputPassword" name="password" type="password" placeholder="Password"  class="form-control rounded-pill border-0 shadow-sm px-4 text-success">
                                 </div>
                                 <div class="custom-control custom-checkbox mb-3">
-                                    <input id="customCheck1" type="checkbox" checked class="custom-control-input">
-                                    <label for="customCheck1" class="custom-control-label">Ingat password</label>
+                                    <input id="customCheck1" name="remember_me" type="checkbox" checked class="custom-control-input">
+                                    <label for="customCheck1"  class="custom-control-label">Ingat password</label>
                                 </div>
                                 <button type="submit" class="btn btn-success btn-block text-uppercase mb-2 rounded-pill shadow-sm">Masuk</button>
                                 <div class="text-center d-flex justify-content-between mt-4"><p>Belum punya akun ? <a href="/daftar" class="font-italic text-muted"> 

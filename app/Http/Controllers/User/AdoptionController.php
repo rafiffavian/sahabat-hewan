@@ -17,11 +17,33 @@ class AdoptionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         
         $adoption = Adoption::all();
-        return view('modul.adopsi.index',compact('adoption'));
+
+        $search = $request->search;
+        $hewan = $request->hewan;
+        
+       
+        
+        if ($hewan){
+            $adoption = Adoption::where('id_animaltype',$hewan)->get();
+        }
+        if ($search){
+            $adoption = Adoption::where('animal_name','like','%' . $search . '%')->orWhere('animal_kind','like','%' . $search . '%')->orWhere('lokasi','like','%' . $search . '%')->get();
+        }
+
+        $anjing = $adoption->filter(function($value, $key){
+            return $value->id_animaltype == 1;
+        });
+
+        $kucing = $adoption->filter(function($value, $key){
+            return $value->id_animaltype == 2;
+        });
+
+
+        return view('modul.adopsi.index',compact('adoption','anjing','kucing'));
     }
 
     /**
@@ -47,7 +69,7 @@ class AdoptionController extends Controller
 
     public function whatsapp($id)
     {
-        $adoption = Adoption::find($id)->admin->no_tlp;
+        $adoption = Adoption::find($id)->user->whatsapp;
         return redirect('https://api.whatsapp.com/send?phone='. $adoption);
     }
 
@@ -65,7 +87,8 @@ class AdoptionController extends Controller
         $file->move('adoptionimage', $fileName);
 
         $data = $request->all();
-        $data['asal'] = '1'; 
+        $data['asal'] = '1';
+        $data['lokasi'] = Auth::user()->kota;
         unset($data['token']);
         $data['image'] = $fileName;
 
@@ -87,7 +110,7 @@ class AdoptionController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

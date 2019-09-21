@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateAdoption8Table extends Migration
+class UpdateAdoption9Table extends Migration
 {
     /**
      * Run the migrations.
@@ -16,7 +16,8 @@ class UpdateAdoption8Table extends Migration
         Schema::table('adoption', function (Blueprint $table) {
             
             
-            $table->bigInteger('id_admin')->nullable();
+            $table->dropColumn('id_admin');
+            $table->dropColumn('asal');
             
         });
     }
@@ -32,6 +33,7 @@ class UpdateAdoption8Table extends Migration
             
             
             $table->bigInteger('id_admin')->nullable();
+            $table->integer('asal');
             
         });
     }

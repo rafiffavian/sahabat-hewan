@@ -38,8 +38,9 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
+        $remember = $request->input('remember_me');
         
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password]) && Auth::user()->id_role == '6'){
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember) && Auth::user()->id_role == '6'){
             return redirect()->intended('/detailprofile');
         }elseif(Auth::attempt(['email' => $request->email, 'password' => $request->password]) && Auth::user()->id_role == '7' | '8'){
             return redirect()->intended('/dashboard/user');

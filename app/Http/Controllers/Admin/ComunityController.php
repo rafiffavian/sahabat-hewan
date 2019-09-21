@@ -42,6 +42,21 @@ class ComunityController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'id_animaltype' => 'required|max:255',
+            'name' => 'required|max:255',
+            'location' => 'required|max:255',
+            'description' => 'required|max:255',
+            'image' => 'required|max:255',
+            'id_jakartatype' => 'required|max:255',
+            'instagram' => 'required|max:255',
+            'whatsapp' => 'required|max:255',
+            'Line' => 'required|max:255',
+            'url_lokasi' => 'required|max:255',
+            
+            ]);
+
         $file =  $request->file('image');
         $fileNameArr = explode('.',$file->getClientOriginalName());
         $fileName = $fileNameArr[0] . '-' . time() . '.' . $fileNameArr[1];
@@ -95,6 +110,19 @@ class ComunityController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'id_animaltype' => 'required|max:255',
+            'name' => 'required|max:255',
+            'location' => 'required|max:255',
+            'description' => 'required|max:255',
+            'image' => 'required|max:255',
+            'id_jakartatype' => 'required|max:255',
+            'instagram' => 'required|max:255',
+            'whatsapp' => 'required|max:255',
+            'Line' => 'required|max:255',
+            'url_lokasi' => 'required|max:255',
+            
+            ]);
         // dd($request->all());
         $update = $request->all();
         unset($update['_token']);

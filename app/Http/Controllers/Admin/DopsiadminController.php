@@ -7,6 +7,7 @@ use App\Adoption;
 use App\Animaltype;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DopsiadminController extends Controller
 {
@@ -50,7 +51,8 @@ class DopsiadminController extends Controller
         unset($data['token']);
         $data['image'] = $fileName;
 
-        $save = Adoption::create($data);
+        $user = Auth::user()->adoption();
+        $save = $user->create($data);
 
         if(!$save){
             File::delete('adoptionimage/'.$fileName);

@@ -27,13 +27,13 @@
             <fieldset>
             <h2 class="fs-title">Personal Detail</h2>
             <h3 class="fs-subtitle"></h3>
-            <input type="text" name="first_name" placeholder="Nama Depan" />
-            <input type="text" name="last_name" placeholder="Nama Belakang" />
+            <input type="text" class="first_name" name="first_name" placeholder="Nama Depan" />
+            <input type="text" class="last_name" name="last_name" placeholder="Nama Belakang" />
             <label class="" for="birthday"><p class="font-weight-light">Tanggal Lahir</p></label>
           <div class="container">
             <div class="row">
                       <div class="col-4">
-                        <select name="tanggal" class="custom-select custom-select-sm">
+                        <select name="tanggal" class="tanggal custom-select custom-select-sm">
                           <option value="1" selected>1</option>
                           @for($i=2; $i < 32; $i++)
                               <option value="{{$i}}">{{$i}}</option>
@@ -41,7 +41,7 @@
                           </select>
                       </div>
                       <div class="col-4">
-                        <select name="bulan" class="custom-select custom-select-sm">
+                        <select name="bulan" class="tanggal custom-select custom-select-sm">
                           <option value="1" selected>1</option>
                           @for($i=2; $i < 13; $i++)
                               <option value="{{$i}}">{{$i}}</option>
@@ -49,7 +49,7 @@
                           </select>
                       </div>
                       <div class="col-4">
-                        <select name="tahun" class="custom-select custom-select-sm">
+                        <select name="tahun" class="tanggal custom-select custom-select-sm">
                         @for ($i = $last; $i <= $now; $i++)   
                           <option value="{{$i}}" selected>{{$i}}</option>
                         @endfor 
@@ -62,22 +62,22 @@
             <div class="row">
                       <div class="col-6">
                           <div class="custom-control custom-radio custom-control-inline">
-                                  <input type="radio" id="customRadioInline1" name="gender" value="pria" class="custom-control-input">
+                                  <input type="radio" id="customRadioInline1" name="gender" value="pria" class="gender custom-control-input">
                                   <label class="custom-control-label" for="customRadioInline1"><p class="font-weight-light">Pria</p></label>
                           </div>
                       </div>
                       <div class="col-6">
                           <div class="custom-control custom-radio custom-control-inline">
-                          <input type="radio" id="customRadioInline2" name="gender" value="wanita" class="custom-control-input">
+                          <input type="radio" id="customRadioInline2" name="gender" value="wanita" class="gender custom-control-input">
                           <label class="custom-control-label" for="customRadioInline2"><p class="font-weight-light">Wanita</p></label>
                           </div>
                       </div>
           </div>
           </div>
           
-            <input type="text" name="no_tlp" placeholder="+628780000000" />
+            <input type="text" class="tlp" name="no_tlp" placeholder="+628780000000" />
           
-            <input type="text" name="email" placeholder="email" />
+            <input type="text" class="email" name="email" placeholder="email" />
             <input type="button" style="border-radius: 30px;" name="next" class="next action-button" value="Next" />
           </fieldset>
           <fieldset>
@@ -100,10 +100,11 @@
             <span class="checkbox"><input title="Please tick" name="accept_terms" type="checkbox" class="required" id="js-accept-terms" /></span> <span title="Please tick">Saya menyetujui </span> <a target="_blank" href="#license" data-toggle="modal" title="Opens in a new tab">end-user license agreement</a> &amp; <a target="_blank" href="#tof" data-toggle="modal" title="Opens in a new tab">terms of service</a>
           </label>
         </p>
+        
         <input type="button" style="border-radius: 30px;" name="previous" class="previous action-button" value="Previous" />
         <input type="submit" style="border-radius: 30px;" name="submit" class="submit action-button" value="Submit" />
-        </form>
-        </div>
+      </div>
+    </form>
           </fieldset>
         
         </div>

@@ -11,7 +11,7 @@
 	<div class="col-lg-6 col-sm-8">
 			<form action="#" class="search-wrap">
 				<div class="input-group w-100">
-				    <input type="text" class="form-control" style="width:40%;" placeholder="Search">
+				    <input type="text" name="search" class="form-control" style="width:40%;" placeholder="Search">
 				    <select class="custom-select" name="category_name">
 							<option value="">Sumber Adopsi</option><option value="codex">Komunitas</option>
 							<option value="comments">User</option>
@@ -58,8 +58,8 @@
 				</form>
 
 				<ul class="list-unstyled list-lg">
-					<li><a href="#">Kucing <span class="float-right badge badge-light round">142</span> </a></li>
-					<li><a href="#">Anjing  <span class="float-right badge badge-light round">3</span>  </a></li>
+					<li><a href="?hewan=2">Kucing <span class="float-right badge badge-light round">{{$kucing->count()}}</span> </a></li>
+					<li><a href="?hewan=1">Anjing  <span class="float-right badge badge-light round">{{$anjing->count()}}</span>  </a></li>
 				</ul>  
 			</div> <!-- card-body.// -->
 		</div> <!-- collapse .// -->
@@ -131,21 +131,25 @@
 				<div class="img-wrap"><img src="{{ url('adoptionimage/' . $adoptions->image) }}"></div>
 			</aside> <!-- col.// -->
 			<article class="col-sm-6">
-					<h4 class="title"> Popo <span class="badge badge-pill badge-success">Free</span> </h4>
+					<h4 class="title"> {{$adoptions->animal_name}} <span class="badge badge-pill badge-success">Free</span> </h4><br>
 				
-					<p> {{$adoptions->alasan}}.</p>
 					<dl class="dlist-align">
-					<dt>Lokasi</dt>
-					<dd>Jakarta Timur</dd>
+					<dt>Lokasi:</dt>
+					<dd>{{$adoptions->lokasi}}</dd>
 					</dl>  <!-- item-property-hor .// -->
 					<dl class="dlist-align">
-					<dt>Kategori</dt>
+					<dt>Kategori:</dt>
 					<dd>{{$adoptions->myhewan->name}}</dd>
 					</dl>  <!-- item-property-hor .// -->
 					
 					<dl class="dlist-align">
-					<dt>Jenis</dt>
+					<dt>Jenis:</dt>
 					<dd>{{$adoptions->animal_kind}}</dd>
+					</dl>  <!-- item-property-hor .// -->
+
+					<dl class="dlist-align">
+					<dt>Alasan : Lepas Adopsi</dt>
+					<dd>{{$adoptions->alasan}}.</dd>
 					</dl>  <!-- item-property-hor .// -->
 					
 				

@@ -3,6 +3,7 @@
 @section('content')
         <form class="form-horizontal" method="post" action="{{route('comunity.update',$editComunity->id)}}" enctype="multipart/form-data">
         @csrf
+        @include('layouts.error-form')
         <fieldset>
             <input type="hidden" name="_method" value="put">
 
@@ -34,18 +35,7 @@
                 <input id="textinput" name="location" type="text" value="{{$editComunity->location}}" class="form-control input-md">
             </div>
         </div>
-        <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput">Rating</label>  
-            <div class="col-md-4">
-                <input id="textinput" name="rating" type="text" value="{{$editComunity->rating}}" class="form-control input-md">
-            </div>
-        </div>
-        <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput">Jumlah Kasus</label>  
-            <div class="col-md-4">
-                <input id="textinput" name="case_finish" type="text" value="{{$editComunity->case_finish}}" class="form-control input-md">
-            </div>
-        </div>
+      
         <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Description</label>  
             <div class="col-md-4">
