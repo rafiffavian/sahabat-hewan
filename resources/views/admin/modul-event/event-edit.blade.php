@@ -66,6 +66,7 @@
                 <select name="id_jakartatype" id="" class="form-control">
                @foreach($wilayah as $wilayahku)
                     <option value="{{$wilayahku->id}}" @if($wilayahku->id == $editEvent->id_jakartatype) selected="selected" @endif>{{$wilayahku->name}}</option>
+                   
                @endforeach     
                
                 </select>
@@ -75,9 +76,9 @@
         <label class="col-md-4 control-label" for="textinput">Jenis Hewan</label>  
             <div class="col-md-4">
                 <select name="id_animaltype" id="" class="form-control">
-               @foreach($animal as $animals)
-                   
+               @foreach($animal as $animals)    
                     <option value="{{$animals->id}}" @if($animals->id == $editEvent->id_animaltype) selected="selected" @endif>{{$animals->name}}</option>
+                   
                @endforeach     
                
                 </select>

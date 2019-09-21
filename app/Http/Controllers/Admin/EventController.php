@@ -44,6 +44,25 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+
+            'id_animaltype' => 'required|max:255',
+            'name' => 'required|max:255',
+            'price' => 'required|max:255',
+            'location' => 'required|max:255',
+            'description' => 'required|max:255',
+            'image' => 'required',
+            'time' => 'required|max:255',
+            'time_finish' => 'required|max:255',
+            'id_jakartatype' => 'required|max:255',
+            'instagram' => 'required|max:255',
+            'whatsapp' => 'required|max:255',
+            'line' => 'required|max:255',
+            'url_lokasi' => 'required',
+            
+            ]);
+
         $file =  $request->file('image');
         $fileNameArr = explode('.',$file->getClientOriginalName());
         $fileName = $fileNameArr[0] . '-' . time() . '.' . $fileNameArr[1];
@@ -97,6 +116,26 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $request->validate([
+
+            'id_animaltype' => 'required|max:255',
+            'name' => 'required|max:255',
+            'price' => 'required|max:255',
+            'location' => 'required|max:255',
+            'description' => 'required|max:255',
+            'image' => 'required',
+            'time' => 'required|max:255',
+            'time_finish' => 'required|max:255',
+            'id_jakartatype' => 'required|max:255',
+            'instagram' => 'required|max:255',
+            'whatsapp' => 'required|max:255',
+            'line' => 'required|max:255',
+            'url_lokasi' => 'required',
+            
+            ]);
+
+
         $update = $request->all();
         unset($update['_token']);
         unset($update['_method']);

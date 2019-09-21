@@ -38,6 +38,19 @@ class FinddoctorController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+
+            'no_tlp' => 'required|max:255',
+            'name' => 'required|max:255',
+            'kelurahan' => 'required|max:255',
+            'kecamatan' => 'required|max:255',
+            'kota' => 'required|max:255',
+            'image' => 'required',
+            'provinsi' => 'required|max:255',
+            
+            ]);
+
         $file =  $request->file('image');
         $fileNameArr = explode('.',$file->getClientOriginalName());
         $fileName = $fileNameArr[0] . '-' . time() . '.' . $fileNameArr[1];
@@ -64,7 +77,9 @@ class FinddoctorController extends Controller
      */
     public function show($id)
     {
-        //
+        $detailDoctor = Doctor::findOrFail($id);
+        return view('admin.modul-doctor.doctor-detail',compact('detailDoctor'));
+
     }
 
     /**
@@ -75,7 +90,8 @@ class FinddoctorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $editDoctor = Doctor::findOrFail($id);
+        return view('admin.modul-doctor.doctor-edit',compact('editDoctor'));
     }
 
     /**
@@ -87,7 +103,46 @@ class FinddoctorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+
+            'no_tlp' => 'required|max:255',
+            'name' => 'required|max:255',
+            'kelurahan' => 'required|max:255',
+            'kecamatan' => 'required|max:255',
+            'kota' => 'required|max:255',
+            'image' => 'required',
+            'provinsi' => 'required|max:255',
+            
+            ]);
+
+
+        $update = $request->all();
+        unset($update['_token']);
+        unset($update['_method']);
+
+        $file =  $request->file('image');
+        if ($file != null){
+
+            $fileNameArr = explode('.',$file->getClientOriginalName());
+            $fileName = $fileNameArr[0] . '-' . time() . '.' . $fileNameArr[1];
+            $file->move('doctorimage', $fileName);
+
+            $update['image'] = $fileName;
+
+            $gambar = Doctor::find($id)->image;
+            // dd($gambar);
+            // exit();
+            File::delete('doctorimage/' . $gambar);
+        }
+
+       
+
+        $update_action = Doctor::where('id',$id)->update($update);
+        if ($update_action){
+            return redirect()->route('finddoctor.index');
+        }else{
+            echo "Gagal Update";
+        }
     }
 
     /**

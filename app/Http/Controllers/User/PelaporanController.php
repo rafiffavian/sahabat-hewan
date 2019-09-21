@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Animaltype;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Katpelaporan;
 use App\Report;
 
 class PelaporanController extends Controller
@@ -15,7 +17,9 @@ class PelaporanController extends Controller
      */
     public function index()
     {
-        return view('modul.pelaporan.komunitas');
+        $animal = Animaltype::all();
+        $katPelaporan = Katpelaporan::all();
+        return view('modul.pelaporan.komunitas',compact('animal','katPelaporan'));
     }
 
     /**

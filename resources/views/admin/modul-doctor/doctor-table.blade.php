@@ -58,8 +58,8 @@
                     <td>{{$doctors->kecamatan}}</td>
                     <td>{{$doctors->provinsi}}</td>
                     <td>
-                        <a href=""><i class="fa fa-eye"></i></a>
-                        <a href=""><i class="fa fa-pencil"></i></a>
+                        <a href="{{route('finddoctor.show',$doctors)}}"><i class="fa fa-eye"></i></a>
+                        <a href="{{route('finddoctor.edit',$doctors)}}"><i class="fa fa-pencil"></i></a>
                     <form method="post" action="{{ route('finddoctor.destroy', $doctors->id) }}"> 
                       @csrf
                         <input type="hidden" name="_method" value="delete">   

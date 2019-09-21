@@ -48,7 +48,7 @@ class CaridokterController extends Controller
      */
     public function create()
     {
-        //
+        return view('modul.pelaporan.cari-form');
     }
 
     /**

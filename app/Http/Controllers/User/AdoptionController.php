@@ -69,7 +69,7 @@ class AdoptionController extends Controller
 
     public function whatsapp($id)
     {
-        $adoption = Adoption::find($id)->user->whatsapp;
+        $adoption = Adoption::find($id)->whatsapp;
         return redirect('https://api.whatsapp.com/send?phone='. $adoption);
     }
 

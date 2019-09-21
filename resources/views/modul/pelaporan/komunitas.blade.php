@@ -49,6 +49,27 @@
                         <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
 
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Kategori Hewan</label>
+                        <select name="kategori_hewan" class="form-control" id="">
+                            <option value="anjing">Anjing</option>
+                            <option value="kucing">Kucing</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Kategori Pelaporan</label>
+                        <select name="id_katpelaporan" class="form-control" id="">
+                        @foreach($katPelaporan as $katPelaporans)
+                            <option value="{{$katPelaporans->id}}">{{$katPelaporans->name}}</option>
+                        @endforeach    
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Description</label>
+                        <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea>
+                    </div>
+
                     <br>
                     <div style="height: 250px; width: 100%; display: none;" id="map"></div>
                     <h4 class="text-center">Bagikan Lokasi</h4>

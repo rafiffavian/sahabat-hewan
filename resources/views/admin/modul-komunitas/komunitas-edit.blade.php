@@ -49,6 +49,7 @@
                 <select name="id_jakartatype" id="" class="form-control">
                @foreach($wilayah as $wilayahku)
                     <option value="{{$wilayahku->id}}" @if($wilayahku->id == $editComunity->id_jakartatype) selected="selected" @endif>{{$wilayahku->name}}</option>
+                   
                @endforeach     
                
                 </select>
@@ -60,6 +61,7 @@
                 <select name="id_animaltype" id="" class="form-control">
                @foreach($animal as $animals)
                     <option value="{{$animals->id}}" @if($animals->id == $editComunity->id_animaltype) selected="selected" @endif>{{$animals->name}}</option>
+                   
                @endforeach     
                
                 </select>

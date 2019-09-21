@@ -64,7 +64,11 @@
                     <td>
                         <a href="{{route('event.show', $events->id)}}"><i class="fa fa-eye"></i></a>
                         <a href="{{route('event.edit', $events->id)}}"><i class="fa fa-pencil"></i></a>
-                        <a href="{{route('event.destroy', $events->id)}}"><i class="fa fa-trash"></i></a>
+                       <form method="post" action="{{ route('event.destroy', $events->id) }}"> 
+                      @csrf
+                        <input type="hidden" name="_method" value="delete">   
+                        <button type="submit"><i class="fa fa-trash"></i></button>
+                    </form>    
                     </td>
                   </tr>
              @endforeach

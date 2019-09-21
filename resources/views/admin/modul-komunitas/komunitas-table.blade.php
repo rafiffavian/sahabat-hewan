@@ -56,7 +56,7 @@
                     <td>
                         <a href="{{route('comunity.show', $comunities->id)}}"><i class="fa fa-eye"></i></a>
                         <a href="{{route('comunity.edit', $comunities->id)}}"><i class="fa fa-pencil"></i></a>
-                        <form method="post" action="{{ route('comunity.destroy', $comunities->id) }}"> 
+                    <form method="post" action="{{ route('comunity.destroy', $comunities->id) }}"> 
                       @csrf
                         <input type="hidden" name="_method" value="delete">   
                         <button type="submit"><i class="fa fa-trash"></i></button>

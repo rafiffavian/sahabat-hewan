@@ -5,8 +5,9 @@
     <div class="col-md-7">
       
       <div style="text-align: center;">
-      <img width = "80%" height ="auto" class=" " src="asset/img/desainpelaporan/dokter.png" alt="">
-      <button style=" margin: 0 auto;" type="button" class="btn btn-success text-center btn-lg" data-toggle="modal" data-target="#caridokter">Cari dokter hewan <i class="fas fa-search-location ml-2"></i> </button></div>
+        <img width = "80%" height ="auto" class=" " src="asset/img/desainpelaporan/dokter.png" alt="">
+        <a href="{{route('caridokter.create')}}"  class="btn btn-success text-center btn-lg">Cari dokter hewan <i class="fas fa-search-location ml-2"></i></a>
+      </div>
       
     </div>
     <div class="col-md-5 mt-4">
