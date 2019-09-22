@@ -22,6 +22,12 @@ class PelaporanController extends Controller
         return view('modul.pelaporan.komunitas',compact('animal','katPelaporan'));
     }
 
+    public function fileUpload(Request $request){
+        $file = $request->file('file');
+        $file->move('remortimage', $file->getClientOriginalName());
+        return response()->json($file->getClientOriginalName());
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -40,9 +46,33 @@ class PelaporanController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->all();
+        $gambar = $data['gambar'];
+        $gambarExplode = explode(',', $gambar);
+
+        if(isset($gambarExplode[0])){
+            $data['image_one'] = $gambarExplode[0];
+        }
+        if(isset($gambarExplode[1])){
+            $data['image_two'] = $gambarExplode[1];
+        }
+        if(isset($gambarExplode[2])){
+            $data['image_three'] = $gambarExplode[2];
+        }
+        if(isset($gambarExplode[3])){
+            $data['image_four'] = $gambarExplode[3];
+        }
+
+        unset($data['_token']);
+        unset($data['gambar']);
+
         $admin = new Report();
-        $admin->create($request->except('_token'));
-        return redirect(route('pelaporan.index'));
+        $saveAdmin = $admin->create($data);
+        if($saveAdmin){
+            return response()->json($data);
+        } else {
+            return 'false';
+        }
     }
 
     /**

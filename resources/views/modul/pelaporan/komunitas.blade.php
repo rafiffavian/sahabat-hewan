@@ -24,7 +24,7 @@
  @include('layouts.includes.navbar')
 
     <div class="container" >
-        <form action="{{route('pelaporan.store')}}" method="post">
+        <form action="{{route('pelaporan.store')}}" method="post" id="form-lapor">
             @csrf
             <input type="hidden" id="lat" name="latitude"/>
             <input type="hidden" id="long" name="longtitude"/>
@@ -98,13 +98,13 @@
                       
                         <div class="form-group">
                             <div class="file-loading">
-                                <!-- <input id="file-1" type="file" name="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="2"> -->
+                                <input id="file-1" type="file" name="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="2">
                             </div>
                             <small id="foto" class="form-text text-muted">ukuran foto maks 2MB</small>
                             <small id="video" class="form-text text-muted">ukuran video maks 10MB</small>
                         </div>
                             <br>
-                        <button type="submit" class="btn btn-success">Laporkan</button>
+                        <button type="submit" class="btn btn-success" id="submit-lapor">Laporkan</button>
 
                 </div>
             </div>
@@ -124,11 +124,12 @@
     <script type="text/javascript">
         $('#bagikan_lokasi').click(function(){
             $('#map').show();
-
         })
+
         $("#file-1").fileinput({
             theme: 'fa',
-            uploadUrl: "/image-view",
+            uploadUrl: "{{route('pelaporan.fileUpload')}}",
+            enableResumableUpload: true,
             uploadExtraData: function() {
                 return {
                     _token: $("input[name='_token']").val(),
@@ -142,6 +143,33 @@
                 return filename.replace('(', '_').replace(']', '_');
             }
         });
+
+        $('#form-lapor').submit(function(e){
+            e.preventDefault();
+            var data = $(this).serializeArray();
+            var gambar = [];
+            $('.kv-zoom-cache').find('.kv-file-content').find('img').each(function(){
+                gambar.push($(this).attr('title'));
+            });
+            if(gambar.length > 5){
+                alert('total gambar dan video yang boleh di upload 5');
+            } else {
+                data.push({name: 'gambar', value: gambar});
+                console.log('data', data)
+                request = $.ajax({
+                    url: "{{route('pelaporan.store')}}",
+                    type: "post",
+                    data: data
+                });
+
+                // Callback handler that will be called on success
+                request.done(function (response, textStatus, jqXHR){
+                    // Log a message to the console
+                    console.log(response);
+                });
+            }
+
+        })
     </script>
 </body>
 </html>

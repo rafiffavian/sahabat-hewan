@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('/hewan/delete/{id}', 'User\ProfileController@deletehewan')->name('detail.deletehewan');
     Route::resource('/adoption', 'User\AdoptionController');
     Route::resource('/pelaporan', 'User\PelaporanController');
+    Route::post('/pelaporan-upload', 'User\PelaporanController@fileUpload')->name('pelaporan.fileUpload');
     Route::resource('/caridokter', 'User\CaridokterController');
     Route::resource('/teman', 'User\TemanController');
     Route::get('/teman/hubungi/{id}', 'User\AdoptionController@hubungi')->name('teman.hubungi');
