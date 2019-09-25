@@ -47,7 +47,7 @@ class FinddoctorController extends Controller
             'kecamatan' => 'required|max:255',
             'kota' => 'required|max:255',
             'image' => 'required',
-            'provinsi' => 'required|max:255',
+           
             
             ]);
 
@@ -111,7 +111,7 @@ class FinddoctorController extends Controller
             'kecamatan' => 'required|max:255',
             'kota' => 'required|max:255',
             'image' => 'required',
-            'provinsi' => 'required|max:255',
+            'url' => 'required',
             
             ]);
 

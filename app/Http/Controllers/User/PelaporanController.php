@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Katpelaporan;
 use App\Report;
+use Illuminate\Support\Facades\Auth;
 
 class PelaporanController extends Controller
 {
@@ -62,11 +63,14 @@ class PelaporanController extends Controller
         if(isset($gambarExplode[3])){
             $data['image_four'] = $gambarExplode[3];
         }
+        if(isset($gambarExplode[4])){
+            $data['image_five'] = $gambarExplode[4];
+        }
 
         unset($data['_token']);
         unset($data['gambar']);
 
-        $admin = new Report();
+        $admin = Auth::user()->report();
         $saveAdmin = $admin->create($data);
         if($saveAdmin){
             return response()->json($data);

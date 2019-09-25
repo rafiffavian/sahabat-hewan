@@ -21,7 +21,7 @@
       <div class="box">
         <div class="box-header with-border">
           <h3 style="text-align: center" class="box-title">Table Event</h3><br>
-          <a class="btn btn-primary" href="{{route('event.create')}}">Tambah</a>
+          <a class="btn btn-primary" href="{{route('report.create')}}">Tambah</a>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -37,34 +37,39 @@
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th>Gambar 1</th>
-                    <th>Gambar 2</th>
-                    <th>Gambar 3</th>
-                    <th>Gambar 4</th>
-                    <th>Video</th>
-                    <th>location</th>
-                    <th>no_tlp</th>
+                    <th>Gambar</th>
+                    <th>latitude</th>
+                    <th>longtitude</th>
+                    <th>Jenis Hewan</th>
+                    <th>Kategori Pelaporan</th>
+                    <th>Email</th>
                     <th>whatsapp</th>
+                    <th>no tlp</th>
+                    <th>Description</th>
                     <th>created_at</th>
-                    <th>updated_at</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
               @foreach($report as $reports)
                   <tr>
-                    <td><img src="{{ url('reportimage/' . $reports->imageone) }}" width="200"></td>
-                    <td><img src="{{ url('reportimage/' . $reports->imagetwo) }}" width="200"></td>
-                    <td><img src="{{ url('reportimage/' . $reports->imagethree) }}" width="200"></td>
-                    <td><img src="{{ url('reportimage/' . $reports->imagefour) }}" width="200"></td>
-                    <td><img src="{{ url('video/' . $reports->video) }}" width="200"></td>
-                    <td>{{$reports->location}}</td>
+                    <td><img src="{{ url('remortimage/' . $reports->image_one) }}" width="100"></td>
+                    <td>{{$reports->latitude}}</td>
+                    <td>{{$reports->longtitude}}</td>
+                    <td>{{$reports->kategori_hewan}}</td>
+                    <td>{{$reports->kat_pelaporan->name}}</td>
+                    <td>{{$reports->email}}</td>
+                    <td>{{$reports->no_whatsapp}}</td>
                     <td>{{$reports->no_tlp}}</td>
-                    <td>{{$reports->whatsapp}}</td>
+                    <td>{{$reports->description}}</td>
+                    <td>{{$reports->created_at}}</td>
                     <td>
-                        <a href=""><i class="fa fa-eye"></i></a>
-                        <a href=""><i class="fa fa-pencil"></i></a>
-                        <a href=""><i class="fa fa-trash"></i></a>
+                        <a href="{{route('report.show',$reports->id)}}"><i class="fa fa-eye"></i></a>
+                        <form method="post" action="{{ route('report.destroy', $reports->id) }}"> 
+                      @csrf
+                        <input type="hidden" name="_method" value="delete">   
+                        <button type="submit"><i class="fa fa-trash"></i></button>
+                    </form>    
                     </td>
                   </tr>
              @endforeach

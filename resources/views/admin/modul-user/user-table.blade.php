@@ -44,8 +44,6 @@
                     <th>No Telp</th>
                     <th>Email</th>
                     <th>Username</th>
-                    <th>Description</th>
-                    <th>Address</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -59,12 +57,14 @@
                     <td>{{$users->no_tlp}}</td>
                     <td>{{$users->email}}</td>
                     <td>{{$users->username}}</td>
-                    <td>{{$users->description}}</td>
-                    <td>{{$users->address}}</td>
                     <td>
                         <a href="{{route('user.show', $users->id)}}"><i class="fa fa-eye"></i></a>
                         <a href="{{route('user.edit', $users->id)}}"><i class="fa fa-pencil"></i></a>
-                        <a href="{{route('user.destroy', $users->id)}}"><i class="fa fa-trash"></i></a>
+                        <form method="post" action="{{ route('user.destroy', $users->id) }}"> 
+                      @csrf
+                        <input type="hidden" name="_method" value="delete">   
+                        <button type="submit"><i class="fa fa-trash"></i></button>
+                    </form>    
                     </td>
                   </tr>
              @endforeach

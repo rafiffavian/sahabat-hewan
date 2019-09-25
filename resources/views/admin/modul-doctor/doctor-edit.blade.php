@@ -48,9 +48,9 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">Provinsi</label>  
+            <label class="col-md-4 control-label" for="textinput">URL</label>  
             <div class="col-md-4">
-                <input type="text" value="{{$editDoctor->provinsi}}" name="provinsi" placeholder="Provinsi" class="form-control input-md">  
+                <textarea name="url" id="" cols="30" class="form-control" rows="10">{{$editDoctor->url}}</textarea>
             </div>
         </div>
        

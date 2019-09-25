@@ -22,7 +22,7 @@
 
 <body class="">
  @include('layouts.includes.navbar')
-<form action="" method="post">
+<form action="{{route('caridokter.store')}}" method="post">
     @csrf
     <div class="container" >
         <div class="row" >

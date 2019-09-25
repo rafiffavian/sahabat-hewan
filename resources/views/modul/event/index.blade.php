@@ -82,41 +82,11 @@
 		<div class="filter-content collapse show" id="collapse44">
 			<div class="card-body">
 			<form>
-				<label class="form-check">
-				  <input class="form-check-input" value="" type="checkbox">
-				  <span class="form-check-label">
-				  	<span class="float-right badge badge-light round">5</span>
-				    Jakarta Timur
-				  </span>
-				</label>  <!-- form-check.// -->
-				<label class="form-check">
-				  <input class="form-check-input" value="" type="checkbox">
-				  <span class="form-check-label">
-				  	<span class="float-right badge badge-light round">13</span>
-				    Jakarta Barat
-				  </span>
-				</label> <!-- form-check.// -->
-				<label class="form-check">
-				  <input class="form-check-input" value="" type="checkbox">
-				  <span class="form-check-label">
-				  	<span class="float-right badge badge-light round">12</span>
-				    Jakarta Utara
-				  </span>
-				</label>  <!-- form-check.// -->
-				<label class="form-check">
-				  <input class="form-check-input" value="" type="checkbox">
-				  <span class="form-check-label">
-				  	<span class="float-right badge badge-light round">32</span>
-				    Jakarta Selatan
-				  </span>
-				</label>  <!-- form-check.// -->
-				<label class="form-check">
-				  <input class="form-check-input" value="" type="checkbox">
-				  <span class="form-check-label">
-				  	<span class="float-right badge badge-light round">12</span>
-				    Jakarta Pusat
-				  </span>
-				</label>  <!-- form-check.// -->
+			<ul class="list-unstyled list-lg">
+					@foreach($lokasi as $l => $ll)
+						<li><a href="?lokasi={{$l}}">{{ $l }} <span class="float-right badge badge-light round">{{ $ll }}</span> </a></li>
+					@endforeach
+				</ul>
 			</form>
 			</div> <!-- card-body.// -->
 		</div> <!-- collapse .// -->

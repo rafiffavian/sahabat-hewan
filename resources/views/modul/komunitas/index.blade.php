@@ -119,7 +119,12 @@
 	<main class="col-sm-9">
 
 	<p class="text-muted">Dibawah ini merupakan daftar komunitas yang bekerja sama dengan aplikasi ini untuk menyelamatkan dan melindungi hewan.</p><br>
-
+	@php
+	$jumlah_comunity = $comunity->count();
+	if ($jumlah_comunity < 1){
+		echo "<h1>Data Kosong</h1><br>";
+	}
+@endphp
 @foreach($comunity as $comunities)
 	<article class="card card-product">
 		<div class="card-body">

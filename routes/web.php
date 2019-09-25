@@ -53,6 +53,7 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('dashboard/event', 'Admin\EventController');
     Route::resource('dashboard/user', 'Admin\UserController');
     Route::resource('dashboard/report', 'Admin\ReportController');
+    Route::get('/dashboard/grafik','Admin\ReportController@grafik')->name('laporan.grafik');
     Route::resource('dashboard/finddoctor', 'Admin\FinddoctorController');
     Route::resource('dashboard/dopsiadmin', 'Admin\DopsiadminController');
 });	   

@@ -18,4 +18,8 @@ class Report extends Model
     {
         return $this->belongsTo(Animaltype::class, 'id_animaltype');
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }

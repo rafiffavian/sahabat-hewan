@@ -59,7 +59,14 @@ class CaridokterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $kecamatan = $data['kecamatan'];
+        $kelurahan = $data['kelurahan'];
+        $kota = $request['kota'];
+        $doctor_kelurahan = Doctor::where('kelurahan',$kelurahan)->get();
+        $doctor_kecamatan = Doctor::where('kecamatan',$kecamatan)->get();
+        $doctor_kota = Doctor::where('kota',$kota)->get();
+        return view('modul.pelaporan.listdoctor',compact('doctor_kelurahan','doctor_kecamatan','doctor_kota'));
     }
 
     /**

@@ -33,7 +33,7 @@
         <label class="col-md-4 control-label" for="textinput">Jenis Kelamin</label>  
             <div class="col-md-4">
                 <select name="gender" id="" class="form-control">   
-                <option value="{{$editAdmin->gender}}">{{$editAdmin->gender}}</option>                    
+                <option value="{{$editUser->gender}}">{{$editUser->gender}}</option>                    
                     <option value="Laki-laki">Laki-laki</option>
                     <option value="Perempuan">Perempuan</option>
                 </select>
@@ -52,6 +52,12 @@
             </div>
         </div>
         <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Whatsapp</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="whatsapp" type="text" value="{{$editUser->whatsapp}}" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Username</label>  
             <div class="col-md-4">
                 <input id="textinput" name="username" type="text" value="{{$editUser->username}}" class="form-control input-md">
@@ -64,9 +70,49 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">Alamat</label>  
+            <label class="col-md-4 control-label" for="textinput">Password</label>  
             <div class="col-md-4">
-                <textarea name="address" id="" cols="30" rows="10">{{$editUser->address}}</textarea>
+                <input type="password" name="password" value="{{$editUser->password}}">
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Tanggal Lahir</label>  
+            <div class="col-md-4">
+               <input type="date" name="tanggal_lahir" value="{{$editUser->tanggal_lahir}}">
+            </div>
+        </div>  <br>           
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Provinsi</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="provinsi" value="{{$editUser->provinsi}}" type="text" placeholder="Provinsi" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Kota</label>  
+            <div class="col-md-4">
+                <input id="textinput" value="{{$editUser->kota}}" name="kota" type="text" placeholder="Kota" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Kelurahan</label>  
+            <div class="col-md-4">
+                <input id="textinput" value="{{$editUser->kelurahan}}" name="kelurahan" type="text" placeholder="Kelurahan" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Kecamatan</label>  
+            <div class="col-md-4">
+                <input id="textinput" value="{{$editUser->kecamatan}}" name="kecamatan" type="text" placeholder="Kecamatan" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Role</label>  
+            <div class="col-md-4">
+                <select name="id_role" id="" class="form-control">               
+                @foreach($role as $roles)    
+                    <option value="{{$roles->id}}" @if($roles->id == $editUser->id_role) selected="selected" @endif>{{$roles->name}}</option>
+               @endforeach     
+                </select>
             </div>
         </div>
 

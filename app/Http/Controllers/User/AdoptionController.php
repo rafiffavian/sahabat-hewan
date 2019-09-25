@@ -20,30 +20,61 @@ class AdoptionController extends Controller
     public function index(Request $request)
     {
         
-        $adoption = Adoption::all();
+        $adoptionAll = Adoption::all();
+        $adoption = $adoptionAll;
 
         $search = $request->search;
         $hewan = $request->hewan;
-        
+        $sumber = $request->sumber;
+        $location = $request->lokasi;
        
         
         if ($hewan){
             $adoption = Adoption::where('id_animaltype',$hewan)->get();
         }
         if ($search){
-            $adoption = Adoption::where('animal_name','like','%' . $search . '%')->orWhere('animal_kind','like','%' . $search . '%')->orWhere('lokasi','like','%' . $search . '%')->get();
+            $adoption = Adoption::where('animal_name','like','%' . $search . '%')->orWhere('animal_kind','like','%' . $search . '%')->orWhere('lokasi','like','%' . $search . '%');
+            $adoption = $adoption->get();
         }
 
-        $anjing = $adoption->filter(function($value, $key){
+        if($sumber){
+            $adoption = $adoption->filter(function($value, $key) use ($sumber){
+                return $value->asal == $sumber;
+            });
+        }
+
+        if($location){
+            $adoption = $adoption->filter(function($value, $key) use ($location){
+                return $value->lokasi == $location;
+            });
+        }
+
+        $anjing = $adoptionAll->filter(function($value, $key){
             return $value->id_animaltype == 1;
         });
 
-        $kucing = $adoption->filter(function($value, $key){
+        $kucing = $adoptionAll->filter(function($value, $key){
             return $value->id_animaltype == 2;
         });
 
+        $lokasi = [];
+        foreach($adoptionAll as $daerah){
+            if(!in_array($daerah->lokasi, $lokasi)){
+                array_push($lokasi, $daerah->lokasi);
+            }
+        }
 
-        return view('modul.adopsi.index',compact('adoption','anjing','kucing'));
+        $counter = 0;
+        foreach($lokasi as $l){
+            $tempData = $adoptionAll->filter(function($value, $key) use ($l){
+                return $value->lokasi == $l;
+            });
+            $lokasi[$l] = $tempData->count();
+            unset($lokasi[$counter]);
+            $counter++;
+        }
+
+        return view('modul.adopsi.index',compact('adoption','anjing','kucing', 'lokasi'));
     }
 
     /**
@@ -81,6 +112,21 @@ class AdoptionController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+
+            'id_animaltype' => 'required',
+            'animal_name' => 'required|max:255',
+            'animal_kind' => 'required|max:255',
+            'birth' => 'required',
+            'gender' => 'required',
+            'alasan' => 'required|max:255',
+            'image' => 'required',
+            'agresiv' => 'required|max:255',
+           
+           
+            ]);
+
+
         $file =  $request->file('image');
         $fileNameArr = explode('.',$file->getClientOriginalName());
         $fileName = $fileNameArr[0] . '-' . time() . '.' . $fileNameArr[1];

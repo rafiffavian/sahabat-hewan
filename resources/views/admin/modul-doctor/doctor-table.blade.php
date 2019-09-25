@@ -43,7 +43,6 @@
                     <th>Kelurahan</th>
                     <th>Kota</th>
                     <th>Kecamatan</th>
-                    <th>Provinsi</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -56,7 +55,7 @@
                     <td>{{$doctors->kelurahan}}</td>
                     <td>{{$doctors->kota}}</td>
                     <td>{{$doctors->kecamatan}}</td>
-                    <td>{{$doctors->provinsi}}</td>
+                    
                     <td>
                         <a href="{{route('finddoctor.show',$doctors)}}"><i class="fa fa-eye"></i></a>
                         <a href="{{route('finddoctor.edit',$doctors)}}"><i class="fa fa-pencil"></i></a>

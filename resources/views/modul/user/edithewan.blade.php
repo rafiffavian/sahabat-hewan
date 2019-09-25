@@ -29,6 +29,7 @@
         <div class="row" >
             <div class="col-lg-8 col-sm-12 col-11 main-section">
                 <h4 class="text-center ">Edit Hewan</h4>
+                @include('layouts.error-form')
                 <p class="lead text-center ">Isi nomor handphone dan email aktif</p>
 
                 <div class="form-group">
@@ -67,7 +68,7 @@
                 </div>
                 <div class="form-group">
                     <label for="hp">Tingkat Agresivitas</label>
-                    <select name="agresiv"class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <select name="agresiv"class="form-control custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                         <option value="{{$hewan->agresiv}}">{{$hewan->agresiv}}</option>                    
                         <option value="baik">Baik</option>
                         <option value="biasa">Biasa</option>

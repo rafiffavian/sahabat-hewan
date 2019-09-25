@@ -65,6 +65,21 @@ class ProfileController extends Controller
 
     public function updatehewan(Request $request, $id)
     {
+
+        $request->validate([
+
+            'id_animaltype' => 'required',
+            'animal_name' => 'required|max:255',
+            'animal_kind' => 'required|max:255',
+            'birth' => 'required',
+            'gender' => 'required',
+            'alasan' => 'required|max:255',
+            'image' => 'required',
+            'agresiv' => 'required|max:255',
+          
+           
+            ]);
+
         $update = $request->all();
         unset($update['_token']);
         unset($update['_method']);

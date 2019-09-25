@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Adoption;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Role;
 use App\User;
 use Illuminate\Support\Facades\File;
 
@@ -28,9 +29,12 @@ class UserController extends Controller
      */
     public function create()
     {
+
+        $last= date('Y')-100;
+        $now = date('Y');
+        $role = Role::all();
         $user = User::all();
-        $adoption = Adoption::all();
-        return view('admin.modul-user.user-create',compact('user','adoption'));
+        return view('admin.modul-user.user-create',compact('user','role','last','now'));
     }
 
     /**
@@ -40,13 +44,20 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
+        
+        
         $file =  $request->file('image');
         $fileNameArr = explode('.',$file->getClientOriginalName());
         $fileName = $fileNameArr[0] . '-' . time() . '.' . $fileNameArr[1];
         $file->move('userimage', $fileName);
 
         $data = $request->all();
+        $data['password'] = bcrypt($request->password); 
+        $data['tanggal_lahir'] = $data['tahun'] . '-' . $data['bulan'] . '-' . $data['tanggal'];
+        unset($data['tahun']);
+        unset($data['bulan']);
+        unset($data['tanggal']);
         unset($data['token']);
         $data['image'] = $fileName;
 
@@ -67,7 +78,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('admin.modul-user.user-detail');
+        $detailUser = User::findOrFail($id);
+        return view('admin.modul-user.user-detail',compact('detailUser'));
     }
 
     /**
@@ -78,9 +90,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $adoption = Adoption::all();
+        $role = Role::all();
         $editUser = User::findOrFail($id);
-        return view('admin.modul-user.user-edit',compact('editUser','adoption'));
+        return view('admin.modul-user.user-edit',compact('editUser','role'));
     }
 
     /**
@@ -93,6 +105,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $update = $request->all();
+        $update['password'] = bcrypt($request->password); 
         unset($update['_token']);
         unset($update['_method']);
 

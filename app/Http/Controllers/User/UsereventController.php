@@ -15,10 +15,12 @@ class UsereventController extends Controller
      */
     public function index(Request $request)
     {
-        $event = Event::all();
+        $eventAll = Event::all();
+        $event = $eventAll;
 
         $search = $request->search;
         $hewan = $request->hewan;
+        $location = $request->lokasi;
         
        
         
@@ -26,22 +28,47 @@ class UsereventController extends Controller
             $event = Event::where('id_animaltype',$hewan)->get();
         }
         if ($search){
-            $event = Event::where('name','like','%' . $search . '%')->orWhere('description','like','%' . $search . '%')->orWhere('location','like','%' . $search . '%')->get();
+            $event = Event::where('name','like','%' . $search . '%')->orWhere('description','like','%' . $search . '%')->orWhere('location','like','%' . $search . '%');
+            $event->get();
         }
 
-        $anjing = $event->filter(function($value, $key){
+        if($location){
+            $event = $event->filter(function($value, $key) use ($location){
+                return $value->id_jakartatype == $location;
+            });
+        }
+        $anjing = $eventAll->filter(function($value, $key){
             return $value->id_animaltype == 1;
         });
 
-        $kucing = $event->filter(function($value, $key){
+        $kucing = $eventAll->filter(function($value, $key){
             return $value->id_animaltype == 2;
         });
 
-        $all = $event->filter(function($value, $key){
+        $all = $eventAll->filter(function($value, $key){
             return $value->id_animaltype == 1  || 2 || 3;
         });
 
-        return view('modul.event.index',compact('event','anjing','kucing','all'));
+
+        $lokasi = [];
+        foreach($eventAll as $daerah){
+            if(!in_array($daerah->id_jakartatype, $lokasi)){
+                array_push($lokasi, $daerah->id_jakartatype);
+            }
+        }
+
+        $counter = 0;
+        foreach($lokasi as $l){
+            $tempData = $eventAll->filter(function($value, $key) use ($l){
+                return $value->id_jakartatype == $l;
+            });
+            $lokasi[$l] = $tempData->count();
+            unset($lokasi[$counter]);
+            $counter++;
+        }
+        
+
+        return view('modul.event.index',compact('event','anjing','kucing','all','lokasi'));
     }
 
     /**

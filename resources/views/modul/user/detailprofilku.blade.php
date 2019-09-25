@@ -197,6 +197,7 @@
       <div class="modal-body">
         <form action="{{route('adoption.store')}}" method="post" enctype="multipart/form-data">
             @csrf
+            @include('layouts.error-form')
                 <div class="form-group">
                     <label for="formGroupExampleInput">Nama Peliharaan </label>
                     <input type="text" name="animal_name" class="form-control" id="formGroupExampleInput" placeholder="Misal: Cody">
@@ -209,7 +210,8 @@
                     <select name="id_animaltype" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                     @foreach($animal as $animals)
                         <option value="{{$animals->id}}">{{$animals->name}}</option>
-                      @endforeach   
+                      @endforeach  
+                    </select>   
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis</label>
                     <input type="text" name="animal_kind" placeholder="Misal: Siberian Husky" class="form-control">
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis Kelamin</label>
