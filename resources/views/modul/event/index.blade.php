@@ -84,7 +84,7 @@
 			<form>
 			<ul class="list-unstyled list-lg">
 					@foreach($lokasi as $l => $ll)
-						<li><a href="?lokasi={{$l}}">{{ $l }} <span class="float-right badge badge-light round">{{ $ll }}</span> </a></li>
+						<li><a href="?lokasi={{$l}}">{{ $ll[0] }} <span class="float-right badge badge-light round">{{ count($ll) }}</span> </a></li>
 					@endforeach
 				</ul>
 			</form>

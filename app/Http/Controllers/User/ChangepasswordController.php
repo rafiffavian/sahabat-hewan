@@ -31,7 +31,7 @@ class ChangepasswordController extends Controller
             if($old_password != $now_password){
                 return redirect()->back();
             }
-
+                $update = $request->all();
                 $update['password'] = bcrypt($request->password); 
                 $update_action = User::where('id',$id)->update($update);
                 if ($update_action){

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Katpelaporan;
 use App\Report;
 use App\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 
 class ReportController extends Controller
@@ -24,7 +25,30 @@ class ReportController extends Controller
 
     public function grafik()
     {
-        return view('admin.modul-report.report-grafik');
+        $kucing = Report::where('kategori_hewan', 'kucing')->get();
+
+        $anjing = Report::where('kategori_hewan', 'anjing')->get();
+
+        $pelaporanKucing = [];
+        $pelaporanAnjing = [];
+
+        foreach($kucing as $s){
+            if(isset($pelaporanKucing[$s->kat_pelaporan->name])){
+                $pelaporanKucing[$s->kat_pelaporan->name] = $pelaporanKucing[$s->kat_pelaporan->name] + 1;
+            } else {
+                $pelaporanKucing[$s->kat_pelaporan->name] = 1;
+            }
+        }
+
+        foreach($anjing as $s){
+            if(isset($pelaporanAnjing[$s->kat_pelaporan->name])){
+                $pelaporanAnjing[$s->kat_pelaporan->name] = $pelaporanAnjing[$s->kat_pelaporan->name] + 1;
+            } else {
+                $pelaporanAnjing[$s->kat_pelaporan->name] = 1;
+            }
+        }
+
+        return view('admin.modul-report.report-grafik',compact('pelaporanKucing','pelaporanAnjing'));
     }
 
     /**

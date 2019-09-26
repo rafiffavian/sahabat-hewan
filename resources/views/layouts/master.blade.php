@@ -255,13 +255,19 @@
             <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
           </ul>
         </li> -->
-        <li>
-          <a href="{{route('admin.index')}}">
-            <i class="fa fa-th"></i> <span>Admin Table</span>
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Pelaporan</span>
             <span class="pull-right-container">
-              
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('report.index')}}"><i class="fa fa-circle-o"></i> Pelaporan Table</a></li>
+            <li><a href="{{route('laporan.grafik')}}"><i class="fa fa-circle-o"></i> Grafik Pelaporan</a></li>
+          </ul>
         </li>
         <li>
           <a href="{{route('comunity.index')}}">
@@ -287,14 +293,7 @@
             </span>
           </a>
         </li>
-        <li>
-          <a href="{{route('report.index')}}">
-            <i class="fa fa-th"></i> <span>Pelaporan Table</span>
-            <span class="pull-right-container">
-              
-            </span>
-          </a>
-        </li>
+        
         <li>
           <a href="{{route('finddoctor.index')}}">
             <i class="fa fa-th"></i> <span>Doctor</span>
@@ -303,29 +302,16 @@
             </span>
           </a>
         </li>
+        
         <li>
-          <a href="{{route('dopsiadmin.index')}}">
-            <i class="fa fa-th"></i> <span>Adoption Table</span>
-            <span class="pull-right-container">
-              
-            </span>
+            <a href="{{route('dopsiadmin.index')}}">
+              <i class="fa fa-th"></i> <span>Adoption Table</span>
+              <span class="pull-right-container">
+                
+              </span>
+            </a>
           </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-          </ul>
-        </li>
+        </li>  
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>

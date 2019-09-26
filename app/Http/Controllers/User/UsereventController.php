@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use SebastianBergmann\Environment\Console;
 
 class UsereventController extends Controller
 {
@@ -21,8 +22,6 @@ class UsereventController extends Controller
         $search = $request->search;
         $hewan = $request->hewan;
         $location = $request->lokasi;
-        
-       
         
         if ($hewan){
             $event = Event::where('id_animaltype',$hewan)->get();
@@ -49,23 +48,32 @@ class UsereventController extends Controller
             return $value->id_animaltype == 1  || 2 || 3;
         });
 
-
         $lokasi = [];
-        foreach($eventAll as $daerah){
-            if(!in_array($daerah->id_jakartatype, $lokasi)){
-                array_push($lokasi, $daerah->id_jakartatype);
+        foreach($eventAll as $a){
+            if(isset($lokasi[$a->mywilayah->id])){
+                array_push($lokasi[$a->mywilayah->id], $a->mywilayah->name);
+            } else {
+                $lokasi[$a->mywilayah->id] = [$a->mywilayah->name];
             }
         }
+        // dd($lokasi);
 
-        $counter = 0;
-        foreach($lokasi as $l){
-            $tempData = $eventAll->filter(function($value, $key) use ($l){
-                return $value->id_jakartatype == $l;
-            });
-            $lokasi[$l] = $tempData->count();
-            unset($lokasi[$counter]);
-            $counter++;
-        }
+        // $lokasi = [];
+        // foreach($eventAll as $daerah){
+        //     if(!in_array($daerah->id_jakartatype, $lokasi)){
+        //         array_push($lokasi, $daerah->id_jakartatype);
+        //     }
+        // }
+
+        // $counter = 0;
+        // foreach($lokasi as $l){
+        //     $tempData = $eventAll->filter(function($value, $key) use ($l){
+        //         return $value->id_jakartatype == $l;
+        //     });
+        //     $lokasi[$l] = $tempData->count();
+        //     unset($lokasi[$counter]);
+        //     $counter++;
+        // }
         
 
         return view('modul.event.index',compact('event','anjing','kucing','all','lokasi'));
