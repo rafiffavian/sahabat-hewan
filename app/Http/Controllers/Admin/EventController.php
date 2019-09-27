@@ -23,6 +23,34 @@ class EventController extends Controller
         
     }
 
+    public function graphic()
+    {
+
+        $eventAll = Event::all();
+
+        $anjing = $eventAll->filter(function($value, $key){
+            return $value->id_animaltype == 1;
+        });
+
+        $kucing = $eventAll->filter(function($value, $key){
+            return $value->id_animaltype == 2;
+        });
+
+        $semua = $eventAll->filter(function($value, $key){
+            return $value->id_animaltype == 3;
+        });
+
+        $lokasi = [];
+        foreach($eventAll as $a){
+            if(isset($lokasi[$a->mywilayah->id])){
+                array_push($lokasi[$a->mywilayah->id], $a->mywilayah->name);
+            } else {
+                $lokasi[$a->mywilayah->id] = [$a->mywilayah->name];
+            }
+        }
+        return view('admin.modul-event.event-grafik',compact('anjing','kucing','semua','lokasi'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

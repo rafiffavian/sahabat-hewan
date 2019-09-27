@@ -44,6 +44,10 @@ class UsereventController extends Controller
             return $value->id_animaltype == 2;
         });
 
+        $semua = $eventAll->filter(function($value, $key){
+            return $value->id_animaltype == 3;
+        });
+
         $all = $eventAll->filter(function($value, $key){
             return $value->id_animaltype == 1  || 2 || 3;
         });
@@ -76,7 +80,7 @@ class UsereventController extends Controller
         // }
         
 
-        return view('modul.event.index',compact('event','anjing','kucing','all','lokasi'));
+        return view('modul.event.index',compact('event','anjing','kucing','semua','all','lokasi'));
     }
 
     /**

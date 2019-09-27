@@ -27,16 +27,18 @@
     <div class="container" >
         <div class="row" >
             <div class="col-lg-8 col-sm-12 col-11 main-section">
-                <h4 class="text-center ">DETAIL HEWAN ADOPSI</h4><br><br>
+                <h4 class="text-center ">DETAIL HEWAN ADOPSI</h4>
+                <hr>
+                <br><br>
                
 
-                    <div class="form-group">
+                    <div class="form-group ">
                      
                         <div class="col-md-4">
-                        <img src="{{ url('adoptionimage/' . $adoption->image) }}" width="200" alt="">
+                        <img class="" src="{{ url('adoptionimage/' . $adoption->image) }}" width="200" alt="">
                         </div>
                     </div><br>
-                    <div class="form-group">
+                    <div class="form-group text-center">
                         <label style="margin-left:40px;" class="col-md-4 control-label" for="textinput"><h4>Nama Hewan:</h4></label>  
                         <div class="col-md-4">
                             <h2>{{$adoption->animal_name}}</h2>

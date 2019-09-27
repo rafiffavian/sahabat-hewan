@@ -33,6 +33,39 @@ class DopsiadminController extends Controller
         return view('admin.modul-adopsi.adopsi-create',compact('animal'));
     }
 
+    public function grafik()
+    {
+
+        $adoptionAll = Adoption::all();
+
+        $user = $adoptionAll->filter(function($value, $key){
+            return $value->asal == 1;
+        });
+
+        $komunitas = $adoptionAll->filter(function($value, $key){
+            return $value->asal == 2;
+        });
+
+        $lokasi = [];
+        foreach($adoptionAll as $daerah){
+            if(!in_array($daerah->lokasi, $lokasi)){
+                array_push($lokasi, $daerah->lokasi);
+            }
+        }
+
+        $counter = 0;
+        foreach($lokasi as $l){
+            $tempData = $adoptionAll->filter(function($value, $key) use ($l){
+                return $value->lokasi == $l;
+            });
+            $lokasi[$l] = $tempData->count();
+            unset($lokasi[$counter]);
+            $counter++;
+        }
+       
+        return view('admin.modul-adopsi.adopsi-grafik',compact('user','komunitas','lokasi'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
