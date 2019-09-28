@@ -188,6 +188,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{route('comunity.index')}}"><i class="fa fa-circle-o"></i> Komunitas Table</a></li>
+            <li><a href="{{route('daftarkomunitas.index')}}"><i class="fa fa-circle-o"></i>Pendaftaran Komunitas Table</a></li>
             <li><a href="{{route('comunity.grafik')}}"><i class="fa fa-circle-o"></i> Grafik Komunitas</a></li>
           </ul>
         </li>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Daftarkom;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class DafkomController extends Controller
      */
     public function index()
     {
-        //
+        $dafkom = Daftarkom::all();
+        return view('admin.modul-dafkom.dafkom-table',compact('dafkom'));
     }
 
     /**
@@ -46,7 +48,8 @@ class DafkomController extends Controller
      */
     public function show($id)
     {
-        //
+        $detailDafkom = Daftarkom::findOrFail($id); 
+        return view('admin.modul-dafkom.dafkom-detail',compact('detailDafkom'));
     }
 
     /**
@@ -80,6 +83,11 @@ class DafkomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete_action = Daftarkom::where('id',$id)->delete();
+        if ($delete_action){
+            return redirect()->route('daftarkomunitas.index');
+        }else{
+            echo "Gagal Delete";
+        }
     }
 }
