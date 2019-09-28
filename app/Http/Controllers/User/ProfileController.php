@@ -6,6 +6,7 @@ use App\Animaltype;
 use App\Adoption;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -133,7 +134,31 @@ class ProfileController extends Controller
     {
         $user = Auth::user()->findOrFail($id);
         $user->fill($request->except(['token','_method']))->save();
-        return redirect(route('detailprofile.index'));
+
+        $file =  $request->file('image');
+        if ($file != null){
+
+            $fileNameArr = explode('.',$file->getClientOriginalName());
+            $fileName = $fileNameArr[0] . '-' . time() . '.' . $fileNameArr[1];
+            $file->move('userimage', $fileName);
+
+            $update['image'] = $fileName;
+
+            $gambar = User::find($id)->image;
+            // dd($gambar);
+            // exit();
+            File::delete('userimage/' . $gambar);
+        }
+
+       
+
+        $update_action = User::where('id',$id)->update($update);
+        if ($update_action){
+            return redirect()->route('detailprofile.index');
+        }else{
+            echo "Gagal Update";
+        }
+      
     }
 
     /**

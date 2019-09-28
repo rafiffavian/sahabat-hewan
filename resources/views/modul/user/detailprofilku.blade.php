@@ -5,7 +5,10 @@
 <div class="container py-4 my-2">
             <div class="row">
                 <div class="col-md-4 pr-md-5">
-                    <img  style=""class="img-fluid" alt="Responsive image" src="{{$user->image}}" />
+                @if($user->image != null)
+                    <img  style=""class="img-fluid" alt="Responsive image" src="{{ url('/') }}/userimage/{{$user->image}}" />
+                @else 130x140
+                 @endif
                     <div class="pt-4 mt-2">
 
                         <section class="mb-4 pb-1">

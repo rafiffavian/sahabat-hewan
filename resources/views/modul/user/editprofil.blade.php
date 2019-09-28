@@ -52,7 +52,7 @@
                 <div class="col-12 col-sm-auto mb-3">
                   <div class="mx-auto" style="width: 140px;">
                     <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
-                      <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                      <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">@if($editUser->image != null)<img src="{{ url('/') }}/userimage/{{$editUser->image}}" width="100%"/>@else 130x140 @endif</span>
                     </div>
                   </div>
                 </div>
@@ -61,12 +61,13 @@
                     <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{$editUser->first_name}} {{$editUser->last_name}}</h4>
                     <p class="mb-0">{{$editUser->username}}</p>
                     
+                    <form class="form" novalidate="" method="post" action="{{route('detailprofile.update',$editUser->id)}}" enctype="multipart/form-data">
                     <div class="mt-2">
-                      <a href="#file" class="btn btn-primary">
+                      <a href="#file" class="btn btn-primary select-foto">
                         <i class="fa fa-fw fa-camera"></i>
                         <span>Ubah foto</span>
                         </a>
-                        <input type="file" class="custom-file-input">
+                        <input type="file" name="image" class="custom-file-input">
                     </div>
                   </div>
                   <div class="text-center text-sm-right">
@@ -79,7 +80,6 @@
               </ul>
               <div class="tab-content pt-3">
                 <div class="tab-pane active">
-                  <form class="form" novalidate="" method="post" action="{{route('detailprofile.update',$editUser->id)}}">
                     @csrf
                     <input type="hidden" name="_method" value="put">
                     <div class="row">

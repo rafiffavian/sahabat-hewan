@@ -22,6 +22,30 @@ class ComunityController extends Controller
         return view('admin.modul-komunitas.komunitas-table',compact('comunity'));
     }
 
+    public function graphic()
+    {
+        $comunityAll = Comunity::all();
+
+        $kat = [];
+        foreach($comunityAll as $a){
+            if(isset($kat[$a->myhewan->id])){
+                array_push($kat[$a->myhewan->id], $a->myhewan->name);
+            } else {
+                $kat[$a->myhewan->id] = [$a->myhewan->name];
+            }
+        }
+
+        $lokasi = [];
+        foreach($comunityAll as $a){
+            if(isset($lokasi[$a->mywilayah->id])){
+                array_push($lokasi[$a->mywilayah->id], $a->mywilayah->name);
+            } else {
+                $lokasi[$a->mywilayah->id] = [$a->mywilayah->name];
+            }
+        }
+        return view('admin.modul-komunitas.komunitas-grafik',compact('kat','lokasi'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -5,7 +5,8 @@
     <div class="col-md-7">
       
       <div style="text-align: center;">
-        <img width = "80%" height ="auto" class=" " src="asset/img/desainpelaporan/dokter.png" alt="">
+        <img width = "50%" height ="auto" class="mt-5 mb-5" src="asset/img/desainpelaporan/dokterfree.png" alt="">
+        <br>
         <a href="{{route('caridokter.create')}}"  class="btn btn-success text-center btn-lg">Cari dokter hewan <i class="fas fa-search-location ml-2"></i></a>
       </div>
       

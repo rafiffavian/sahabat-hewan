@@ -53,14 +53,7 @@
 		</header>
 		<div style="" class="filter-content collapse show" id="collapse22">
 			<div class="card-body">
-				<form class="pb-3">
-				<div class="input-group">
-				  <input class="form-control" placeholder="Search" type="text">
-				  <div class="input-group-append">
-				    <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
-				  </div>
-				</div>
-				</form>
+				
 
 				<ul class="list-unstyled list-lg">
 					<li><a href="?hewan=1">Anjing <span class="float-right badge badge-light round">{{$anjing->count()}}</span> </a></li>
@@ -132,6 +125,12 @@
 					</dl>  <!-- item-property-hor .// -->
 					<dl class="dlist-align">
 					<dt>Kontak</dt>
+					<dd>Instagram:</dd>
+					@if($events->instagram !=null)
+					<dd>{{$events->instagram}}</dd><br>
+					@else
+					<dd>Data Kosong</dd><br>
+					@endif
 					<dd>Line:</dd>
 					<dd>{{$events->line}}</dd><br>
 					<dd>Whatsapp:</dd>

@@ -45,19 +45,14 @@
 		</header>
 		<div style="" class="filter-content collapse show" id="collapse22">
 			<div class="card-body">
-				<form class="pb-3">
-				<div class="input-group">
-				  <input class="form-control" placeholder="Search" type="text">
-				  <div class="input-group-append">
-				    <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
-				  </div>
-				</div>
-				</form>
+			
 
 				<ul class="list-unstyled list-lg">
 					<li><a href="?hewan=1">Anjing <span class="float-right badge badge-light round">{{$anjing->count()}}</span> </a></li>
 					<li><a href="?hewan=2">Kucing  <span class="float-right badge badge-light round">{{$kucing->count()}}</span>  </a></li>
-					<li><a href="{{route('komunitas.index')}}">Semua Hewan  <span class="float-right badge badge-light round">{{$all->count()}}</span>  </a></li>
+					<li><a href="?hewan=3">Semua Hewan <span class="float-right badge badge-light round">{{$semua->count()}}</span>  </a></li>
+					<li><a href="{{route('komunitas.index')}}">Total  <span class="float-right badge badge-light round">{{$all->count()}}</span>  </a></li>
+					
 				</ul>  
 			</div> <!-- card-body.// -->
 		</div> <!-- collapse .// -->
@@ -73,41 +68,11 @@
 		<div class="filter-content collapse show" id="collapse44">
 			<div class="card-body">
 			<form>
-				<label class="form-check">
-				  <input class="form-check-input" value="" type="checkbox">
-				  <span class="form-check-label">
-				  	<span class="float-right badge badge-light round">5</span>
-				    Jakarta Utara
-				  </span>
-				</label>  <!-- form-check.// -->
-				<label class="form-check">
-				  <input class="form-check-input" value="" type="checkbox">
-				  <span class="form-check-label">
-				  	<span class="float-right badge badge-light round">13</span>
-				    Jakarta Timur
-				  </span>
-				</label> <!-- form-check.// -->
-				<label class="form-check">
-				  <input class="form-check-input" value="" type="checkbox">
-				  <span class="form-check-label">
-				  	<span class="float-right badge badge-light round">12</span>
-				    Jakarta Selatan
-				  </span>
-				</label>  <!-- form-check.// -->
-				<label class="form-check">
-				  <input class="form-check-input" value="" type="checkbox">
-				  <span class="form-check-label">
-				  	<span class="float-right badge badge-light round">32</span>
-				    Jakarta Barat
-				  </span>
-				</label>  <!-- form-check.// -->
-				<label class="form-check">
-				  <input class="form-check-input" value="" type="checkbox">
-				  <span class="form-check-label">
-				  	<span class="float-right badge badge-light round">32</span>
-				    Jakarta Pusat
-				  </span>
-				</label>  <!-- form-check.// -->
+			<ul class="list-unstyled list-lg">
+					@foreach($lokasi as $l => $ll)
+						<li><a href="?lokasi={{$l}}">{{ $ll[0] }} <span class="float-right badge badge-light round">{{ count($ll) }}</span> </a></li>
+					@endforeach
+				</ul>
 			</form>
 			</div> <!-- card-body.// -->
 		</div> <!-- collapse .// -->

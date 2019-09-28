@@ -122,7 +122,7 @@ anime.timeline({loop: true})
                                     <label for="customCheck1"  class="custom-control-label">Ingat password</label>
                                 </div>
                                 <button type="submit" class="btn btn-success btn-block text-uppercase mb-2 rounded-pill shadow-sm">Masuk</button>
-                                <div class="text-center d-flex justify-content-between mt-4"><p>Belum punya akun ? <a href="/daftar" class="font-italic text-muted"> 
+                                <div class="text-center d-flex justify-content-between mt-4"><p>Belum punya akun ? <a href="{{route('enduser.index')}}" class="font-italic text-muted"> 
                                         <u>Daftar disini</u></a></p></div>
                             </form>
                         </div>

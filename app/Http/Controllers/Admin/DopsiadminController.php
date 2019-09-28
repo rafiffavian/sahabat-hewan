@@ -62,8 +62,16 @@ class DopsiadminController extends Controller
             unset($lokasi[$counter]);
             $counter++;
         }
-       
-        return view('admin.modul-adopsi.adopsi-grafik',compact('user','komunitas','lokasi'));
+
+        if(count($user) > 0){
+           $user_komunitas['user'] = count($user); 
+        }
+
+        if(count($komunitas) > 0){
+            $user_komunitas['komunitas'] = count($komunitas); 
+         }
+
+        return view('admin.modul-adopsi.adopsi-grafik',compact('user_komunitas','lokasi'));
     }
 
     /**

@@ -86,10 +86,10 @@
                     <div class="row text-center">
                     <div class="col 12">
                     
-                        <img height= "100px" width="auto" src="asset/img/desainpelaporan/front.jpg" alt="">
-                        <img height= "100px" width="auto" src="asset/img/desainpelaporan/sidel.jpg" alt="">
-                        <img height= "100px" width="auto" src="asset/img/desainpelaporan/sider.jpg" alt="">
-                        <img height= "100px" width="auto" src="asset/img/desainpelaporan/back.PNG" alt="">
+                        <img height= "100px" width="auto" src="asset/img/desainpelaporan/anjingdepan.png" alt="">
+                        <img height= "100px" width="auto" src="asset/img/desainpelaporan/anjingsamping.png" alt="">
+                        <img height= "100px" width="auto" src="asset/img/desainpelaporan/anjingkanan.png" alt="">
+                        <img height= "100px" width="auto" src="asset/img/desainpelaporan/anjingbelakang.PNG" alt="">
 
                     </div>
                     </div>

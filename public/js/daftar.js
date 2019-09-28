@@ -12,6 +12,12 @@ $(".next").click(function () {
     var tlp = $('.tlp').val();
     var email = $('.email').val();
     if(first_name && last_name && tanggal && gender && tlp && email !== ''){
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var regexEmail = regex.test(email);
+        if(!regexEmail){
+            alert('Format email salah');
+            return false;   
+        }
         if (animating) return false;
     animating = true;
 
@@ -53,6 +59,7 @@ $(".next").click(function () {
 });
 
 $('.next_password').click(function(){
+    $('.nama-orang').html($('#username').val());
     var password = $('.password').val();
     var password_confirm = $('.password_confirm').val();
     if(password === password_confirm && password !== ''){
@@ -177,6 +184,14 @@ $(".previous").click(function () {
         easing: 'easeInOutBack'
     });
 });
+
+$('#js-accept-terms').change(function(){
+    if($(this).is(':checked')){
+        $('.submit').removeAttr('disabled');
+    } else {
+        $('.submit').attr('disabled', 'disabled');
+    }
+})
 
 // $(".submit").click(function () {
 //     return false;

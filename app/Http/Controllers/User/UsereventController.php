@@ -22,13 +22,14 @@ class UsereventController extends Controller
         $search = $request->search;
         $hewan = $request->hewan;
         $location = $request->lokasi;
+   
         
         if ($hewan){
             $event = Event::where('id_animaltype',$hewan)->get();
         }
         if ($search){
-            $event = Event::where('name','like','%' . $search . '%')->orWhere('description','like','%' . $search . '%')->orWhere('location','like','%' . $search . '%');
-            $event->get();
+            $event = Event::where('name','like','%' . $search . '%')->orWhere('description','like','%' . $search . '%')->orWhere('location','like','%' . $search . '%')->orWhere('line','like','%' . $search . '%')->orWhere('instagram','like','%' . $search . '%')->orWhere('price','like','%' . $search . '%')->orWhere('time','like','%' . $search . '%')->orWhere('time_finish','like','%' . $search . '%');
+            $event = $event->get();
         }
 
         if($location){

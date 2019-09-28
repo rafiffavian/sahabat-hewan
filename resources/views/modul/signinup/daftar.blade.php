@@ -62,7 +62,7 @@
             <div class="row">
                       <div class="col-6">
                           <div class="custom-control custom-radio custom-control-inline">
-                                  <input type="radio" id="customRadioInline1" name="gender" value="pria" class="gender custom-control-input">
+                                  <input type="radio" id="customRadioInline1" name="gender" value="pria" class="gender custom-control-input" checked>
                                   <label class="custom-control-label" for="customRadioInline1"><p class="font-weight-light">Pria</p></label>
                           </div>
                       </div>
@@ -83,7 +83,7 @@
           <fieldset>
             <h2 class="fs-title">BUAT AKUN</h2>
             <h3 class="fs-subtitle">Buat username dan passwordmu</h3>
-            <input type="text" name="username" placeholder="@username" />
+            <input type="text" name="username" placeholder="@username" id="username"/>
             <input type="password" class="password" name="password" placeholder="Password" />
             <input type="password" class="password_confirm" name="cpass" placeholder="Confirm Password" />
             <input type="button" style="border-radius: 30px;" name="previous" class="previous action-button" value="Previous" />
@@ -92,8 +92,7 @@
           <fieldset>
             <h2 class="fs-title">Selesai</h2>
             <h3 class="fs-subtitle">Selesaikan akunmu sekarang juga!</h3>
-          <p class="font-weight-lighter">hai <b>@mochammadfariz</b> pastikan anda membaca poin-poin pada license agreement & Term of Service sebelum melakukan submit!  </p>
-          <div>
+          <p class="font-weight-lighter nama-orang">hai <b>@mochammadfariz</b> pastikan anda membaca poin-poin pada license agreement & Term of Service sebelum melakukan submit!  </p>
           <form action="" class="typecast-form simple-register">
           <p class="simple-reg-terms">
           <label>
@@ -102,8 +101,7 @@
         </p>
         
         <input type="button" style="border-radius: 30px;" name="previous" class="previous action-button" value="Previous" />
-        <input type="submit" style="border-radius: 30px;" name="submit" class="submit action-button" value="Submit" />
-      </div>
+        <input type="submit" style="border-radius: 30px;" name="submit" class="submit action-button" disabled  value="Submit" />
     </form>
           </fieldset>
         

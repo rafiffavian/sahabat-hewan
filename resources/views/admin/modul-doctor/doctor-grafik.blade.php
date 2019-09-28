@@ -61,7 +61,7 @@
 
         
 
-        <p><b>Grafik User & Komunitas</b> menampilkan grafik jumlah adopsi yang disediakan oleh user dan komunitas.</p>
+        <p><b>Grafik Kategori & Wilayah</b> menampilkan grafik jumlah dari setiap kategori event yaitu anjing,kucing,dan semua jenis hewan, dan juga wilayah.</p>
       </div>
       <div class="row">
         <div class="col-md-6">
@@ -71,7 +71,7 @@
           <!-- DONUT CHART -->
           <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Grafk Adopsi</h3>
+              <h3 class="box-title">Grafk Wilayah</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -84,25 +84,6 @@
             </div>
             <!-- /.box-body -->
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="box box-danger">
-            <div class="box-header with-border">
-              <h3 class="box-title">Grafik Wilayah</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body chart-responsive">
-              <div class="chart" id="kucing" style="height: 300px; position: relative;"></div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-
         </div>
         
         <!-- /.col (LEFT) -->
@@ -139,30 +120,20 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('adminlte/dist/js/demo.js')}}"></script>
 <script>
-  $(function () {
+   $(function () {
     var donut = new Morris.Donut({
       element: 'anjing',
       resize: true,
       colors: ["#3c8dbc", "#f56954", "#00a65a"],
       data: [
-        @foreach($user_komunitas as $k => $v)
+        @foreach($wilayah as $k => $v)
           {label: "{{$k}}", value: {{$v}} },
         @endforeach
       ],
       hideHover: 'auto'
     });
 
-    var donut = new Morris.Donut({
-      element: 'kucing',
-      resize: true,
-      colors: ["#3c8dbc", "#f56954", "#00a65a"],
-      data: [
-        @foreach($lokasi as $l => $ll)
-          {label: "{{$l}}", value: {{$ll}} },
-        @endforeach
-      ],
-      hideHover: 'auto'
-    });
+
     
   });
 </script>

@@ -17,34 +17,52 @@ class UserkomController extends Controller
      */
     public function index(Request $request)
     {
-        $comunity = Comunity::all();
+        $komunitasAll = Comunity::all();
+        $comunity = $komunitasAll;
 
         $search = $request->search;
         $hewan = $request->hewan;
-
+        $location = $request->lokasi;
+         
         if ($hewan){
             $comunity = Comunity::where('id_animaltype',$hewan)->get();
         }
         if ($search){
-            $comunity = Comunity::where('name','like','%' . $search . '%')->orWhere('description','like','%' . $search . '%')->orWhere('location','like','%' . $search . '%')->get();
+            $comunity = Comunity::where('name','like','%' . $search . '%')->orWhere('description','like','%' . $search . '%')->orWhere('location','like','%' . $search . '%')->orWhere('Line','like','%' . $search . '%')->orWhere('instagram','like','%' . $search . '%');
+            $comunity = $comunity->get();
         }
 
-        $anjing = $comunity->filter(function($value, $key){
+        if($location){
+            $comunity = $comunity->filter(function($value, $key) use ($location){
+                return $value->id_jakartatype == $location;
+            });
+        }
+        $anjing = $komunitasAll->filter(function($value, $key){
             return $value->id_animaltype == 1;
         });
 
-        $kucing = $comunity->filter(function($value, $key){
+        $kucing = $komunitasAll->filter(function($value, $key){
             return $value->id_animaltype == 2;
         });
 
-        $all = $comunity->filter(function($value, $key){
+        $semua = $komunitasAll->filter(function($value, $key){
+            return $value->id_animaltype == 3;
+        });
+
+        $all = $komunitasAll->filter(function($value, $key){
             return $value->id_animaltype == 1  || 2 || 3;
         });
 
-      
+        $lokasi = [];
+        foreach($komunitasAll as $a){
+            if(isset($lokasi[$a->mywilayah->id])){
+                array_push($lokasi[$a->mywilayah->id], $a->mywilayah->name);
+            } else {
+                $lokasi[$a->mywilayah->id] = [$a->mywilayah->name];
+            }
+        }
 
-
-        return view('modul.komunitas.index',compact('comunity','anjing','kucing','all'));
+        return view('modul.komunitas.index',compact('comunity','anjing','kucing','semua','all','lokasi'));
     }
 
     /**

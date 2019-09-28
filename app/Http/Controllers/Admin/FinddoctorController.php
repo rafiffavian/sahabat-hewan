@@ -20,6 +20,47 @@ class FinddoctorController extends Controller
         return view('admin.modul-doctor.doctor-table',compact('doctor'));
     }
 
+    public function graphic()
+    {
+        $doctorAll = Doctor::all();
+
+        $jakut = $doctorAll->filter(function($value, $key){
+            return $value->kota == 'jakarta utara';
+        });
+        $jakbar = $doctorAll->filter(function($value, $key){
+            return $value->kota == 'jakarta barat';
+        });
+        $jaktim = $doctorAll->filter(function($value, $key){
+            return $value->kota == 'jakarta timur';
+        });
+        $jaksel = $doctorAll->filter(function($value, $key){
+            return $value->kota == 'jakarta selatan';
+        });
+        $jakpus = $doctorAll->filter(function($value, $key){
+            return $value->kota == 'jakarta pusat';
+        });
+
+
+        if(count($jakut) > 0){
+            $wilayah['jakarta selatan'] = count($jakut); 
+         }
+        if(count($jakbar) > 0){
+            $wilayah['jakarta barat'] = count($jakbar); 
+         }
+        if(count($jaktim) > 0){
+            $wilayah['jakarta timur'] = count($jaktim); 
+         }
+        if(count($jaksel) > 0){
+            $wilayah['jakarta selatan'] = count($jaksel); 
+         }
+        if(count($jakpus) > 0){
+            $wilayah['jakarta pusat'] = count($jakpus); 
+         }
+ 
+        
+        return view('admin.modul-doctor.doctor-grafik',compact('wilayah'));
+    }    
+
     /**
      * Show the form for creating a new resource.
      *

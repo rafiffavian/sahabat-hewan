@@ -38,46 +38,46 @@
                         <img class="" src="{{ url('adoptionimage/' . $adoption->image) }}" width="200" alt="">
                         </div>
                     </div><br>
-                    <div class="form-group text-center">
-                        <label style="margin-left:40px;" class="col-md-4 control-label" for="textinput"><h4>Nama Hewan:</h4></label>  
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput"><h3><b>Nama Hewan:<b></h3></label>  
                         <div class="col-md-4">
-                            <h2>{{$adoption->animal_name}}</h2>
+                            <h4>{{$adoption->animal_name}}</h4>
                         </div>
                     </div><br>
                     <div class="form-group">
-                        <label style="margin-left:40px;" class="col-md-4 control-label" for="textinput"><h4>Kategori Hewan:</h4></label>  
+                        <label class="col-md-4 control-label" for="textinput"><h3><b>Kategori Hewan:<b></h3></label>  
                         <div class="col-md-4">
-                            <h2>{{$adoption->myhewan->name}}</h2>
+                            <h4>{{$adoption->myhewan->name}}</h4>
                         </div>
                     </div><br>
                     <div class="form-group">
-                         <label style="margin-left:40px;" class="col-md-4 control-label" for="textinput"><h4>Jenis hewan:</h4></label>  
+                         <label class="col-md-4 control-label" for="textinput"><h3><b>Jenis hewan:<b></h3></label>  
                         <div class="col-md-4">
-                            <h2>{{$adoption->animal_kind}}</h2>
+                            <h4>{{$adoption->animal_kind}}</h4>
                         </div>
                     </div><br>
                     <div class="form-group">
-                     <label style="margin-left:40px;" class="col-md-4 control-label" for="textinput"><h4>Tanggal Lahir:</h4></label>  
+                     <label class="col-md-4 control-label" for="textinput"><h3><b>Tanggal Lahir:<b></h3></label>  
                         <div class="col-md-4">
-                            <h2>{{$adoption->birth}}</h2>
+                            <h4>{{$adoption->birth}}</h4>
                         </div>
                     </div><br>
                     <div class="form-group">
-                     <label style="margin-left:40px;" class="col-md-4 control-label" for="textinput"><h4>Gender:</h4></label>  
+                     <label class="col-md-4 control-label" for="textinput"><h3><b>Gender:<b></h3></label>  
                         <div class="col-md-4">
-                        <h2>{{$adoption->gender}}</h2>
+                        <h4>{{$adoption->gender}}</h4>
                         </div>
                     </div><br>
                     <div class="form-group">
-                     <label style="margin-left:40px;" class="col-md-4 control-label" for="textinput"><h4>Tingkat Agresivitas:</h4></label>  
+                     <label class="col-md-4 control-label" for="textinput"><h3><b>Tingkat Agresivitas:<b></h3></label>  
                         <div class="col-md-4">
-                            <h2>{{$adoption->agresiv}}</h2>
+                            <h4>{{$adoption->agresiv}}</h4>
                         </div>
                     </div><br>
                     <div class="form-group">
-                     <label style="margin-left:40px;" class="col-md-4 control-label" for="textinput"><h4>Alasan Pemilik Melepas Hewan:</h4></label>  
+                     <label class="col-md-4 control-label" for="textinput"><h3><b>Alasan Pemilik Melepas Hewan:<b></h3></label>  
                         <div class="col-md-4">
-                            <h2>{{$adoption->alasan}}</h2>
+                            <h4>{{$adoption->alasan}}</h4>
                         </div>
                     </div>
                   

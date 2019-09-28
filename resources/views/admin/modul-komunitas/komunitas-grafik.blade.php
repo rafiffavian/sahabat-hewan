@@ -61,7 +61,7 @@
 
         
 
-        <p><b>Grafik User & Komunitas</b> menampilkan grafik jumlah adopsi yang disediakan oleh user dan komunitas.</p>
+        <p><b>Grafik Kategori & Wilayah</b> menampilkan grafik jumlah dari setiap kategori event yaitu anjing,kucing,dan semua jenis hewan, dan juga wilayah.</p>
       </div>
       <div class="row">
         <div class="col-md-6">
@@ -71,7 +71,7 @@
           <!-- DONUT CHART -->
           <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Grafk Adopsi</h3>
+              <h3 class="box-title">Grafk Kategori</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -145,8 +145,8 @@
       resize: true,
       colors: ["#3c8dbc", "#f56954", "#00a65a"],
       data: [
-        @foreach($user_komunitas as $k => $v)
-          {label: "{{$k}}", value: {{$v}} },
+        @foreach($kat as $l => $ll)
+          {label: "{{$ll[0]}}", value: {{count($ll)}} },
         @endforeach
       ],
       hideHover: 'auto'
@@ -158,7 +158,7 @@
       colors: ["#3c8dbc", "#f56954", "#00a65a"],
       data: [
         @foreach($lokasi as $l => $ll)
-          {label: "{{$l}}", value: {{$ll}} },
+          {label: "{{$ll[0]}}", value: {{count($ll)}} },
         @endforeach
       ],
       hideHover: 'auto'

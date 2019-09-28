@@ -12,13 +12,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="textinput"><h4>Gambar1:</h4></label>  
             <div class="col-md-4">
-        @if($detailReport->image_one != "null")
-            <img src="{{ url('remortimage/' . $detailReport->image_one) }}" width="200" alt="">
-        @else
-            <p>Data Kosong</p>
-            </div>
-        </div><br>
-        @endif
+            <img src="{{ url('remortimage/' . $detailReport->image_one) }}" width="200" alt="{{asset('asset/img/desainpelaporan/anjingbelakang.PNG')}}">
         <div class="form-group">
         <label class="col-md-4 control-label" for="textinput"><h4>Gambar2:</h4></label>  
             <div class="col-md-4">

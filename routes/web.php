@@ -50,12 +50,15 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/listdoctor', 'User\CaridokterController@listdoctor')->name('listdoctor.index');
     Route::resource('dashboard/admin', 'Admin\AdminController');
     Route::resource('dashboard/comunity', 'Admin\ComunityController');
+    Route::get('/dashboard/comunity-grafik/grafik','Admin\ComunityController@graphic')->name('comunity.grafik');
     Route::resource('dashboard/event', 'Admin\EventController');
     Route::get('/dashboard/event-grafik/grafik','Admin\EventController@graphic')->name('event.grafik');
     Route::resource('dashboard/user', 'Admin\UserController');
     Route::resource('dashboard/report', 'Admin\ReportController');
     Route::get('/dashboard/grafik','Admin\ReportController@grafik')->name('laporan.grafik');
     Route::resource('dashboard/finddoctor', 'Admin\FinddoctorController');
+    Route::resource('dashboard/daftarkomunitas', 'Admin\DafkomController');
+    Route::get('/dashboard/doctor-grafik/grafik','Admin\FinddoctorController@graphic')->name('doctor.grafik');
     Route::resource('dashboard/dopsiadmin', 'Admin\DopsiadminController');
     Route::get('/dashboard/adopsi/grafik','Admin\DopsiadminController@grafik')->name('adopsi.grafik');
 });	   

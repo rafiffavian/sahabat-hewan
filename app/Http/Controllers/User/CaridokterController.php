@@ -26,6 +26,8 @@ class CaridokterController extends Controller
         return view('modul.pelaporan.dokter');
     }
 
+    
+
     public function listdoctor()
     {
         $user_id = Auth::user()->id;

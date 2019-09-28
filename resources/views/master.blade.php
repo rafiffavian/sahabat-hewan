@@ -62,6 +62,9 @@ var mapProp= {
 };
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
+$('.select-foto').click(function(){
+    $('.custom-file-input').click();
+})
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
