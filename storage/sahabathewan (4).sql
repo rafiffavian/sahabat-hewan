@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2019 at 12:16 PM
+-- Generation Time: Oct 14, 2019 at 11:26 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -80,9 +80,11 @@ CREATE TABLE `adoption` (
 --
 
 INSERT INTO `adoption` (`id`, `id_user`, `image`, `id_animaltype`, `animal_name`, `animal_kind`, `birth`, `gender`, `agresiv`, `alasan`, `created_at`, `updated_at`, `asal`, `lokasi`, `whatsapp`) VALUES
-(7, 20, 'husky-1568970626.jpg', 1, 'Cody', 'siberian', '2015-05-05', 'lakilaki', 'baik', 'saya banyak hewan peliharaan', '2019-09-20 02:10:26', '2019-09-20 02:10:26', 1, 'jakarta selatan', ''),
-(8, 20, 'anggora-1568995425.jpg', 2, 'Meong', 'Anggora', '2017-01-11', 'perempuan', 'baik', 'Saya Memiliki banyak kucing, dan tidak bisa mengurusnya semua', '2019-09-20 09:03:45', '2019-09-20 09:03:45', 1, 'jakarta selatan', ''),
-(10, 21, 'login-1569258261.png', 2, 'Cody', 'siberian', '2011-01-11', 'lakilaki', 'baik', 'test', '2019-09-23 10:04:21', '2019-09-23 10:04:21', 1, 'jakarta selatan', NULL);
+(8, 20, 'anggora-1568634520-1569922538.jpg', 2, 'Meong', 'Anggora', '2017-01-11', 'perempuan', 'baik', 'Saya Memiliki banyak kucing, dan tidak bisa mengurusnya semua', '2019-09-20 09:03:45', '2019-10-01 02:35:38', 1, 'jakarta selatan', '08757666789'),
+(12, 19, 'anjingkanan-1569925334.png', 1, 'Kuku', 'siberian hushky', '2002-02-02', 'lakilaki', 'baik', 'Komunitas sudah menampung terlalu banyak hewan', '2019-09-29 21:04:04', '2019-10-01 03:22:14', 2, 'test', '087878787878'),
+(14, 34, 'login-1569912124.png', 2, 'catty', 'Anggora', '2019-02-02', 'perempuan', 'biasa', 'terlalu banyak kucing yang dipunya', '2019-09-30 23:42:04', '2019-09-30 23:42:04', 1, NULL, NULL),
+(15, 21, 'husky-1568395478-1569922577.jpg', 1, 'buddy', 'siberian hushky', '2001-01-01', 'lakilaki', 'baik', 'saya sudah banyak memiliki hewan peliharaan', '2019-10-01 02:36:17', '2019-10-01 02:36:17', 1, 'jakarta selatan', NULL),
+(16, 36, 'Gambar-Kucing-Anggora-300x230-1569924652.jpg', 2, 'cattie', 'anggora', '2018-12-12', 'lakilaki', 'baik', 'terlalu banyak kucing peliharaan', '2019-10-01 03:10:52', '2019-10-01 03:10:52', 1, 'jakarta timur', NULL);
 
 -- --------------------------------------------------------
 
@@ -133,7 +135,7 @@ CREATE TABLE `comunity` (
 --
 
 INSERT INTO `comunity` (`id`, `id_animaltype`, `name`, `location`, `description`, `created_at`, `updated_at`, `image`, `id_jakartatype`, `instagram`, `whatsapp`, `Line`, `url_lokasi`) VALUES
-(7, 3, 'garda satwa', 'Jl. Taman Cirendeu Permai No.23, Lebak Bulus, Kec. Cilandak', 'Berdirinya Garda Satwa Indonesia (GSI) berawal dari sebuah komunitas yang didirikan 1 Juni 2012. Pada tanggal 14 September 2014, komunitas ini resmi menjadi yayasan yang begerak di bidang kesejahteraan satwa domestik peliharaan. Nama Garda dipilih karena memiliki arti sebagai penjaga atau pelindung. Jadi Garda Satwa Indonesia artinya adalah penjaga satwa Indonesia.', '2019-09-21 02:41:57', '2019-09-21 02:41:57', 'komunitassemua-1569058917.jpg', 4, 'gardasatwa indonesia', '08757666789', '@gardasatwa', 'https://www.google.com/maps/place/Cilandak,+South+Jakarta+City,+Jakarta/@-6.289716,106.7553322,13z/data=!3m1!4b1!4m5!3m4!1s0x2e69f1c333aa0d33:0x9f3028e18a6a02ea!8m2!3d-6.2845276!4d106.8001396');
+(8, 1, 'Sahabat Satwa', 'Kec. Pulo Gadung', 'Sahabat Satwa Indonesia adalah salah satu organisasi yang bergerak untuk penyelamatan hewan domestik sepeti anjing dan kucing yang terlantar.', '2019-10-01 02:52:36', '2019-10-01 02:52:36', 'komunitas-gambar-1569923556.jpg', 3, '@sahabatsatwa', '087576667898', '@sahabat_satwa', 'https://www.google.co.id/maps/place/Kec.+Pulo+Gadung,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta/@-6.1907903,106.8566086,13z/data=!3m1!4b1!4m5!3m4!1s0x2e69f4c1755a610d:0x7c7f05b44572f6d8!8m2!3d-6.1894643!4d106.8945456');
 
 -- --------------------------------------------------------
 
@@ -158,7 +160,8 @@ CREATE TABLE `daftarkomunitas` (
 --
 
 INSERT INTO `daftarkomunitas` (`id`, `id_user`, `nama_komunitas`, `no_tlp`, `whatsapp`, `email`, `alasan`, `created_at`, `updated_at`) VALUES
-(1, 3, 'test 123', '09788888880', '0788878', 'test@gmail.com', 'test ajah', '2019-09-12 14:15:38', '2019-09-12 14:15:38');
+(1, 21, 'test', '08775678788', '08757666789', 'rafiffavian584@gmail.com', 'das', '2019-10-01 02:53:51', '2019-10-01 02:53:51'),
+(2, 36, 'peduli hewan', '073832610127', '087218321237', 'peduli@gmail.com', 'saya ingin membuat hewan mendapatkan kepedulian yang lebih', '2019-10-01 03:13:06', '2019-10-01 03:13:06');
 
 -- --------------------------------------------------------
 
@@ -184,8 +187,9 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`id`, `name`, `no_tlp`, `created_at`, `updated_at`, `kelurahan`, `kota`, `kecamatan`, `image`, `url`) VALUES
-(1, 'eka', '08775678788', '2019-09-22 03:29:39', '2019-09-25 12:16:29', 'Rawamangun', 'Jakarta Timur', 'Pulo Gadung', 'jejak-1569438989.png', 'https://www.google.co.id/maps/place/Jl.+Rawamangun+Muka+Selatan,+RW.12,+Rawamangun,+Kec.+Pulo+Gadung,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta/@-6.2018573,106.8787487,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f491725c1cf7:0x28102393db2d5bbc!8m2!3d-6.2018626!4d106.8809374'),
-(2, 'eri', '09788888880', '2019-09-22 03:30:16', '2019-09-22 03:30:16', 'Ragunan', 'jakarta selatan', 'Pasar minggu', 'login-1569148216.png', NULL);
+(3, 'Dr.Mia', '08775678788', '2019-10-01 01:56:24', '2019-10-01 01:56:24', 'susukan', 'Jakarta Timur', 'ciracas', 'doctorcans-1569920184.jpg', 'https://www.google.co.id/maps/place/Susukan,+Kec.+Ciracas,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta/@-6.3182996,106.8522854,14z/data=!3m1!4b1!4m5!3m4!1s0x2e69ed0b4bf19227:0xe64b7baf7ccbcfb7!8m2!3d-6.315539!4d106.8679899'),
+(4, 'test', '087756787889', '2019-10-07 01:56:20', '2019-10-07 01:56:20', 'te', 'tet', 'te', 'ddd-1570438580.jpg', 'df'),
+(5, 'r', 'r', '2019-10-07 08:58:15', '2019-10-07 08:58:15', 'r', 'r', 'r', '10-meme-lucu-opah-upin-ipin-ini-bikin-ketawa-geli-190113e-1570438695.jpg', 'r');
 
 -- --------------------------------------------------------
 
@@ -217,11 +221,10 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `id_animaltype`, `image`, `name`, `price`, `location`, `description`, `time`, `created_at`, `updated_at`, `id_jakartatype`, `time_finish`, `line`, `whatsapp`, `url_lokasi`, `instagram`) VALUES
-(2, 1, 'siberianhusky-1569065852.jpg', 'Perkumpulan Para Sparta', 'Free', 'Rumah Kebagusan', 'test saja lah', '10:00', '2019-09-09 13:23:17', '2019-09-21 04:37:32', 4, '12:00', 'herdi12', '088778788', 'https://www.google.com/maps/place/Kebagusan,+Pasar+Minggu,+South+Jakarta+City,+Jakarta/@-6.3092892,106.8135113,14z/data=!3m1!4b1!4m5!3m4!1s0x2e69edefe092ac77:0x6fd63397723799f8!8m2!3d-6.3115948!4d106.8325872', 'hengky12'),
-(3, 2, 'kucingsungapura-1568447516.jpg', 'Texas cat', 'Free', 'kebon sirih jakarta selatan', 'ini adalah perkumpulan kucing texas', '12:00', '2019-09-14 00:51:56', '2019-09-14 00:51:56', 2, '13:00', '@texascat', '0878877778', 'test', NULL),
-(4, 1, 'husky-1568447589.jpg', 'dog festival', 'free', 'rawamangun', 'ini adalah festival anjing rawamangun', '09:00', '2019-09-14 00:53:09', '2019-09-14 00:53:09', 5, '10:00', 'dograwamangun', '066777778888', 'test', NULL),
-(5, 1, 'komunitassemua-1568601432.jpg', 'test', 'Rp.200000', 'test', 'test', '10', '2019-09-15 19:37:12', '2019-09-15 19:37:12', 1, '11', 'test', '08757666789', 'test', NULL),
-(6, 1, 'sahabathewan-1569224292.png', 'test', 'dasdsa', 'test', 'asdsadas', '10:00', '2019-09-23 00:38:12', '2019-09-23 00:38:12', 2, '11:00', 'dsad', '08757666789', 'sdadsa', 'sada');
+(7, 1, 'event-gambar-1569923185.jpg', 'Kiat-kiat Melindungi Anjing', 'Free', 'Jl. Taman Cirendeu Permai No.23, Lebak Bulus, Kec. Cilandak', 'Ini adalah event untuk melindungi dan mencintai anjing', '10:00', '2019-10-01 02:46:25', '2019-10-01 02:46:25', 4, '15:00', '@pecinta_anjing', '08757666789', 'https://www.google.co.id/maps/place/Jl.+Taman+Cirendeu+Permai+No.23,+Lb.+Bulus,+Kec.+Cilandak,+Kota+Jakarta+Selatan,+Daerah+Khusus+Ibukota+Jakarta+12440/@-6.2915148,106.766775,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f02d699d0c53:0xc292267973703321!8m2!3d-6.2915148!4d106.7689637', '@pecintaanjing'),
+(8, 1, 'event-gambar2-1569923300.jpg', 'Kiat-kiat Melindungi Kucing', 'Free', 'Ragunan Kec. Ps. Minggu', 'Ini Adalah event kiat-kiat mencintai dan melindungi kucing', '09:00', '2019-10-01 02:48:20', '2019-10-01 02:48:20', 4, '14:00', '@pecinta_kucing', '08757666789', 'https://www.google.co.id/maps/place/Ragunan,+Kec.+Ps.+Minggu,+Kota+Jakarta+Selatan,+Daerah+Khusus+Ibukota+Jakarta/@-6.2968282,106.8037759,14z/data=!3m1!4b1!4m5!3m4!1s0x2e69f200fc450367:0xbcc4aad326d293e7!8m2!3d-6.301752!4d106.8207875', '@pecintakucing'),
+(9, 2, 'anjingkanan-1569930842.png', 'asdas', 'Free', 'sad', 'da', '10:00', '2019-10-01 04:54:02', '2019-10-01 04:54:02', 1, '12:00', 'das', '08757666789', 'das', 'sad'),
+(10, 2, 'anjingkanan-1569930864.png', 'sadas', 'Free', 'asd', 'asdas', '10:00', '2019-10-01 04:54:24', '2019-10-01 04:54:24', 1, '12:00', 'das', '08757666789', 'sdsa', 'sad');
 
 -- --------------------------------------------------------
 
@@ -945,7 +948,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (72, '2019_09_21_181326_update_report8_table', 70),
 (73, '2019_09_21_181356_update_report9_table', 71),
 (74, '2019_09_23_125823_update_report11_table', 72),
-(75, '2019_09_25_190959_update_doctor4_table', 73);
+(75, '2019_09_25_190959_update_doctor4_table', 73),
+(76, '2019_10_13_215449_update_report12_table', 74);
 
 -- --------------------------------------------------------
 
@@ -970,30 +974,18 @@ CREATE TABLE `report` (
   `description` text COLLATE utf8mb4_unicode_ci,
   `id_katpelaporan` bigint(20) DEFAULT NULL,
   `kategori_hewan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `report`
 --
 
-INSERT INTO `report` (`id`, `id_user`, `image_one`, `image_two`, `image_three`, `image_four`, `image_five`, `no_tlp`, `no_whatsapp`, `created_at`, `updated_at`, `latitude`, `longtitude`, `description`, `id_katpelaporan`, `kategori_hewan`, `email`) VALUES
-(18, 21, 'sahabathewan.jpg', 'sahabathewan.png', 'sahabathewan1.png', 'sahabathewan2.png', NULL, '08775678788', '0877766666', '2019-09-23 06:03:05', '2019-09-23 06:03:05', '-6.345775', '106.852843', 'dsadas', 1, 'anjing', 'rafiffavian584@gmail.com'),
-(19, 21, 'sahabathewan.jpg', 'sahabathewan.png', 'sahabathewan1.png', 'sahabathewan2.png', 'jejak.png', '08775678788', '0877766666', '2019-09-23 06:03:38', '2019-09-23 06:03:38', '-6.345775', '106.852843', 'dsadas', 2, 'anjing', 'rafiffavian584@gmail.com'),
-(20, 21, 'sahabathewan.jpg', 'sahabathewan.png', 'sahabathewan1.png', 'sahabathewan2.png', NULL, '08775678788', '0877766666', '2019-09-23 06:04:03', '2019-09-23 06:04:03', '-6.345775', '106.852843', 'dsadas', 3, 'anjing', 'rafiffavian584@gmail.com'),
-(21, 19, 'jejak.png', 'login.png', 'sahabathewan.jpg', 'sahabathewan.png', 'sahabathewan1.png', '08775678788', '0877766666', '2019-09-24 23:02:12', '2019-09-24 23:02:12', '-6.345750', '106.852829', 'adsa', 4, 'anjing', 'rafiffavian584@gmail.com'),
-(22, 19, 'jejak.png', 'login.png', 'sahabathewan.jpg', 'sahabathewan.png', 'sahabathewan1.png', '08775678788', '0877766666', '2019-09-24 23:02:20', '2019-09-24 23:02:20', '-6.345750', '106.852829', 'adsa', 5, 'anjing', 'rafiffavian584@gmail.com'),
-(23, 19, 'jejak.png', NULL, NULL, NULL, NULL, '08775678788', '0877766666', '2019-09-26 06:31:22', '2019-09-26 06:31:22', '-6.371292', '106.832111', 'test', 3, 'kucing', 'eka@yahoo.com'),
-(24, 19, '', NULL, NULL, NULL, NULL, '09788888880', '0877766666', '2019-09-26 06:32:44', '2019-09-26 06:32:44', '-6.371250', '106.832078', 'test', 4, 'kucing', 'rafiffavian584@gmail.com'),
-(25, 19, '', NULL, NULL, NULL, NULL, '09788888880', '0877766666', '2019-09-26 06:33:23', '2019-09-26 06:33:23', '-6.371250', '106.832078', 'test', 1, 'kucing', 'rafiffavian584@gmail.com'),
-(26, 19, '', NULL, NULL, NULL, NULL, '09788888880', '0877766666', '2019-09-26 06:33:40', '2019-09-26 06:33:40', '-6.371250', '106.832078', 'test', 2, 'kucing', 'rafiffavian584@gmail.com'),
-(27, 19, '', NULL, NULL, NULL, NULL, '09788888880', '0877766666', '2019-09-26 06:33:58', '2019-09-26 06:33:58', '-6.371250', '106.832078', 'test', 5, 'kucing', 'rafiffavian584@gmail.com'),
-(28, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 'kucing', NULL),
-(29, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 'anjing', NULL),
-(30, 21, '', NULL, NULL, NULL, NULL, NULL, NULL, '2019-09-26 08:28:55', '2019-09-26 08:28:55', '-6.371299', '106.832069', 'sadasdsa', 1, 'anjing', NULL),
-(31, 21, '', NULL, NULL, NULL, NULL, NULL, NULL, '2019-09-26 08:29:06', '2019-09-26 08:29:06', '-6.371299', '106.832069', 'sadasdsaeqwewq', 1, 'anjing', NULL),
-(32, 21, 'IMG20190906162733.jpg', 'IMG20190906162741.jpg', 'IMG20190906162755.jpg', 'IMG20190906162801_1.jpg', NULL, '08775678788', '0877766666', '2019-09-27 01:04:19', '2019-09-27 01:04:19', '-6.368484', '106.833602', 'ada hewan', 3, 'anjing', 'eka@yahoo.com'),
-(33, 21, 'IMG20190906162733.jpg', 'IMG20190906162741.jpg', 'IMG20190906162755.jpg', 'IMG20190906162801_1.jpg', 'IMG20190906162803.jpg', '08775678788', '0877766666', '2019-09-27 03:52:28', '2019-09-27 03:52:28', '-6.367811', '106.833133', 'tet', 1, 'anjing', 'rafiffavian584@gmail.com');
+INSERT INTO `report` (`id`, `id_user`, `image_one`, `image_two`, `image_three`, `image_four`, `image_five`, `no_tlp`, `no_whatsapp`, `created_at`, `updated_at`, `latitude`, `longtitude`, `description`, `id_katpelaporan`, `kategori_hewan`, `email`, `status`) VALUES
+(44, 36, 'cat-4260536_960_720.jpg', 'CUTE-realistic-handmade-fake-fur-cat-WITH.jpg_350x350.jpg', 'depan.jpg', 'samping.jpg', NULL, '08152718291632', '0878918326343', '2019-10-01 04:03:18', '2019-10-14 04:34:45', '-6.367783', '106.833204', 'terluka pada bagian kaki, butuh pertolongan', 3, 'kucing', 'eka@gmail.com', '2'),
+(45, 33, 'doctor1.jpg', 'doctor3.jpg', NULL, NULL, NULL, '087756787889', '088878787878', '2019-10-13 17:04:40', '2019-10-14 06:48:14', NULL, NULL, 'tet', 1, 'anjing', 'rafif@gmail.com', '1'),
+(46, 21, 'doctor1.jpg', 'doctor2.jpg', NULL, NULL, NULL, '087756787889', '088878787878', '2019-10-14 04:32:32', '2019-10-14 06:45:03', NULL, NULL, 'komando', 1, 'anjing', 'ari@gmail.com', '2');
 
 -- --------------------------------------------------------
 
@@ -1051,17 +1043,15 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `image`, `first_name`, `last_name`, `gender`, `no_tlp`, `email`, `username`, `password`, `tanggal_lahir`, `description`, `provinsi`, `kota`, `remember_token`, `created_at`, `updated_at`, `whatsapp`, `kelurahan`, `kecamatan`, `id_role`) VALUES
-(19, 'login-1569642864.png', 'faiq', 'fananie', 'pria', '08775678788', 'faiq@yahoo.com', 'faiq_88', '$2y$10$09K0MJUQUccwePghxSe6f.zaq0RNdWAc7gObEvCkdrqyJ6zCuy2fK', '2019-01-01', 'test', NULL, NULL, 'mXTYSgKNzqA40a8Ca90dKYdDL08brwQjisduaokvHjGzcy2tuZPdnQcmAWk7', '2019-09-18 11:58:33', '2019-09-27 23:51:26', '08757666789', NULL, NULL, 7),
-(20, 'userimage/anon.jpg', 'Rafif', 'Favian', 'pria', '087789123707', 'rafiffavian584@gmail.com', 'Rafiffavian_', '$2y$10$IOnAC3qMEDJUVkZHQ/pdu.FJTum4GGgRXFsXFiugewwKEUv.E10Ci', '1998-02-14', 'Saya adalah Pecinta kucing dan anjing, saya adalah seorang mahasiswa', 'Jakarta', 'Jakarta Timur', NULL, '2019-09-19 08:29:10', '2019-09-19 08:38:28', '6287789123707', 'Rawamangun', NULL, 6),
-(21, 'jejak-1569664522.png', 'ari', 'kurniawan', 'pria', '0877577888', 'ari@gmail.com', 'ari_kurn', '$2y$10$LGo.UsRQo6Q1CB8CE9WupOrsMvSZ4xS3dJBaU6SYd.HIW6rFEJBG6', '1998-01-01', 'Saya adalah penyuka hewan', 'jakarta', 'jakarta selatan', 'i8za1fIbfWf1yEW9ypzQ72sJQGv7Q4OVh96gCiUQP2qPqi8puOE1KlCh0x6p', '2019-09-20 23:03:32', '2019-09-28 02:55:22', '62876653678', 'ragunan', NULL, 6),
-(22, 'login-1569391665.png', 'reza', 'akbar', 'Laki-laki', '08775678788', 'reza@akbar.com', 'rezaakbar', '$2y$10$e9QA6LAjizxI8oE3K3aGz.ylWw.gBPovw3wlFRHAEdjuCAi0kxZYu', NULL, 'test', 'jakarta', 'jakarta barat', 'eJmOyFtl9poO8ZgmP86Evx3I93C97UIUfuncU7KwYuzpkxorGnnfZPvl3HIs', '2019-09-24 23:07:45', '2019-09-24 23:07:45', '08757666789', 'petamburan', NULL, 7),
+(19, 'IMG20190906162741-1569771947.jpg', 'faiq', 'fananie', 'pria', '08775678788', 'faiq@yahoo.com', 'faiq_88', '$2y$10$m1p0CbKPLvnVejVo08YKWON2lGHVQ4jhPbX732CunXsQqQmhznSNC', '2019-01-01', 'test', 'dasd', 'asdas', 'ROIL6KgqhH7BPWrFuFD4jcv4XH95hnCk62qMbbcqpsO04A5uKsJUF3pIUTMg', '2019-09-18 11:58:33', '2019-10-04 23:42:03', '08757666789', 'asd', 'ada', 7),
+(21, 'login-1569910348.png', 'ari', 'kurniawan', 'pria', '0877577888', 'ari@gmail.com', 'ari_kurn', '$2y$10$LGo.UsRQo6Q1CB8CE9WupOrsMvSZ4xS3dJBaU6SYd.HIW6rFEJBG6', '1998-01-01', 'Saya adalah penyuka hewan', 'jakarta', 'jakarta selatan', 'dcHJdx6XZF2nXMmWXlepqfdia98fdtdtzwctk9jtKi0DicPmyZFF1ChIHcin', '2019-09-20 23:03:32', '2019-09-30 23:12:28', '62876653678', 'ragunan', NULL, 7),
+(22, 'login-1569391665.png', 'reza', 'akbar', 'Laki-laki', '08775678788', 'reza@akbar.com', 'rezaakbar', '$2y$10$e9QA6LAjizxI8oE3K3aGz.ylWw.gBPovw3wlFRHAEdjuCAi0kxZYu', NULL, 'test', 'jakarta', 'jakarta barat', 'q7MKyG540lpFtaTT22cRYbyGzR7uBSQ3Fjo9auRw85gHEqTrlZr7YhxDtLUw', '2019-09-24 23:07:45', '2019-09-24 23:07:45', '08757666789', 'petamburan', NULL, 8),
 (24, 'jejak-1569398141.png', 'hariz', 'azhar', 'Laki-laki', '08775678788', 'hariz@gmail.com', 'hariz12', '$2y$10$7mgQaLRtk2m2MWReCVMZqeP0D.b9E5otdxrLvxHLnRCHO3PwBjgEu', '2019-01-01', 'test', 'jakarta', 'jakarta utara', NULL, '2019-09-24 23:50:49', '2019-09-25 00:56:56', '08757666789', 'kapuk', 'pantai indah kapuk', 8),
-(27, 'userimage/anon.jpg', 'raka', 'aka', 'pria', '09788888880', 'raka@gmail.com', 'rakaka', '$2y$10$ZmZ8hwgtxquZt9MZAEhgFeo3yX4H3vIQ0RRBc3GQa0YyApcIyy6qq', '2019-01-01', 'test', NULL, NULL, NULL, '2019-09-28 02:07:56', '2019-09-28 02:07:56', NULL, NULL, NULL, 6),
-(28, 'userimage/anon.jpg', 'reja', 'aja', 'pria', '08775678788', 'reja@gmail.com', 'reja', '$2y$10$e4eJx/8kyuz8OwVqu1QaW.5wUL7e0tU2XuknVfQZ08OorPpBbhkjW', '2019-01-01', 'test', NULL, NULL, NULL, '2019-09-28 02:08:39', '2019-09-28 02:08:39', NULL, NULL, NULL, 6),
-(29, 'userimage/anon.jpg', 'akmal', 'reza', 'pria', '08775678788', 'akmal@gmail.com', 'akmalaja', '$2y$10$O/W4ZeIp8Ur.GH7l1x0svOb72lw1hekF9XgyDj2grG0f1A7FI2zq.', '2019-01-01', 'test', NULL, NULL, NULL, '2019-09-28 02:09:23', '2019-09-28 02:09:23', NULL, NULL, NULL, 6),
-(30, 'userimage/anon.jpg', 'bani', 'baba', 'pria', '08775678788', 'bani@gmail.com', 'bani', '$2y$10$mwMjfjocuWQS8eIvq6svc.d00MbD/qPwreqAYqFAHHQyjSnih8xzq', '2019-01-01', 'test', NULL, NULL, NULL, '2019-09-28 02:10:37', '2019-09-28 02:10:37', NULL, NULL, NULL, 6),
-(31, 'userimage/anon.jpg', 'eki', 'eku', 'pria', '0867777777', 'eki@yahoo.com', 'eki', '$2y$10$jjqL/zQC1Beynkc0M7D1Xeno8SIaVm/9caQvRwc6M3fFyMyHvvbcG', '2019-01-01', 'test', NULL, NULL, 'ogEjgsvWqJ7X9DwNrLJk2g3umbHDkU1fXg88kXcQS4P4XO2LQR5A4ZJSw92y', '2019-09-28 03:07:27', '2019-09-28 03:07:27', NULL, NULL, NULL, 6),
-(32, 'anon.jpg', 'mega', 'noring', 'pria', '09788888880', 'mega@gmail.com', 'mega', '$2y$10$xLAK87D9qDBB0PvtKXQWteBp/WJnYFZHpyLWVZEtJtpRWMaWL4Oou', '2019-01-01', 'test', NULL, NULL, 'mZOJwsBVfyYjFznzwryCziJoPOZxX5lpcKYDzZETj6jeocXLrz46rjWLllGV', '2019-09-28 03:10:12', '2019-09-28 03:10:12', NULL, NULL, NULL, 6);
+(32, 'anon.jpg', 'mega', 'noring', 'pria', '09788888880', 'mega@gmail.com', 'mega', '$2y$10$xLAK87D9qDBB0PvtKXQWteBp/WJnYFZHpyLWVZEtJtpRWMaWL4Oou', '2019-01-01', 'test', NULL, NULL, 'HJykxWalbAsAdZNQRo82JfhjbpWT0a4VXO2HVttIIMmFgOFXj8gpZxawOgYt', '2019-09-28 03:10:12', '2019-09-28 03:10:12', NULL, NULL, NULL, 6),
+(33, 'anon.jpg', 'haha', 'hh', 'pria', '08775678788', 'haha@gmail.com', 'haha', '$2y$10$gway3E5z1iiq3Oan7d14ROcb5bZHvBYwpO7jmhGEAPzqWxCRjf0t6', '2019-01-01', 'test', NULL, NULL, '0BQIdT3jrBoXEEdBxYuqivqjEcVHNQRRwmKBnSKKQhP5IMD9RJB8pwVmb2UO', '2019-09-29 08:43:51', '2019-09-29 08:43:51', NULL, NULL, NULL, 6),
+(34, 'sahabathewan2-1569912317.png', 'eka', 's', 'wanita', '0978888888', 'eka@yahoo.com', 'eka', '$2y$10$z4/4puuqI4E7pTEijZx/zeDSeTNtldNz7jP3MwMkXfJ9Pzf.LPjIm', '2019-01-15', 'test', 'jakarta', 'jakarta pusat', 'nbUTtTwE4jctrwowSH1AfwNh9Xbf6aoa4mIipFWyVmsm5wz0ZTIyb6JVvl4H', '2019-09-30 23:40:09', '2019-09-30 23:45:17', '08757666789', 'ragunan selatan', NULL, 6),
+(35, 'anon.jpg', 'FSD', 'SDF', 'pria', 'SD', 'rafiffavian584@gmail.com', 'da', '$2y$10$Qz0WxlTuz5UZaKD9cEgNxuR1VaKgyvQqIM4Zf/uocRGx6zr6xviKu', '2019-01-01', 'test', NULL, NULL, NULL, '2019-10-01 00:07:40', '2019-10-01 00:07:40', NULL, NULL, NULL, 6),
+(36, 'foto profil-1569924475.jpg', 'eka', 'setianingsih', 'wanita', '087813241679', 'eka@gmail.com', 'ekasetianingsh', '$2y$10$ABY6cWgfN8.RO7QcVqRzhukQfAeTaO/YNjKrCBhlNYT/8.YypVhs2', '1998-10-15', 'saya adalah pecinta kucing', 'jakarta', 'jakarta timur', '10tNi9C122SUamDkoypZ3Ro0UckusGQJKAfPeTLIlneO6jmkEV1Tu4cPqA0u', '2019-10-01 03:02:44', '2019-10-01 03:07:55', '089731267348', 'rawamangun', NULL, 6);
 
 --
 -- Indexes for dumped tables
@@ -1179,7 +1169,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `adoption`
 --
 ALTER TABLE `adoption`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `animaltype`
@@ -1191,25 +1181,25 @@ ALTER TABLE `animaltype`
 -- AUTO_INCREMENT for table `comunity`
 --
 ALTER TABLE `comunity`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `daftarkomunitas`
 --
 ALTER TABLE `daftarkomunitas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `jadwal`
@@ -1239,13 +1229,13 @@ ALTER TABLE `kat_pelaporan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -1257,7 +1247,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
