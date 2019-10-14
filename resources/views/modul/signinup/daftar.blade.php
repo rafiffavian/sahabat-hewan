@@ -115,45 +115,30 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">end-user license agreement</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Purbasari memiliki enam orang kakak perempuan yaitu Purbararang, Purbadewata, Purbaendah, Purbakancana, Purbamanik dan Purbaleuih.
-
-Purbasari sangat baik sifat dan kelakuannya. Dia lembut, manis budi, ddan suka menolong.
-
-Siapapun juga yang membutuhkan pertolongan dengan senang hati dibantunya.
-
-Selain hatinya yang elok, Purbasari juga memiliki paras yang cantik dan rupawan, setiap orang yang melihatnya pasti jatuh hati pada pandangan pertama.
-
-Sayangnya kecantikan dan kebaikan hati purbasari tidak menurun dari kakak sulungnya Purbararang yang berperangai sangat buruk.
-
-Walaupun cantik Purbararang sangat kasar, sombong, kejam dan iri hati terhadap siapapun juga.
- Purbasari memiliki enam orang kakak perempuan yaitu Purbararang, Purbadewata, Purbaendah, Purbakancana, Purbamanik dan Purbaleuih.
-
-Purbasari sangat baik sifat dan kelakuannya. Dia lembut, manis budi, ddan suka menolong.
-
-Siapapun juga yang membutuhkan pertolongan dengan senang hati dibantunya.
-
-Selain hatinya yang elok, Purbasari juga memiliki paras yang cantik dan rupawan, setiap orang yang melihatnya pasti jatuh hati pada pandangan pertama.
-
-Sayangnya kecantikan dan kebaikan hati purbasari tidak menurun dari kakak sulungnya Purbararang yang berperangai sangat buruk.
-
-Walaupun cantik Purbararang sangat kasar, sombong, kejam dan iri hati terhadap siapapun juga.
- Purbasari memiliki enam orang kakak perempuan yaitu Purbararang, Purbadewata, Purbaendah, Purbakancana, Purbamanik dan Purbaleuih.
-
-Purbasari sangat baik sifat dan kelakuannya. Dia lembut, manis budi, ddan suka menolong.
-
-Siapapun juga yang membutuhkan pertolongan dengan senang hati dibantunya.
-
-Selain hatinya yang elok, Purbasari juga memiliki paras yang cantik dan rupawan, setiap orang yang melihatnya pasti jatuh hati pada pandangan pertama.
-
-Sayangnya kecantikan dan kebaikan hati purbasari tidak menurun dari kakak sulungnya Purbararang yang berperangai sangat buruk.
-
-Walaupun cantik Purbararang sangat kasar, sombong, kejam dan iri hati terhadap siapapun juga.
+      Ketentuan Penggunaan Web App<br><br>
+            1.&nbsp;	Kami mengumpulkan dan memproses informasi bisnis dan informasi pribadi Anda, seperti nama, alamat surat elektronik (surel / e-mail), dan nomor telepon seluler Anda ketika Anda mendaftar. Anda harus memberikan informasi yang akurat dan lengkap, memperbaharui informasi dan setuju untuk memberikan kepada kami bukti identitas apapun yang secara wajar dapat kami mintakan. Jika informasi pribadi yang Anda berikan kepada kami ada yang berubah, misalnya, jika Anda mengubah alamat surel, nomor telepon, atau jika Anda ingin membatalkan akun Anda, mohon perbaharui rincian informasi Anda dengan mengirimkan permintaan Anda kepada kami. Sepanjang yang dapat kami lakukan, kami akan memberlakukan perubahan yang diminta tersebut.<br>
+            2.&nbsp;	Anda hanya dapat menggunakan Web App ketika Anda telah mendaftar pada Web App tersebut. Setelah Anda berhasil mendaftarkan diri, Web App akan memberikan Anda suatu akun pribadi yang dapat diakses dengan kata sandi yang Anda pilih.<br>
+            3.&nbsp;	Hanya Anda yang dapat menggunakan akun Anda sendiri dan Anda berjanji untuk tidak memberikan wewenang kepada orang lain untuk menggunakan identitas Anda atau menggunakan akun Anda. Anda tidak dapat menyerahkan atau mengalihkan akun Anda kepada pihak lain. Anda harus menjaga keamanan dan kerahasiaan kata sandi akun Anda dan setiap identifikasi yang kami berikan kepada Anda. Dalam hal terjadi pengungkapan atas kata sandi Anda, dengan cara apapun, yang mengakibatkan setiap penggunaan yang tidak sah atau tanpa kewenangan atas akun atau identitas Anda, maka Kami tidak bertanggung jawab atas data yang direkam dan disajikan dari penggunaan yang tidak sah atau tanpa kewenangan tersebut.<br>
+            4.&nbsp;	Anda diharuskan untuk melaporkan kepada Kami bila Anda, oleh sebab apapun, tidak memiliki kontrol atas akun Anda. Anda bertanggung jawab atas setiap penggunaan akun Anda dalam Web App meskipun jika Akun tersebut telah disalahgunakan oleh orang lain.
+            5.&nbsp;	Anda berjanji bahwa Anda akan menggunakan Web App hanya untuk tujuan yang dimaksud untuk mendapatkan Layanan. Anda tidak diperbolehkan untuk menyalahgunakan atau menggunakan Web App untuk tujuan penipuan atau menyebabkan ketidaknyamanan kepada orang lain.<br>
+6.&nbsp;	Anda tidak diperkenankan untuk membahayakan, mengubah atau memodifikasi Web App atau mencoba untuk membahayakan, mengubah atau memodifikasi Web App dengan cara apapun. Kami tidak bertanggungjawab jika Anda tidak memiliki perangkat yang sesuai atau jika Anda telah mengunduh versi Aplikasi yang salah untuk perangkat Anda. Kami berhak untuk melarang Anda untuk menggunakan Web App lebih lanjut jika Anda menggunakan Web App dengan perangkat yang tidak kompatibel/cocok atau tidak sah atau untuk tujuan lain selain daripada tujuan yang dimaksud untuk penggunaan Web App ini. Anda berjanji bahwa Anda hanya akan menggunakan suatu jalur akses yang diperbolehkan untuk Anda gunakan.<br>
+7.&nbsp;	Anda akan menjaga kerahasiaan dan tidak akan menyalahgunakan informasi yang Anda terima dari penggunaan Web App tersebut.
+8.&nbsp;	Anda mengetahui dan setuju bahwa setiap informasi dalam bentuk apapun, termasuk namun tidak terbatas pada video, audio, gambar atau tulisan yang ada dalam Web App memiliki hak atas kekayaan intelektual (termasuk namun tidak terbatas kepada hak atas merek dan hak cipta) masing-masing. Anda tidak diperbolehkan untuk menggunakan, mengubah, memfasilitasi, menyebarluaskan dan/atau memutilasi hak atas kekayaan intelektual tersebut tanpa izin dari pemilik hak atas kekayaan intelektual tersebut  sebagaimana diatur dalam peraturan perundang-undangan yang berlaku.<br>
+9.&nbsp;	Pada saat mengakses dan menggunakan Web App termasuk setiap fitur dan layanannya, Anda tidak diperkenankan untuk:<br>
+&nbsp;&nbsp;&nbsp;i.	mengalihkan akun Anda kepada pihak lain tanpa persetujuan terlebih dahulu dari Kami.<br>
+&nbsp;&nbsp;&nbsp;ii.	menyebarkan virus, spam atau teknologi sejenis lainnya yang dapat merusak dan/atau merugikan Web App dan pengguna lainnya.<br>
+&nbsp;&nbsp;&nbsp;iii.	memasukkan atau memindahkan fitur pada Web App tanpa persetujuan dari Kami.<br>
+&nbsp;&nbsp;&nbsp;iv.	menempatkan informasi atau aplikasi lain yang melanggar hak kekayaan intelektual pihak lain di dalam Web App.<br>
+&nbsp;&nbsp;&nbsp;v.	mengambil atau mengumpulkan data pribadi dari pengguna lain, termasuk tetapi tidak terbatas pada alamat surel, tanpa persetujuan dari pengguna tersebut.<br>
+&nbsp;&nbsp;&nbsp;vi.	menggunakan Web App untuk untuk hal-hal yang dilarang berdasarkan hukum dan undang-undang yang berlaku.<br>
+&nbsp;&nbsp;&nbsp;vii.	menggunakan Web App untuk mendistribusikan iklan atau materi lainnya.<br>
+10.&nbsp;	Anda memahami dan setuju bahwa penggunaan Web App oleh Anda akan tunduk pula pada Kebijakan Privasi kami sebagaimana dapat diubah dari waktu ke waktu. Dengan menggunakan Web App, Anda juga memberikan persetujuan sebagaimana dipersyaratkan berdasarkan Kebijakan Privasi kami.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -169,23 +154,72 @@ Walaupun cantik Purbararang sangat kasar, sombong, kejam dan iri hati terhadap s
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"> terms of service</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Purbasari memiliki enam orang kakak perempuan yaitu Purbararang, Purbadewata, Purbaendah, Purbakancana, Purbamanik dan Purbaleuih.
+      <b>Syarat dan Ketentuan</b>
+<b>PENTING:</b> Anda sebagai pengguna (“Anda”) aplikasi web Sahabat Hewan (Web App) diwajibkan untuk membaca Syarat dan Ketentuan Penggunaan ini (“Ketentuan Penggunaan”) dan Kebijakan Privasi yang terlampir dengan hati-hati dan seksama sebelum menggunakan setiap fitur dan/atau layanan yang tersedia dalam Web App.<br><br>
 
-Purbasari sangat baik sifat dan kelakuannya. Dia lembut, manis budi, ddan suka menolong.
+Dengan menggunakan Web App Sahabat Hewan Anda setuju bahwa Anda telah membaca, memahami, mengetahui, menerima, dan menyetujui seluruh informasi, syarat-syarat, dan ketentuan-ketentuan penggunaan Web App yang terdapat dalam Ketentuan Penggunaan ini. Ketentuan Penggunaan ini merupakan suatu perjanjian sah terkait tata cara dan persyaratan penggunaan Web App antara Anda dengan pengelola Web App yaitu Olympians Developer (“Kami”).<br><br>
 
-Siapapun juga yang membutuhkan pertolongan dengan senang hati dibantunya.
+Mohon diperhatikan bahwa Ketentuan Penggunaan dan Kebijakan Privasi dapat diperbarui dari waktu ke waktu dan pembaruan tersebut akan Kami beritahukan kepada Anda pada saat Anda mengakses Web App. 
+Jika Anda tidak menyetujui Syarat dan Ketentuan ini, jangan mengakses dan/atau menggunakan Platform dan/atau Layanan ini.<br><br>
 
-Selain hatinya yang elok, Purbasari juga memiliki paras yang cantik dan rupawan, setiap orang yang melihatnya pasti jatuh hati pada pandangan pertama.
 
-Sayangnya kecantikan dan kebaikan hati purbasari tidak menurun dari kakak sulungnya Purbararang yang berperangai sangat buruk.
+<b>I.	Ketentuan Umum</b>
+1.	Koneksi internet diperlukan untuk dapat menggunakan Layanan. Segala biaya yang timbul atas koneksi perangkat elektronik Anda dengan jaringan internet merupakan tanggung jawab Anda sepenuhnya.<br>
+2.	Aplikasi ini merupakan aplikasi perangkat lunak yang menghubungkan Anda dengan pihak Komunitas hewan dan Dokter Hewan.<br>
+3.	Jenis Layanan yang dapat diminta Melalui Web App :<br>
+-	Pelaporan;<br>
+-	Komunitas;<br>
+-	Dokter Hewan terdekat;<br>
+-	Adopsi; dan<br>
+-	Event.<br>
+4.	Web App merupakan fitur yang berfungsi sebagai sarana Pengguna untuk mengakses beberapa Layanan Kami tanpa perlu mengunduh Aplikasi. Untuk saat ini, Sahabat Hewan tersedia dalam Web App.<br>
+5.	Kami berhak untuk sewaktu-waktu mengubah, menghapus,  dan/atau menerapkan syarat dan ketentuan baru dalam Ketentuan Penggunaan ini. Perubahan terhadap Ketentuan Penggunaan akan segera berlaku efektif dan akan diberitahukan kepada Anda pada saat Anda mengakses Web App pertama kalinya setelah perubahan tersebut efektif. Pemakaian Anda yang berkelanjutan terhadap Web App akan dianggap sebagai persetujuan untuk tunduk kepada perubahan atas syarat dan ketentuan dari Ketentuan Penggunaan ini.<br>
+6.	Kami berhak sewaktu-waktu mengubah, menghapus, mengurangi, menambah dan/atau memperbarui fitur atau fasilitas dalam Web App . Pemakaian Anda yang berkelanjutan terhadap Web App akan dianggap sebagai persetujuan kepada perubahan, penghapusan, pengurangan, penambahan dan/atau pembaruan fitur atau fasilitas Web App.<br>
 
-Walaupun cantik Purbararang sangat kasar, sombong, kejam dan iri hati terhadap siapapun juga.
+<b>II.	Layanan</b>
+1.	Pelaporan<br>
+i.	Fitur aplikasi ini memungkinkan Anda melakukan pelaporan atas hewan yang sedang terluka, sekarat dan atau kondisi yang lainnya.<br>
+ii.	Laporan yang Anda buat akan ditangani oleh Komunitas Hewan yang telah bekerjasama dengan kami.<br>
+iii.	Layanan Kami tidak bersifat memaksa atau pun mengikat. Keputusan untuk menggunakan Layanan ini sepenuhnya berada di tangan Anda. Anda bebas untuk memilih untuk menggunakan penyedia layanan lainnya.<br><br>
+
+2.	Dokter Hewan Terdekat<br>
+i.	Fitur Applikasi ini memfasilitasi Anda untuk menemukan dokter hewan terdekat dengan lokasi Anda.<br>
+3.	Adopsi<br>
+i.	Fitur ini memfasilitasi pengguna dan atau komunitas untuk menawarkan hewan yang dapat diadopsi oleh pengguna lain yang tertarik dengan hewan tersebut.<br>
+ii.	Fitur adopsi ini bebas dari biaya apapun.<br><br>
+
+4.	Event<br>
+i.	Fitur ini memberikan informasi seputar event terkait perlindungan hewan, penanganan hewan, dan yang lainnya.<br>
+ii.	Fitur ini hanya menyediakan informasi tanpa memfasilitasi pengguna untuk bergabung dalam event. Untuk bergabung dalam event pengguna dapat menghubungi pihak terkait.<br>
+5.	Komunitas<br>
+i.	Fitur ini memberikan informasi mengenai semua komunitas yang bekerja sama dengan kami.<br>
+ii.	Fitur ini memfasilitasi komunitas untuk mengajukan kerjasama dengan kami.<br><br>
+
+<b>III.	Hak Atas Kekayaan Intelektual</b><br>
+
+1.	Kami adalah pemilik tunggal atas nama, ikon, dan logo Sahabat Hewan serta fitur dalam Web App, yang mana merupakan hak cipta dan merek dagang yang dilindungi undang-undang Republik Indonesia. Dilarang keras menggunakan, memodifikasi, atau memasang nama, ikon, logo, atau merek tersebut tanpa persetujuan tertulis dari Kami.<br>
+2.	Olympians Developer adalah pemilik tunggal atas nama, ikon, dan logo “” serta pemegang hak kekayaan intelektual yang sah atas nama, ikon dan logo “Sahabat Hewan” dalam Web App tersebut, yang merupakan hak cipta dan merek yang dilindungi undang-undang. Dilarang keras menggunakan, mengubah, atau memasang nama, ikon, logo, atau merek tersebut tanpa persetujuan tertulis dari Olympians Developer.<br>
+3.	Seluruh hak atas kekayaan intelektual yang terdapat dalam Web App berdasarkan hukum negara Republik Indonesia, termasuk dalam hal ini adalah kepemilikan hak kekayaan intelektual atas seluruh source code Web App dan hak kekayaan intelektual terkait Web App. Untuk itu, Anda dilarang untuk melakukan pelanggaran atas hak kekayaan intelektual yang terdapat pada Web App ini, termasuk melakukan modifikasi, karya turunan, mengadaptasi, menduplikasi, menyalin, menjual, membuat ulang, meretas, menjual, dan/atau mengeksploitasi Web App ini termasuk penggunaan Web App atas akses yang tidak sah, meluncurkan program otomatis atau script, atau segala program apapun yang mungkin menghambat operasi dan/atau kinerja Web App, atau dengan cara apapun memperbanyak atau menghindari struktur navigasi atau presentasi dari Web App atau isinya.<br>
+4.	Anda hanya diperbolehkan untuk menggunakan Web App maupun salinan web App semata-mata untuk kebutuhan pribadi, non-komersial, non-eksklusif, tidak dapat dipindahtangankan, tidak dapat dialihkan dan tidak dapat disublisensikan.<br>
+5.	Kami memiliki hak sepenuhnya untuk melakukan tindakan hukum terhadap setiap pelanggaran yang dilakukan oleh Anda terkait dengan hak kekayaan intelektual yang terkait Web App.<br><br>
+
+IV.	Pemberitahuan
+1.	Semua pemberitahuan atau permintaan informasi kepada atau tentang Kami akan diproses jika dibuat secara tertulis dan dikirimkan ke alamat alamat email kami di sahabathewan@gmail.com.
+2.	Semua pemberitahuan dan/atau permintaan tentang Anda akan diproses bila diserahkan langsung, dikirimkan melalui e-mail yang diberikan oleh Anda kepada Kami. 
+
+<b>V.	Tidak Ada Jaminan</b><br>
+Web App  ini disediakan “sebagaimana adanya” dalam arti Anda mengakui dan menyetujui bahwa seluruh risiko yang ditimbulkan dari penggunaan fitur Web App oleh Anda tetap sepenuhnya ada pada Anda dan Anda tidak memiliki hak untuk meminta ganti rugi apapun dari Kami. Kami TIDAK memberikan pernyataan ataupun jaminan terkait dengan:<br>
+1.	Bahwa Web App ini akan bebas dari kesalahan dan/atau kecacatan maupun saat beroperasi dengan kombinasi dengan perangkat keras, perangkat lunak, sistem atau data lainnya serta bahwa kesalahan dan/atau kecacatan dalam Web App akan diperbaiki.<br>
+2.	Ketersediaan dan kehandalan Web App maupun server-server pendukung yang menyediakan Web App , termasuk terbebas dari virus dan komponen berbahaya lain.<br>
+3.	Ketersediaan dan kehandalan Web App maupun server-server pendukung yang menyediakan Web App , termasuk terbebas dari virus dan komponen berbahaya lain.<br>
+4.	Bahwa fitur dalam Web App akan sesuai dengan harapan dan kebutuhan Anda.<br>
+5.	Bahwa kualitas produk, fitur dan informasi yang tersedia akan memenuhi harapan dan kebutuhan Anda.<br>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

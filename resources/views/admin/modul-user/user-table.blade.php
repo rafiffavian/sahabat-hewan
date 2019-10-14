@@ -51,9 +51,9 @@
               @foreach($user as $users)
                   <tr>
                @if($users->image != null)  
-                  <td><img src="{{ url('userimage/' . $users->image) }}" width="200"></td> 
+                  <td><img src="{{ url('/') }}/userimage/{{$users->image}}" width="200"></td> 
               @else
-                  <td><img src="{{asset('userimage/anon.jpg')}}" width="200"></td> 
+                  <td><img src="{{ url('/') }}/userimage/anon.jpg" width="200"></td> 
               @endif 
                     <td>{{$users->first_name}}</td>
                     <td>{{$users->last_name}}</td>

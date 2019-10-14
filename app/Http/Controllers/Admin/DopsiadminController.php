@@ -125,7 +125,8 @@ class DopsiadminController extends Controller
      */
     public function show($id)
     {
-        //
+        $detailAdopsi = Adoption::findOrFail($id); 
+        return view('admin.modul-adopsi.adopsi-detail',compact('detailAdopsi'));
     }
 
     /**
@@ -202,6 +203,15 @@ class DopsiadminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $gambar = Adoption::find($id)->image;
+        // dd($gambar);
+        // exit();
+        File::delete('adoptionimage/' . $gambar);
+        $delete_action = Adoption::where('id',$id)->delete();
+        if ($delete_action){
+            return redirect()->route('dopsiadmin.index');
+        }else{
+            echo "Gagal Delete";
+        }
     }
 }

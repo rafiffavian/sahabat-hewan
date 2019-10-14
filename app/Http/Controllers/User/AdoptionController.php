@@ -113,7 +113,6 @@ class AdoptionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-
             'id_animaltype' => 'required',
             'animal_name' => 'required|max:255',
             'animal_kind' => 'required|max:255',
@@ -122,9 +121,7 @@ class AdoptionController extends Controller
             'alasan' => 'required|max:255',
             'image' => 'required',
             'agresiv' => 'required|max:255',
-           
-           
-            ]);
+        ]);
 
 
         $file =  $request->file('image');
@@ -137,6 +134,10 @@ class AdoptionController extends Controller
         $data['lokasi'] = Auth::user()->kota;
         unset($data['token']);
         $data['image'] = $fileName;
+
+        if(isset($data['/adoption'])){
+            unset($data['/adoption']);
+        }
 
         $save = Auth::user()->adoption();
         $save->create($data);

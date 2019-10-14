@@ -52,7 +52,11 @@
                 <tbody>
               @foreach($adoption as $adoptions)
                   <tr>
-                  <td><img src="{{ url('adoptionimage/' . $adoptions->image) }}" width="200"></td>
+                  @if($adoptions->image != null)        
+                  <td><img src="{{ url('/') }}/adoptionimage/{{$adoptions->image}}" width="200"></td>
+                  @else
+                  <td><img src="{{ url('/') }}/userimage/anon.jpg" width="200"></td> 
+                  @endif 
                     <td>{{$adoptions->animal_name}}</td>
                     <td>{{$adoptions->myhewan->name}}</td>
                     <td>{{$adoptions->animal_kind}}</td>
@@ -60,11 +64,20 @@
                     <td>{{$adoptions->gender}}</td>
                     <td>{{$adoptions->agresiv}}</td>
                     <td>{{$adoptions->alasan}}</td>
-                    <td>{{$adoptions->asal}}</td>
+                    @if($adoptions->asal == 1) 
+                    <td>User</td>
+                    @else
+                    <td>Komunitas</td>
+                    @endif
                     <td>
                         <a href="{{route('dopsiadmin.show', $adoptions->id)}}"><i class="fa fa-eye"></i></a>
                         <a href="{{route('dopsiadmin.edit', $adoptions->id)}}"><i class="fa fa-pencil"></i></a>
-                        <a href="{{route('dopsiadmin.destroy', $adoptions->id)}}"><i class="fa fa-trash"></i></a>
+                        <form method="post" action="{{route('dopsiadmin.destroy', $adoptions->id)}}"> 
+                      @csrf
+                        <input type="hidden" name="_method" value="delete">   
+                        <button onClick="return confirm('Are you sure?')" type="submit"><i class="fa fa-trash"></i></button>
+                    </form>    
+                        
                     </td>
                   </tr>
              @endforeach

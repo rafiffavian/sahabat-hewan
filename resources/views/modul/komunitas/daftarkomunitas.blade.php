@@ -58,7 +58,7 @@
                 <br>
                
                         <br>
-                    <button type="submit" class="btn btn-success">DAFTAR</button><br><br>
+                    <button type="submit" onClick="return confirm('Are you sure?')" class="btn btn-success">DAFTAR</button><br><br>
 
             </div>
         </div>

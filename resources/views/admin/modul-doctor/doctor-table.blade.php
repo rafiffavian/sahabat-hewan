@@ -49,7 +49,11 @@
                 <tbody>
               @foreach($doctor as $doctors)
                   <tr>
-                  <td><img src="{{ url('doctorimage/' . $doctors->image) }}" width="200"></td>
+                  @if($doctors->image != null)      
+                  <td><img src="{{ url('/') }}/doctorimage/{{$doctors->image}}" width="200"></td>
+                  @else
+                  <td><img src="{{ url('/') }}/userimage/anon.jpg" width="200"></td> 
+                  @endif 
                     <td>{{$doctors->name}}</td>
                     <td>{{$doctors->no_tlp}}</td>
                     <td>{{$doctors->kelurahan}}</td>

@@ -48,6 +48,7 @@ class PelaporanController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $data['status'] = '2';
         $gambar = $data['gambar'];
         $gambarExplode = explode(',', $gambar);
 

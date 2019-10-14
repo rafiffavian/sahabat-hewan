@@ -48,7 +48,11 @@
                 <tbody>
               @foreach($comunity as $comunities)
                   <tr>
-                  <td><img src="{{ url('comunityimage/' . $comunities->image) }}" width="200"></td>
+                  @if($comunities->image != null)    
+                  <td><img src="{{ url('/') }}/comunityimage/{{$comunities->image}}" width="200"></td>
+                  @else
+                  <td><img src="{{ url('/') }}/userimage/anon.jpg" width="200"></td> 
+                  @endif 
                     <td>{{$comunities->name}}</td>
                     <td>{{$comunities->location}}</td>
                     <td>{{$comunities->description}}</td>

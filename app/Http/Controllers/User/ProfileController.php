@@ -133,7 +133,7 @@ class ProfileController extends Controller
     public function update(Request $request, $id)
     {
         $user = Auth::user()->findOrFail($id);
-        $user->fill($request->except(['token','_method']))->save();
+        $update_data = $user->fill($request->except(['token','_method']))->save();
 
         $file =  $request->file('image');
         if ($file != null){
@@ -148,12 +148,12 @@ class ProfileController extends Controller
             // dd($gambar);
             // exit();
             File::delete('userimage/' . $gambar);
+            $update_action = User::where('id',$id)->update($update);
         }
 
        
 
-        $update_action = User::where('id',$id)->update($update);
-        if ($update_action){
+        if ($update_data){
             return redirect()->route('detailprofile.index');
         }else{
             echo "Gagal Update";

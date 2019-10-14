@@ -99,7 +99,7 @@
 		<div class="card-body">
 		<div class="row">
 			<aside class="col-sm-3">
-				<div class="img-wrap"><img src="{{ url('adoptionimage/' . $adoptions->image) }}"></div>
+				<div class="img-wrap"><img src="{{ asset('adoptionimage/'. $adoptions->image) }}"></div>
 			</aside> <!-- col.// -->
 			<article class="col-sm-6">
 					<h4 class="title"> {{$adoptions->animal_name}} <span class="badge badge-pill badge-success">Free</span> </h4><br>

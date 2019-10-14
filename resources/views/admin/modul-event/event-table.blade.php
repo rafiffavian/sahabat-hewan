@@ -52,7 +52,11 @@
                 <tbody>
               @foreach($event as $events)
                   <tr>
-                  <td><img src="{{ url('eventimage/' . $events->image) }}" width="200"></td>
+                  @if($events->image != null)    
+                  <td><img src="{{ url('/') }}/eventimage/{{$events->image}}" width="200"></td>
+                  @else
+                  <td><img src="{{ url('/') }}/userimage/anon.jpg" width="200"></td> 
+                  @endif 
                     <td>{{$events->name}}</td>
                     <td>{{$events->location}}</td>
                     <td>{{$events->time}}</td>

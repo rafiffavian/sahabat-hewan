@@ -50,7 +50,7 @@
                
                         <br>
                         <a href="javascript:history.back()" class="btn btn-warning">Back</a>
-                    <button type="submit" class="btn btn-success">OK</button><br><br>
+                    <button type="submit" onClick="return confirm('Are you sure?')" class="btn btn-success">OK</button><br><br>
 
             </div>
         </div>

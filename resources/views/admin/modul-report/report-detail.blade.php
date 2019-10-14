@@ -12,31 +12,40 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="textinput"><h4>Gambar1:</h4></label>  
             <div class="col-md-4">
-            <img src="{{ url('remortimage/' . $detailReport->image_one) }}" width="200" alt="{{asset('asset/img/desainpelaporan/anjingbelakang.PNG')}}">
+            @if($detailReport->image_one != null)                     
+            <img src="{{ url('/') }}/remortimage/{{$detailReport->image_one}}" width="200" alt="">
+            @else <td><img  width="100"lass="img-fluid" alt="Responsive image" src="{{ url('/') }}/userimage/anon.jpg" /></td>
+            @endif
+            </div>
+        </div><br>    
         <div class="form-group">
         <label class="col-md-4 control-label" for="textinput"><h4>Gambar2:</h4></label>  
             <div class="col-md-4">
+            @if($detailReport->image_two != null)                
             <img src="{{ url('remortimage/' . $detailReport->image_two) }}" width="200" alt="">
+            @else <td><img  width="100"lass="img-fluid" alt="Responsive image" src="{{ url('/') }}/userimage/anon.jpg" /></td>
+            @endif
             </div>
         </div><br>
         <div class="form-group">
         <label class="col-md-4 control-label" for="textinput"><h4>Gambar3:</h4></label>  
             <div class="col-md-4">
+            @if($detailReport->image_three != null)            
             <img src="{{ url('remortimage/' . $detailReport->image_three) }}" width="200" alt="">
+            @else <td><img  width="100"lass="img-fluid" alt="Responsive image" src="{{ url('/') }}/userimage/anon.jpg" /></td>
+            @endif
             </div>
         </div><br>
         <div class="form-group">
         <label class="col-md-4 control-label" for="textinput"><h4>Gambar4:</h4></label>  
             <div class="col-md-4">
+            @if($detailReport->image_four != null)        
             <img src="{{ url('remortimage/' . $detailReport->image_four) }}" width="200" alt="">
+            @else <td><img  width="100"lass="img-fluid" alt="Responsive image" src="{{ url('/') }}/userimage/anon.jpg" /></td>
+            @endif
             </div>
         </div><br>
-        <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput"><h4>Gambar5:</h4></label>  
-            <div class="col-md-4">
-            <img src="{{ url('remortimage/' . $detailReport->image_five) }}" width="200" alt="">
-            </div>
-        </div><br>
+        
         <div class="form-group">
         <label class="col-md-4 control-label" for="textinput"><h4>ID user:</h4></label>  
             <div class="col-md-4">
@@ -80,6 +89,12 @@
             </div>
         </div>
         <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput"><h4>Lihat Lokasi</h4></label>  
+            <div class="col-md-4">
+            <h2><a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{$detailReport->latitude}},{{$detailReport->longtitude}}">Lihat Lokasi</a></h2>
+            </div>
+        </div>
+        <div class="form-group">
         <label class="col-md-4 control-label" for="textinput"><h4>Description</h4></label>  
             <div class="col-md-4">
                  <h2>{{$detailReport->description}}</h2>
@@ -115,6 +130,11 @@
 
         <div class="form-group text-center">
          <a href="javascript:history.back()" class="btn btn-warning"> Back </a>
+      @if($detailReport->status == 2)   
+         <a href="{{route('detail.sukses',$detailReport->id)}}" class="btn btn-success"> Kasus Selesai </a>
+      @else   
+         <a href="{{route('detail.sukses',$detailReport->id)}}" class="btn btn-danger"> Kasus Belum Selesai </a>
+      @endif   
         </div>
 
         </fieldset>

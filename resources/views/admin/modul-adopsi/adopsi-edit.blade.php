@@ -79,7 +79,7 @@
         <label class="col-md-4 control-label" for="textinput">asal</label>  
             <div class="col-md-4">
                 <select name="asal"class="form-control custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option value="{{$editAdoption->asal}}">{{$editAdoption->asal}}</option>
+                        <option value="{{$editAdoption->asal}}">@if($editAdoption->id == 1) User @else Komunitas @endif </option>
                         <option value="1">User</option>
                         <option value="2">Komunitas</option>
                 </select>

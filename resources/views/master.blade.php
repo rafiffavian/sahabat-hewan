@@ -34,7 +34,7 @@
     @include('layouts.includes.navbar')
     
     @yield('content')
-    <h1>{{Auth::user()->id}}</h1>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

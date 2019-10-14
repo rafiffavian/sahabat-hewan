@@ -4,9 +4,12 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use App\User;
+use Mail;
+use Sentinel;
+use Reminder;
 
-class LoginController extends Controller
+class ForgotController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +18,33 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('modul.signinup.login');
+        return view('modul.signinup.forgotpassword');
+    }
+
+    public function password(Request $request)
+    {
+        $user = User::whereEmail($request->email)->first();
+
+        if($user == null){
+            return redirect()->back()->with(['error' => 'Email Tidak Ada']);
+        }
+        $user = Sentinel::findById($user->id);
+        $reminder = Reminder::exists($user) ? : Reminder::create($user);
+        $this->sendEmail($user, $reminder->code);
+
+        return redirect()->back()->with(['success' => 'Reset code sent to your email.']);
+    }
+
+    public function sendEmail($user, $code)
+    {
+        Mail::send(
+            'modul.signinup.forgot',
+            ['user' => $user, 'code' => $code],
+            function($message) use ($user){
+                $message->to($user->email);
+                $message->subject("$user->name, reset your passowrd.");
+            }
+        );
     }
 
     /**
@@ -23,11 +52,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        Auth::logout();
-        return redirect(route('login.index'));
-
+        //
     }
 
     /**
@@ -38,16 +65,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $remember = $request->input('remember_me');
-        
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember) && Auth::user()->id_role == '6'){
-            return redirect()->intended('/detailprofile');
-        }elseif(Auth::attempt(['email' => $request->email, 'password' => $request->password]) && Auth::user()->id_role == '7' | '8'){
-            return redirect()->intended('/dashboard/report');
-        }else{
-            return redirect()->back();
-        }
-        
+        //
     }
 
     /**

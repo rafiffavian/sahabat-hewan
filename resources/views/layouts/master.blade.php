@@ -156,7 +156,7 @@
             <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
           </ul>
         </li> -->
-        
+        @if(Auth::user()->id_role == 7)
         <li>
           <a href="{{route('user.index')}}">
             <i class="fa fa-th"></i> <span>User Table</span>
@@ -176,6 +176,8 @@
           <ul class="treeview-menu">
             <li><a href="{{route('report.index')}}"><i class="fa fa-circle-o"></i> Pelaporan Table</a></li>
             <li><a href="{{route('laporan.grafik')}}"><i class="fa fa-circle-o"></i> Grafik Pelaporan</a></li>
+            <li><a href="{{route('laporan.tableberhasil')}}"><i class="fa fa-circle-o"></i> Pelaporan Berhasil Table</a></li>
+            <li><a href="{{route('laporan.grafikberhasil')}}"><i class="fa fa-circle-o"></i> Grafik Pelaporan Berhasil</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -233,7 +235,63 @@
             <li><a href="{{route('adopsi.grafik')}}"><i class="fa fa-circle-o"></i> Grafik Adopsi</a></li>
           </ul>
         </li>
-       
+
+        @else
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Pelaporan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('report.index')}}"><i class="fa fa-circle-o"></i> Pelaporan Table</a></li>
+            <li><a href="{{route('laporan.grafik')}}"><i class="fa fa-circle-o"></i> Grafik Pelaporan</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Komunitas</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('comunity.index')}}"><i class="fa fa-circle-o"></i> Komunitas Table</a></li>
+            <li><a href="{{route('daftarkomunitas.index')}}"><i class="fa fa-circle-o"></i>Pendaftaran Komunitas Table</a></li>
+            <li><a href="{{route('comunity.grafik')}}"><i class="fa fa-circle-o"></i> Grafik Komunitas</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Event</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('event.index')}}"><i class="fa fa-circle-o"></i> Event Table</a></li>
+            <li><a href="{{route('event.grafik')}}"><i class="fa fa-circle-o"></i> Grafik Event</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Adopsi</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('dopsiadmin.index')}}"><i class="fa fa-circle-o"></i> Adopsi Table</a></li>
+            <li><a href="{{route('adopsi.grafik')}}"><i class="fa fa-circle-o"></i> Grafik Adopsi</a></li>
+          </ul>
+        </li>
+
+        @endif
        
     </section>
     <!-- /.sidebar -->

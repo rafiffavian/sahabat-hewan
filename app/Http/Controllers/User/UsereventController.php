@@ -18,7 +18,7 @@ class UsereventController extends Controller
     {
         $eventAll = Event::all();
         $event = $eventAll;
-
+        // dd($request->hewan);
         $search = $request->search;
         $hewan = $request->hewan;
         $location = $request->lokasi;
@@ -79,7 +79,7 @@ class UsereventController extends Controller
         //     unset($lokasi[$counter]);
         //     $counter++;
         // }
-        
+       
 
         return view('modul.event.index',compact('event','anjing','kucing','semua','all','lokasi'));
     }

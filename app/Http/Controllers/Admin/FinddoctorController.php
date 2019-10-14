@@ -24,41 +24,28 @@ class FinddoctorController extends Controller
     {
         $doctorAll = Doctor::all();
 
-        $jakut = $doctorAll->filter(function($value, $key){
-            return $value->kota == 'jakarta utara';
-        });
-        $jakbar = $doctorAll->filter(function($value, $key){
-            return $value->kota == 'jakarta barat';
-        });
-        $jaktim = $doctorAll->filter(function($value, $key){
-            return $value->kota == 'jakarta timur';
-        });
-        $jaksel = $doctorAll->filter(function($value, $key){
-            return $value->kota == 'jakarta selatan';
-        });
-        $jakpus = $doctorAll->filter(function($value, $key){
-            return $value->kota == 'jakarta pusat';
-        });
+        
 
+        $lokasi = [];
+        foreach($doctorAll as $daerah){
+            if(!in_array($daerah->kota, $lokasi)){
+                array_push($lokasi, $daerah->kota);
+            }
+        }
 
-        if(count($jakut) > 0){
-            $wilayah['jakarta selatan'] = count($jakut); 
-         }
-        if(count($jakbar) > 0){
-            $wilayah['jakarta barat'] = count($jakbar); 
-         }
-        if(count($jaktim) > 0){
-            $wilayah['jakarta timur'] = count($jaktim); 
-         }
-        if(count($jaksel) > 0){
-            $wilayah['jakarta selatan'] = count($jaksel); 
-         }
-        if(count($jakpus) > 0){
-            $wilayah['jakarta pusat'] = count($jakpus); 
-         }
+        $counter = 0;
+        foreach($lokasi as $l){
+            $tempData = $doctorAll->filter(function($value, $key) use ($l){
+                return $value->kota == $l;
+            });
+            $lokasi[$l] = $tempData->count();
+            unset($lokasi[$counter]);
+            $counter++;
+        }
+
  
         
-        return view('admin.modul-doctor.doctor-grafik',compact('wilayah'));
+        return view('admin.modul-doctor.doctor-grafik',compact('lokasi'));
     }    
 
     /**

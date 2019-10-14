@@ -15,7 +15,7 @@
                             <div class="work-experience pt-2">
                                 <div class="section">
                                 <h3>{{$user->username}}</h3>
-                                <h1>{{Auth::user()->id}}</h1>
+                               
                                 </div>
                             </div>
                         </section>
@@ -74,11 +74,11 @@
                                             <img style="margin-top: 25px;width: 200px; height: 200px;object-fit: cover;" class="rounded img-fluid image scale-on-hover" src="{{ url('adoptionimage/' . $adoptions->image) }}">
                                         </a>
                                      <div class="row">
-                                        <a style="margin-top:5px;margin-left:20px;" href="{{route('detail.hewan', $adoptions->id)}}" class="btn btn-warning btn-sm">Ubah</a><br>
+                                        <a style="width:100px;margin-top:5px;margin-left:20px;" href="{{route('detail.hewan', $adoptions->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-trash"></i> Ubah</a><br>
                                        <form method="post" action="{{ route('detail.deletehewan', $adoptions->id) }}"> 
                                             @csrf
                                             <input type="hidden" name="_method" value="delete">   
-                                            <button style="width:70px;margin-left:5px;margin-top:5px;" type="submit" class="btn btn-danger">Hapus</button>
+                                            <button style="width:100px;margin-left:5px;margin-top:5px;" onClick="return confirm('Are you sure?')" type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</button>
                                         </form>    
                                         </div>      
                                     </div>

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-});
+Route::get('/', 'User\LoginController@index');
 
 
 Route::get('/daftarkomunitas', function () {
@@ -28,6 +26,10 @@ Route::get('/profilteman', function () {
 
 Route::resource('/user', 'User\EnduserController', ['names' => 'enduser']);
 Route::resource('/login', 'User\LoginController');
+
+Route::resource('/forgot', 'User\ForgotController');
+Route::post('/forgot/password', 'User\ForgotController@password')->name('forgot.password');
+
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/myinfo', 'User\MyinfoController@edit')->name('myinfo.edit');
@@ -54,7 +56,13 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('dashboard/event', 'Admin\EventController');
     Route::get('/dashboard/event-grafik/grafik','Admin\EventController@graphic')->name('event.grafik');
     Route::resource('dashboard/user', 'Admin\UserController');
+
     Route::resource('dashboard/report', 'Admin\ReportController');
+    Route::get('/dashboard/report/detail/{id}', 'Admin\ReportController@sukses')->name('detail.sukses');
+    Route::get('/dashboard/report-berhasil/', 'Admin\ReportController@berhasil')->name('laporan.berhasil');
+    Route::get('/dashboard/report/table/berhasil','Admin\ReportController@tableberhasil')->name('laporan.tableberhasil');
+    Route::get('/dashboard/grafik-berhasil','Admin\ReportController@grafikberhasil')->name('laporan.grafikberhasil');
+
     Route::get('/dashboard/grafik','Admin\ReportController@grafik')->name('laporan.grafik');
     Route::resource('dashboard/finddoctor', 'Admin\FinddoctorController');
     Route::resource('dashboard/daftarkomunitas', 'Admin\DafkomController');

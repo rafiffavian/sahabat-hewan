@@ -13,7 +13,10 @@
         <div class="form-group">
         <label class="col-md-4 control-label" for="textinput"><h4>Gambar:</h4></label>  
             <div class="col-md-4">
-            <img src="{{ url('comunityimage/' . $detailComunity->image) }}" width="200" alt="">
+            @if($detailComunity->image != null)        
+            <img src="{{ url('/') }}/comunityimage/{{$detailComunity->image}}" width="200" alt="">
+            @else <td><img  width="100"lass="img-fluid" alt="Responsive image" src="{{ url('/') }}/userimage/anon.jpg" /></td>
+            @endif
             </div>
         </div><br>
         <div class="form-group">

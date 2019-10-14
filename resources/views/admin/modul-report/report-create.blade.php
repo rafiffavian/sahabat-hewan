@@ -101,6 +101,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6ATO8whdI6uuHaUYrS885LyU7g5Wf4bs&callback=initMap">
 </script>
 <script src="{{asset('js/map.js')}}" type="text/javascript"></script>
+<script src="js/map.js" type="text/javascript"></script>
     <script type="text/javascript">
         $('#bagikan_lokasi').click(function(){
             $('#map').show();
@@ -145,7 +146,10 @@
                 // Callback handler that will be called on success
                 request.done(function (response, textStatus, jqXHR){
                     // Log a message to the console
-                    console.log(response);
+                    alert('Data Berhasil di Simpan');
+                    window.location.replace("{{route('report.index')}}");
+                    $('input').val('');
+                    $('textarea').html('');
                 });
             }
 

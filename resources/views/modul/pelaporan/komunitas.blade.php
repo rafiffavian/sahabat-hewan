@@ -35,12 +35,12 @@
 
                     <div class="form-group">
                         <label for="hp">Nomor Handphone Aktif</label>
-                        <input type="text" class="form-control" name="no_tlp" id="hp" placeholder="+62878000000000">
+                        <input require type="text" class="form-control" name="no_tlp" id="hp" placeholder="+62878000000000">
                     </div>
 
                     <div class="form-group">
                         <label for="wa">Nomor Whatsapp Aktif <img height="40px;" width="auto"src="asset/img/desainpelaporan/whatsapp.png"></label>
-                        <input type="text" name="no_whatsapp" class="form-control" id="wa" placeholder="+62878000000000">
+                        <input required type="text" name="no_whatsapp" class="form-control" id="wa" placeholder="+62878000000000">
                         <small id="emailHelp" class="form-text text-muted">Opsional</small>
                     </div>
 
@@ -118,9 +118,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" type="text/javascript"></script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6ATO8whdI6uuHaUYrS885LyU7g5Wf4bs&callback=initMap">
-</script>
-<script src="js/map.js" type="text/javascript"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6ATO8whdI6uuHaUYrS885LyU7g5Wf4bs&callback=initMap">
+    </script>
+    <script src="js/map.js" type="text/javascript"></script>
     <script type="text/javascript">
         $('#bagikan_lokasi').click(function(){
             $('#map').show();
@@ -151,8 +151,8 @@
             $('.kv-zoom-cache').find('.kv-file-content').find('img').each(function(){
                 gambar.push($(this).attr('title'));
             });
-            if(gambar.length > 5){
-                alert('total gambar dan video yang boleh di upload 5');
+            if(gambar.length > 4){
+                alert('total gambar dan video yang boleh di upload 4');
             } else {
                 data.push({name: 'gambar', value: gambar});
                 console.log('data', data)
@@ -166,6 +166,7 @@
                 request.done(function (response, textStatus, jqXHR){
                     // Log a message to the console
                     alert('Data Berhasil di Simpan');
+                    window.location.replace("{{route('detailprofile.index')}}");
                     $('input').val('');
                     $('textarea').html('');
                 });

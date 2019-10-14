@@ -108,25 +108,32 @@ anime.timeline({loop: true})
                         <div class="col-lg-10 col-xl-7 mx-auto">
                           <img width="80px" height="auto" src="asset/img/logo/sahabathewan1.png" alt="" class="rounded-circle ">
                             <h3 class="">Sahabat Hewan</h3>
-                            <p class="text-muted mb-4">"Hewanku Sobatku" </p>
-                            <form action="{{route('login.store')}}" method="post" >
+                            <p class="text-muted mb-4">"Lupa Password" </p>
+                            <form action="{{route('forgot.password')}}" method="post" >
                               @csrf
+
+                               @if(session('error'))   
+                                 <div>
+                                  {{ session('error')}}
+                                 </div> 
+                               @endif   
+
+                               @if(session('success'))   
+                                 <div>
+                                  {{ session('success')}}
+                                 </div>                                       
+                               @endif   
+
                                 <div class="form-group mb-3">
                                     <input id="inputEmail" name="email" type="email" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
-                                <div class="form-group mb-3">
-                                    <input id="inputPassword" name="password" type="password" placeholder="Password"  class="form-control rounded-pill border-0 shadow-sm px-4 text-success">
-                                </div>
-                                <div class="custom-control custom-checkbox mb-3">
-                                    <input id="customCheck1" name="remember_me" type="checkbox" checked class="custom-control-input">
-                                    <label for="customCheck1"  class="custom-control-label">Ingat password</label>
-                                   
-                                </div>
-                                <button type="submit" class="btn btn-success btn-block text-uppercase mb-2 rounded-pill shadow-sm">Masuk</button>
+                               
+                                <button type="submit" class="btn btn-success btn-block text-uppercase mb-2 rounded-pill shadow-sm">Kirim</button>
+                              </form>
                                 <div class="text-center d-flex justify-content-between mt-4"><p>Belum punya akun ? <a href="{{route('enduser.index')}}" class="font-italic text-muted"> 
                                         <u>Daftar disini</u></a></p></div>
-                                        <a href="{{route('forgot.index')}}">Forgot Password</a>
-                            </form>
+                                        <a href="{{route('login.index')}}">Login</a>
+                                       
                         </div>
                     </div>
                 </div><!-- End -->

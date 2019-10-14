@@ -37,7 +37,7 @@
   <div class="card-body">
   <div class="row">
    <aside class="col-sm-3">
-    <div class="img-wrap"><img src="asset/img/fotokomunitas/komunitassemua.jpg"></div>
+    <div class="img-wrap"><img src="{{ url('/') }}/doctorimage/{{$kelurahan->image}}"></div>
    </aside> <!-- col.// -->
    <article class="col-sm-6">
      <h4 class="title"> {{$kelurahan->name}} </h4>
@@ -76,7 +76,7 @@
   <div class="card-body">
   <div class="row">
    <aside class="col-sm-3">
-    <div class="img-wrap"><img src="asset/img/fotokomunitas/komunitassemua.jpg"></div>
+    <div class="img-wrap"><img src="{{ url('/') }}/doctorimage/{{$kecamatan->image}}"></div>
    </aside> <!-- col.// -->
    <article class="col-sm-6">
      <h4 class="title"> {{$kecamatan->name}} </h4>
@@ -119,7 +119,7 @@
   <div class="card-body">
   <div class="row">
    <aside class="col-sm-3">
-    <div class="img-wrap"><img src="asset/img/fotokomunitas/komunitassemua.jpg"></div>
+    <div class="img-wrap"><img src="{{ url('/') }}/doctorimage/{{$kota->image}}"></div>
    </aside> <!-- col.// -->
    <article class="col-sm-6">
      <h4 class="title"> {{$kota->name}} </h4>

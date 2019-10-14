@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg  navbar-dark" style="background-color: #00cc00;">
-  <a class="navbar-brand" href="">  <img src="{{asset('asset/img/logo/sahabathewan1.png')}}" width="30" height="30" alt=""><b> Sahabat Hewan</b></a>
+  <a class="navbar-brand" href="{{route('detailprofile.index')}}">  <img src="{{asset('asset/img/logo/sahabathewan1.png')}}" width="30" height="30" alt=""><b> Sahabat Hewan</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

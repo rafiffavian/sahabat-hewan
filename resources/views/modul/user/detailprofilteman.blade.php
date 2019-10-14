@@ -5,7 +5,7 @@
 <div class="container py-4 my-2">
     <div class="row">
         <div class="col-md-4 pr-md-5">
-            <img class="w-100 rounded border" src="{{asset($user->image)}}" />
+            <img class="w-100 rounded border" src="{{ url('/') }}/userimage/{{$user->image}}" />
             <div class="pt-4 mt-2">
                 <section class="mb-4 pb-1">
                    

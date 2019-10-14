@@ -128,7 +128,7 @@ class UserController extends Controller
 
         $update_action = User::where('id',$id)->update($update);
         if ($update_action){
-            return redirect()->route('event.index');
+            return redirect()->route('user.index');
         }else{
             echo "Gagal Update";
         }

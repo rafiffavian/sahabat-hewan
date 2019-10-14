@@ -61,6 +61,7 @@ class UserkomController extends Controller
                 $lokasi[$a->mywilayah->id] = [$a->mywilayah->name];
             }
         }
+        
 
         return view('modul.komunitas.index',compact('comunity','anjing','kucing','semua','all','lokasi'));
     }
