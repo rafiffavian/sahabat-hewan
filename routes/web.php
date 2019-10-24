@@ -26,10 +26,13 @@ Route::get('/profilteman', function () {
 
 Route::resource('/user', 'User\EnduserController', ['names' => 'enduser']);
 Route::resource('/login', 'User\LoginController');
+Route::resource('/verifikasi', 'User\VerifikasiController');
 
 Route::resource('/forgot', 'User\ForgotController');
-Route::post('/forgot/password', 'User\ForgotController@password')->name('forgot.password');
-
+Route::post('/forgot/requestPassword', 'User\ForgotController@requestPassword')->name('requestPassword');
+Route::get('/resetPassword/{key}/{id}', 'User\ForgotController@resetPassword')->name('resetPassword');
+Route::post('/resetPassword', 'User\ForgotController@reset')->name('reset');
+Route::get('/password', 'User\ForgotController@resetPasswordForm')->name('resetPasswordForm');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/myinfo', 'User\MyinfoController@edit')->name('myinfo.edit');
@@ -56,6 +59,7 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('dashboard/event', 'Admin\EventController');
     Route::get('/dashboard/event-grafik/grafik','Admin\EventController@graphic')->name('event.grafik');
     Route::resource('dashboard/user', 'Admin\UserController');
+    
 
     Route::resource('dashboard/report', 'Admin\ReportController');
     Route::get('/dashboard/report/detail/{id}', 'Admin\ReportController@sukses')->name('detail.sukses');

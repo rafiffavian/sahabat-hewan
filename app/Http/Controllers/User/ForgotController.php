@@ -4,7 +4,9 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\SendEmail;
 use App\User;
+use Illuminate\Support\Facades\Mail as IlluminateMail;
 use Mail;
 use Sentinel;
 use Reminder;
@@ -20,32 +22,50 @@ class ForgotController extends Controller
     {
         return view('modul.signinup.forgotpassword');
     }
-
+   
     public function password(Request $request)
     {
+        
         $user = User::whereEmail($request->email)->first();
-
         if($user == null){
             return redirect()->back()->with(['error' => 'Email Tidak Ada']);
         }
-        $user = Sentinel::findById($user->id);
-        $reminder = Reminder::exists($user) ? : Reminder::create($user);
-        $this->sendEmail($user, $reminder->code);
+        $new_password = str_random(30);
+        // $user->password = bcrypt($new_password);
+        // $user->save();
+        session(['email' => $request->email, 'password' => $new_password]);
+        $nama = $user->username;
+        Mail::to($user)->send(new SendEmail($new_password,$nama, $user->id));
+        return redirect()->route('login.index')->with(['success' => 'Cek Email Anda.']);
+        // return redirect()->route('login.index');
 
-        return redirect()->back()->with(['success' => 'Reset code sent to your email.']);
+        
     }
 
-    public function sendEmail($user, $code)
-    {
-        Mail::send(
-            'modul.signinup.forgot',
-            ['user' => $user, 'code' => $code],
-            function($message) use ($user){
-                $message->to($user->email);
-                $message->subject("$user->name, reset your passowrd.");
-            }
-        );
+    public function requestPassword(Request $request) {
+        $user = User::whereEmail($request->email)->first();
+        $key = str_random(30);
+        session(['key' => $key]);
+        Mail::to($user)->send(new SendEmail($key, $user->id));
+        return redirect()->route('login.index')->with(['success' => 'Cek Email Anda.']);
+
     }
+
+    public function resetPassword($key, $id) {
+        // $user = User::find($id);
+        return view('modul.signinup.password', compact('key', 'id'));
+    }
+
+    public function reset(Request $request) {
+        $id = $request['id'];
+        $user = User::find($id);
+        $password = $request['password'];
+        $user->password = bcrypt($password);
+        $user->save();
+        return redirect('/')->with(['success' => 'password telah diubah']);
+    }
+
+   
 
     /**
      * Show the form for creating a new resource.

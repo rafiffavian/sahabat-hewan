@@ -110,7 +110,19 @@ anime.timeline({loop: true})
                             <h3 class="">Sahabat Hewan</h3>
                             <p class="text-muted mb-4">"Hewanku Sobatku" </p>
                             <form action="{{route('login.store')}}" method="post" >
+                            <h2 class="fs-title">{{Session::get('email')}} {{Session::get('password')}}</h2>
                               @csrf
+                              @if(session('error'))   
+                                 <div>
+                                  {{ session('error')}}
+                                 </div> 
+                               @endif   
+
+                               @if(session('success'))   
+                                 <div>
+                                  {{ session('success')}}
+                                 </div>                                       
+                               @endif   
                                 <div class="form-group mb-3">
                                     <input id="inputEmail" name="email" type="email" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>

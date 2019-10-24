@@ -109,7 +109,7 @@ anime.timeline({loop: true})
                           <img width="80px" height="auto" src="asset/img/logo/sahabathewan1.png" alt="" class="rounded-circle ">
                             <h3 class="">Sahabat Hewan</h3>
                             <p class="text-muted mb-4">"Lupa Password" </p>
-                            <form action="{{route('forgot.password')}}" method="post" >
+                            <form action="{{route('requestPassword')}}" method="post" >
                               @csrf
 
                                @if(session('error'))   

@@ -18,6 +18,19 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{asset('adminlte/css/skins/_all-skins.min.css')}}">
 
+  <link rel="stylesheet" href="{{asset('adminlte/neon/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css')}}">
+	<link rel="stylesheet" href="{{asset('adminlte/neon/css/font-icons/entypo/css/entypo.css')}}">
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
+	<link rel="stylesheet" href="{{asset('adminlte/neon/css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{asset('adminlte/neon/css/neon-core.css')}}">
+	<link rel="stylesheet" href="{{asset('adminlte/neon/css/neon-theme.css')}}">
+	<link rel="stylesheet" href="{{asset('adminlte/neon/css/neon-forms.css')}}">
+	<link rel="stylesheet" href="{{asset('adminlte/neon/css/custom.css')}}">
+  <link rel="stylesheet" href="{{asset('adminlte/neon/css/skins/blue.css')}}">
+  
+  <script src="{{asset('adminlte/neon/js/jquery-1.11.3.min.js')}}"></script>
+
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -511,13 +524,39 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<!-- Imported styles on this page -->
+	<link rel="stylesheet" href="{{asset('adminlte/neon/js/datatables/datatables.css')}}">
+	<link rel="stylesheet" href="{{asset('adminlte/neon/js/select2/select2-bootstrap.css')}}">
+	<link rel="stylesheet" href="{{asset('adminlte/neon/js/select2/select2.css')}}">
+
+	<!-- Bottom scripts (common) -->
+	<script src="{{asset('adminlte/neon/js/gsap/TweenMax.min.js')}}"></script>
+	<script src="{{asset('adminlte/neon/js/jquery-ui-1.10.3.minimal.min.js')}}"></script>
+	<script src="{{asset('adminlte/neon/js/bootstrap.js')}}"></script>
+	<script src="{{asset('adminlte/neon/js/joinable.js')}}"></script>
+	<script src="{{asset('adminlte/neon/js/resizeable.js')}}"></script>
+	<script src="{{asset('adminlte/neon/js/neon-api.js')}}"></script>
+
+
+	<!-- Imported scripts on this page -->
+	<script src="{{asset('adminlte/neon/js/datatables/datatables.js')}}"></script>
+	<script src="{{asset('adminlte/neon/js/select2/select2.min.js')}}"></script>
+	<script src="{{asset('adminlte/neon/js/neon-chat.js')}}"></script>
+
+
+	<!-- JavaScripts initializations and stuff -->
+	<script src="{{asset('adminlte/neon/js/neon-custom.js')}}"></script>
+
+
+	<!-- Demo Settings -->
+	<script src="{{asset('adminlte/neon/js/neon-demo.js')}}"></script>
 
 <!-- jQuery 3 -->
-<script src="{{asset('adminlte/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<!-- <script src="{{asset('adminlte/bower_components/jquery/dist/jquery.min.js')}}"></script> -->
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- SlimScroll -->
-<script src="{{asset('adminlte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+<!-- <script src="{{asset('adminlte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script> -->
 <!-- FastClick -->
 <script src="{{asset('adminlte/bower_components/fastclick/lib/fastclick.js')}}"></script>
 <!-- AdminLTE App -->

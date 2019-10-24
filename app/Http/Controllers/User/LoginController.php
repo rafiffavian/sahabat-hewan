@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+
 class LoginController extends Controller
 {
     /**
@@ -38,9 +39,11 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $remember = $request->input('remember_me');
+        $remember = $request->has('remember_me') ? true : false;
         
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember) && Auth::user()->id_role == '6'){
+            $user = auth()->user();
+            Auth::login($user,true);
             return redirect()->intended('/detailprofile');
         }elseif(Auth::attempt(['email' => $request->email, 'password' => $request->password]) && Auth::user()->id_role == '7' | '8'){
             return redirect()->intended('/dashboard/report');

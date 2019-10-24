@@ -34,10 +34,67 @@
         <div class="box-body">
           <div class="row">
             <div class="col-md-12">
-              <table class="table table-striped table-bordered">
-                <thead>
-                  <tr>
-                    <th>Gambar</th>
+            <div class="main-content">
+	<h2 align="center">Data Tables</h2>
+	<br />
+<hr>
+<div class="col-md-2">
+	<a type="button" class="btn btn-green btn-icon icon-left" href="/siswa">
+								New Unit
+								<i class="entypo-plus">    		 </i>
+							</a>
+	</div>
+<div class="col-md-3">
+							
+<button type="button" class="btn btn-blue btn-icon">
+								Set Unit Partition
+								<i class="fa fa-pie-chart">    			  </i>
+							</button>
+							</div>
+
+			<br />
+			<br />
+			<br />
+
+            <script type="text/javascript">
+		jQuery( document ).ready( function( $ ) {
+			var $table3 = jQuery("#table-3");
+
+			var table3 = $table3.DataTable( {
+				"aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+			} );
+
+			// Initalize Select Dropdown after DataTables is created
+			$table3.closest( '.dataTables_wrapper' ).find( 'select' ).select2( {
+				minimumResultsForSearch: -1
+			});
+
+			// Setup - add a text input to each footer cell
+			$( '#table-3 tfoot th' ).each( function () {
+				var title = $('#table-3 thead th').eq( $(this).index() ).text();
+				$(this).html( '<input type="text" class="form-control" placeholder="" />' );
+			} );
+
+			// Apply the search
+			table3.columns().every( function () {
+				var that = this;
+
+				$( 'input', this.footer() ).on( 'keyup change', function () {
+					if ( that.search() !== this.value ) {
+						that
+							.search( this.value )
+							.draw();
+					}
+				} );
+			} );
+		} );
+		</script>
+
+            <table class="table table-bordered datatable" id="table-3">
+			<thead>
+				<tr class="replace-inputs">
+                    <th>No</th>
+				          	<th>Gambar</th>
                     <th>Nama Event</th>
                     <th>Alamat</th>
                     <th>Time</th>
@@ -47,11 +104,13 @@
                     <th>Price</th>
                     <th>Wilayah</th>
                     <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-              @foreach($event as $events)
+				</tr>
+			</thead>
+			<tbody>
+      <?php $no = 0 ;?> 
+      @foreach($event as $events)<?php $no++ ;?> 
                   <tr>
+                  <td>{{$no}}</td>
                   @if($events->image != null)    
                   <td><img src="{{ url('/') }}/eventimage/{{$events->image}}" width="200"></td>
                   @else
@@ -75,9 +134,25 @@
                     </form>    
                     </td>
                   </tr>
+              
              @endforeach
-                </tbody>
-              </table>
+			</tbody>
+			<tfoot>
+				<tr>
+        <th>No</th>
+					<th>Gambar</th>
+                    <th>Nama Event</th>
+                    <th>Alamat</th>
+                    <th>Time</th>
+                    <th>Jenis Hewan</th>
+                    <th>Requirement</th>
+                    <th>Deskripsi</th>
+                    <th>Price</th>
+                    <th>Wilayah</th>
+                    <th>Action</th>
+				</tr>
+			</tfoot>
+		</table>
             </div>
           </div>
         </div>
@@ -88,6 +163,6 @@
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->
-
+   
     </section>
 @endsection
