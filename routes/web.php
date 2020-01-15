@@ -73,6 +73,10 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard/doctor-grafik/grafik','Admin\FinddoctorController@graphic')->name('doctor.grafik');
     Route::resource('dashboard/dopsiadmin', 'Admin\DopsiadminController');
     Route::get('/dashboard/adopsi/grafik','Admin\DopsiadminController@grafik')->name('adopsi.grafik');
+
+    Route::get('/detailkomunitas', function () {
+        return view('modul.komunitas.detailkomunitas');
+    });
 });	   
     
 

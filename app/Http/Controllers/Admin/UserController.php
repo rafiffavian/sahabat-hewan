@@ -1,4 +1,4 @@
-<?php
+us<?php
 
 namespace App\Http\Controllers\Admin;
 

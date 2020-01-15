@@ -84,11 +84,39 @@ class FinddoctorController extends Controller
         $fileName = $fileNameArr[0] . '-' . time() . '.' . $fileNameArr[1];
         $file->move('doctorimage', $fileName);
 
-        $data = $request->all();
-        unset($data['token']);
-        $data['image'] = $fileName;
+        // $data = $request->all();
+        // unset($data['token']);
+        // $data['image'] = $fileName;
 
-        $save = Doctor::create($data);
+        
+        
+        $name = $request->name;
+        
+        $no_tlp = $request->no_tlp;
+        $kelurahan = $request->kelurahan;
+        $kota = $request->kota;
+        $kecamatan = $request->kecamatan;
+        $url = $request->url;
+
+        // $data = new \App\Doctor();
+        $save = Doctor::insert([
+        'image' => $fileName,
+        'name' => 'rafif',
+        // 'no_tlp' => $no_tlp,
+        // 'kelurahan' => $kelurahan,
+        'kota' => $kota,
+        'kecamatan' => $kecamatan,
+        'url' => $url
+    ]);        
+        
+
+        // if($data->save()){
+        //     $res['message'] = "Success";
+        //     $res['value'] = "$data";
+        //     return response($res);
+        // }
+
+        // $save = Doctor::create($data);
 
         if(!$save){
             File::delete('doctorimage/'.$fileName);
@@ -165,7 +193,25 @@ class FinddoctorController extends Controller
 
        
 
-        $update_action = Doctor::where('id',$id)->update($update);
+        // $update_action = Doctor::where('id',$id)->update($update);
+        $name = $request->name;
+        
+        $no_tlp = $request->no_tlp;
+        $kelurahan = $request->kelurahan;
+        $kota = $request->kota;
+        $kecamatan = $request->kecamatan;
+        $url = $request->url;
+
+        // $data = new \App\Doctor();
+        $update_action = Doctor::where('id',$id)->insert([
+        'image' => $fileName,
+        'name' => 'rafif',
+        // 'no_tlp' => $no_tlp,
+        // 'kelurahan' => $kelurahan,
+        'kota' => $kota,
+        'kecamatan' => $kecamatan,
+        'url' => $url
+    ]);        
         if ($update_action){
             return redirect()->route('finddoctor.index');
         }else{

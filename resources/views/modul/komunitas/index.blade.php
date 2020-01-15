@@ -36,6 +36,25 @@
 	<aside class="col-sm-3">
 
 <div class="card card-filter">
+<article class="card-group-item">
+		<header class="card-header">
+			<a class="" >
+				<h6 class="title">Komunitas of the Month  <img width="15%" height="auto" src="asset/img/fotokomunitas/piala2.png" alt=""></h6>
+				
+			</a>
+		</header>
+		<div >
+			<div class="card-body">
+				
+				<ul class="list-unstyled list-lg">
+					<li> <img width="10%" height="auto" src="asset/img/fotokomunitas/emas.png" alt=""><a class="ml-3" href="/detailkomunitas">Djaboers Cat <span class="float-right badge badge-light round">42</span> </a></li>
+					<li><img width="10%" height="auto" src="asset/img/fotokomunitas/perak.png" alt=""> <a class="ml-3" href="#">Anggora Bekasi  <span class="float-right badge badge-light round">30</span>  </a></li>
+					<li><img width="10%" height="auto" src="asset/img/fotokomunitas/perunggu.png" alt=""> <a class="ml-3" href="#">Rottweiler Depok <span class="float-right badge badge-light round">12</span>  </a></li>
+				</ul>  
+			</div> <!-- card-body.// -->
+		</div> <!-- collapse .// -->
+	</article> <!-- card-group-item.// -->
+
 	<article class="card-group-item">
 		<header class="card-header">
 			<a class="" aria-expanded="true" href="#" data-toggle="collapse" data-target="#collapse22">

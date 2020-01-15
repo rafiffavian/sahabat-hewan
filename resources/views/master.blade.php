@@ -21,11 +21,16 @@
 
     <!-- TAMBAHAN css untuk automatch -->
     <link href="css/automatch.css" rel="stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" type="text/css" href="{{asset('css/diagram.css')}}">
+
+<!-- Tambahan css untuk pelaporan komunitas -->
+<link rel="stylesheet" type="text/css" href="{{asset('css/laporkomunitas.css')}}">
    
     <!-- link untuk grid gallery hewanku -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
-        <link rel="stylesheet" href="grid-gallery.css">
+        <link rel="stylesheet" href="{{asset('grid-gallery.css')}}">
 
     <title>Hello, world!</title>
 </head>
